@@ -1,0 +1,18 @@
+<svg viewBox="1045 327 305 171" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="filter3_g_367_44" x="1045" y="327" width="305" height="171" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.25 0.25" numOctaves="3" seed="8108"/>
+      <feDisplacementMap in="shape" scale="40" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%"/>
+      <feMerge result="effect1_texture_367_44">
+        <feMergeNode in="displacedImage"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#filter3_g_367_44)">
+    <path d="M1130 433.5C1130 458.077 1174.77 478 1230 478C1285.23 478 1330 458.077 1330 433.5C1330 408.923 1285.23 389 1230 389C1174.77 389 1130 408.923 1130 433.5Z" fill="#F2F2F2"/>
+    <path d="M1144 401.5C1144 431.6 1166.61 456 1194.5 456C1222.39 456 1245 431.6 1245 401.5C1245 371.4 1222.39 347 1194.5 347C1166.61 347 1144 371.4 1144 401.5Z" fill="#F2F2F2"/>
+    <path d="M1065 431C1065 456.957 1094.1 478 1130 478C1165.9 478 1195 456.957 1195 431C1195 405.043 1165.9 384 1130 384C1094.1 384 1065 405.043 1065 431Z" fill="#F2F2F2"/>
+  </g>
+</svg>

@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How AR Shapes What We Can Remember and Teach — Carlos Rodriguez</title>
+  <meta name="description" content="A controlled study examining how augmented reality changes spatial understanding, collaborative recall, and knowledge transfer across teams." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="../styles.css?v=391" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#80C343",
+            ink: "#000000",
+            indigo: "#130091",
+            muted: "#D3D3D3",
+            body: "#727272",
+            body2: "#737373",
+            card: "#f8f8f8",
+          },
+          fontFamily: {
+            lexend: ['Lexend', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+            helv: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+          maxWidth: {
+            shell: '1000px',
+            nav: '1120px',
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  </script>
+</head>
+
+<body class="bg-white text-body font-helv antialiased project-page project-page--research">
+  <span id="top" class="scroll-anchor" aria-hidden="true"></span>
+
+  <!-- ============================ NAV ============================ -->
+  <header id="siteHeader" class="site-header sticky top-0 z-50 site-header--transparent">
+    <nav class="site-nav">
+      <a href="../index.html#top" class="nav-brand">Carlos Rodriguez</a>
+
+      <ul class="nav-menu hidden md:flex">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+
+      <button id="menuToggle" class="flex flex-col gap-[5px] md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-neutral-100 bg-white md:hidden">
+      <ul class="mx-auto flex max-w-[70rem] flex-col gap-4 px-6 py-4 text-[13px] text-body">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+    </div>
+  </header>
+
+  <!-- ============================ PROJECT HERO ============================ -->
+  <section class="project-hero project-hero--research" aria-labelledby="project-title">
+    <div class="project-hero__media" aria-hidden="true">
+      <video
+        class="project-hero__video"
+        src="../assets/media/gplxc-research.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+    </div>
+
+    <div class="project-hero__inner">
+      <div class="project-hero__content reveal">
+        <span class="impact-tag">Mixed-Methods Study</span>
+
+        <h1 id="project-title" class="project-hero__title font-lexend">
+          <span class="project-hero__title-main">How AR Shapes What We Can Remember and Teach</span>
+        </h1>
+
+        <p class="project-hero__lede project-hero__lede--research">
+          A controlled study examining how augmented reality changes spatial understanding, collaborative recall, and knowledge transfer across teams.
+        </p>
+
+        <dl class="project-hero__meta">
+          <div class="project-hero__meta-item">
+            <dt>Role</dt>
+            <dd>Researcher, Study Designer, Analyst<br />&amp; Data Visualizer</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Duration</dt>
+            <dd>6 months</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Partner</dt>
+            <dd>Gage Park<br />Latinx Council</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Participants</dt>
+            <dd>16 participants</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Methods</dt>
+            <dd>Behavioral Coding, Interaction Analysis, Recall Scoring,<br />Data Visualization</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <main class="site-main project-main">
+    <section class="project-about reveal" aria-labelledby="about-client-title">
+      <img
+        src="../assets/logos/institution-gplxc.png"
+        alt="GPLXC"
+        class="project-about__logo"
+        width="105"
+        height="24"
+      />
+
+      <div class="project-column">
+        <div class="project-about__media">
+          <video
+            class="project-about__video"
+            src="../assets/media/gplxc-about.mp4"
+            controls
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+
+        <div class="project-about__copy">
+          <h3 id="about-client-title" class="project-about__label font-lexend">About Client</h3>
+          <p class="project-about__text">
+            The Gage Park Latinx Council is a Queer, DACA, and Latinx-led grassroots organization rooted in
+            the Southwest Side of Chicago. Through art, popular education, and mutual aid, they run two Cultural
+            Centers that serve as sanctuaries for healing, creativity, and resistance &mdash; centering the
+            experiences of immigrant, queer, and Latinx communities that dominant institutions have historically ignored.
+          </p>
+          <p class="project-about__text">
+            This study was commissioned in service of their community programming &mdash; specifically to inform
+            the design of a bilingual AR nature education experience for children ages 7&ndash;12 anchored to a
+            GPLXC community mural.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block reveal" aria-labelledby="project-brief-title">
+      <div class="project-column">
+        <h2 id="project-brief-title" class="project-block__label font-lexend">Project Brief</h2>
+        <p class="project-block__text">
+          Before building Peque&ntilde;os So&ntilde;adores, a critical design question needed answering: does AR
+          actually support the kind of spatial understanding we want children to develop &mdash; and can that
+          understanding be passed from one person to another?
+        </p>
+        <p class="project-block__text">
+          Most AR systems are evaluated on whether users complete tasks successfully. This study asked a different
+          question: what kind of understanding does AR leave behind once the interaction ends &mdash; and can that
+          understanding be communicated to someone who wasn&rsquo;t there?
+        </p>
+      </div>
+    </section>
+
+    <section class="project-block reveal" aria-labelledby="project-problem-title">
+      <div class="project-column">
+        <h2 id="project-problem-title" class="project-block__label font-lexend">Problem</h2>
+        <p class="project-block__text">
+          AR is increasingly used in collaborative and educational contexts. But interaction designers rarely ask
+          whether the interaction structure they choose shapes how people mentally represent space &mdash; or whether
+          that representation can transfer across people.
+        </p>
+        <p class="project-block__text">
+          For a community AR experience designed for children navigating a mural together, that question is not
+          academic. If AR fragments spatial understanding rather than building it, the design needs to account for
+          that before deployment.
+        </p>
+        <p class="project-block__text">
+          This study was designed to surface that gap. Not to conclude that AR is better or worse, but to understand
+          what it changes about how understanding forms.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-block project-methodology reveal" aria-labelledby="methodology-title">
+      <div class="project-column">
+        <h2 id="methodology-title" class="project-block__label font-lexend">Methodology</h2>
+        <h3 class="project-methodology__subtitle font-lexend">Why LEGO?</h3>
+        <p class="project-block__text">
+          AR is increasingly used in collaborative and educational contexts. But interaction designers rarely ask
+          whether the interaction structure they choose shapes how people mentally represent space &mdash; or whether
+          that representation can transfer across people.
+        </p>
+        <p class="project-block__text">
+          For a community AR experience designed for children navigating a mural together, that question is not
+          academic. If AR fragments spatial understanding rather than building it, the design needs to account for
+          that before deployment. This study was designed to surface that gap. Not to conclude that AR is better or
+          worse, but to understand what it changes about how understanding forms.
+        </p>
+
+        <div class="project-methodology__gallery">
+          <div class="project-methodology__group">
+            <h3 class="project-methodology__subtitle font-lexend">Landmark-based</h3>
+            <div class="project-methodology__grid">
+              <img
+                src="../assets/media/methodology-landmark-1.png"
+                alt="Top-down view of a grey LEGO baseplate with scattered landmark structures and AR marker cards"
+                width="291"
+                height="291"
+              />
+              <img
+                src="../assets/media/methodology-landmark-2.png"
+                alt="Top-down view of a second landmark-based LEGO layout with AR marker cards"
+                width="291"
+                height="291"
+              />
+            </div>
+          </div>
+
+          <div class="project-methodology__group">
+            <h3 class="project-methodology__subtitle font-lexend">Path-based</h3>
+            <div class="project-methodology__grid">
+              <img
+                src="../assets/media/methodology-path-1.png"
+                alt="Top-down view of a grey LEGO baseplate with continuous path-based brick constructions"
+                width="291"
+                height="291"
+              />
+              <img
+                src="../assets/media/methodology-path-2.png"
+                alt="Top-down view of a second path-based LEGO layout with connected brick routes"
+                width="291"
+                height="291"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-conditions reveal" aria-labelledby="conditions-title">
+      <div class="project-column">
+        <h2 id="conditions-title" class="project-block__label font-lexend">Two Conditions</h2>
+        <p class="project-block__text">
+          The only intentional variable was the interaction model. Everything else &mdash; the task, the environment,
+          the team structure &mdash; remained constant.
+        </p>
+
+        <div class="project-conditions__grid">
+          <article class="project-conditions__card">
+            <img
+              class="project-conditions__icon project-conditions__icon--a"
+              src="../assets/media/icon1_image.png"
+              alt=""
+              width="1536"
+              height="1024"
+            />
+            <h3 class="project-conditions__name font-lexend">Condition A</h3>
+            <p class="project-conditions__desc">
+              AR-supported interaction with spatial audio cues tied to landmarks.
+            </p>
+          </article>
+
+          <article class="project-conditions__card">
+            <img
+              class="project-conditions__icon"
+              src="../assets/media/icon2_image.png"
+              alt=""
+              width="1536"
+              height="1024"
+            />
+            <h3 class="project-conditions__name font-lexend">Condition B</h3>
+            <p class="project-conditions__desc">
+              Non-AR interaction, no audio.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-sound reveal" aria-labelledby="sound-design-title">
+      <div class="project-column">
+        <h2 id="sound-design-title" class="project-block__label font-lexend">Sound Design</h2>
+        <p class="project-block__text">
+          Condition A paired each place type with a distinct spatial audio cue. The LEGO forms below were the
+          shared visual vocabulary; the clips are the sounds that fired when an AR marker for that place came into view.
+        </p>
+
+        <div class="project-sound__list">
+          <article class="project-sound__item">
+            <h3 class="project-sound__item-title font-lexend">Entrance</h3>
+            <div class="project-sound__layout">
+              <div class="project-sound__media">
+                <img
+                  src="../assets/media/entrance_image.png"
+                  alt="LEGO entrance arch with blue, red, and yellow pillars on a green baseplate"
+                  width="1536"
+                  height="1024"
+                />
+              </div>
+              <div class="project-sound__detail">
+                <div class="project-sound__player">
+                  <button
+                    type="button"
+                    class="project-sound__toggle"
+                    data-sound-toggle
+                    data-sound-src="../assets/media/entranceM.mp3"
+                    aria-label="Play Entrance sound"
+                    aria-pressed="false"
+                  >
+                    <span class="project-sound__toggle-icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="project-sound__wave" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="project-sound__note">
+                  <h4 class="project-sound__note-label font-lexend">Visual</h4>
+                  <p class="project-sound__note-text">
+                    A small gateway of primary-colored pillars with a white lintel. Built to read as a threshold: the clear start of the environment.
+                  </p>
+                </div>
+                <div class="project-sound__note">
+                  <h4 class="project-sound__note-label font-lexend">Sound</h4>
+                  <p class="project-sound__note-text">
+                    A short harmonic chime with a soft brass-like sustain. Designed as a threshold cue so crossing into the space feels like an arrival, not just another marker.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-sound__item">
+            <h3 class="project-sound__item-title font-lexend">Gathering space</h3>
+            <div class="project-sound__layout">
+              <div class="project-sound__media">
+                <img
+                  src="../assets/media/gatheringspace_image.png"
+                  alt="LEGO gathering space with blue and yellow seats around a central red element"
+                  width="1536"
+                  height="1024"
+                />
+              </div>
+              <div class="project-sound__detail">
+                <div class="project-sound__player">
+                  <button
+                    type="button"
+                    class="project-sound__toggle"
+                    data-sound-toggle
+                    data-sound-src="../assets/media/gatheringplaceM.mp3"
+                    aria-label="Play Gathering space sound"
+                    aria-pressed="false"
+                  >
+                    <span class="project-sound__toggle-icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="project-sound__wave" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="project-sound__note">
+                  <h4 class="project-sound__note-label font-lexend">Visual</h4>
+                  <p class="project-sound__note-text">
+                    Four inward-facing seats around a central red block. Reads as a shared meeting point rather than a private corner.
+                  </p>
+                </div>
+                <div class="project-sound__note">
+                  <h4 class="project-sound__note-label font-lexend">Sound</h4>
+                  <p class="project-sound__note-text">
+                    A social ambience of distant chatter over water and light bell textures. Meant to feel communal and open, the kind of place you remember as where people gather.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-sound__item">
+            <h3 class="project-sound__item-title font-lexend">Landmark</h3>
+            <div class="project-sound__layout">
+              <div class="project-sound__media project-sound__media--landmark">
+                <img
+                  src="../assets/media/landmark_image.png"
+                  alt="Tall LEGO landmark tower with a green pointed top on a green baseplate"
+                  width="1254"
+                  height="1254"
+                />
+              </div>
+              <div class="project-sound__detail">
+                <div class="project-sound__player">
+                  <button
+                    type="button"
+                    class="project-sound__toggle"
+                    data-sound-toggle
+                    data-sound-src="../assets/media/landmarkM.mp3"
+                    aria-label="Play Landmark sound"
+                    aria-pressed="false"
+                  >
+                    <span class="project-sound__toggle-icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="project-sound__wave" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="project-sound__note">
+                  <h4 class="project-sound__note-label font-lexend">Visual</h4>
+                  <p class="project-sound__note-text">
+                    A tall stacked tower with a pointed green top on a raised base. Built to be the most vertically distinct object in the layout.
+                  </p>
+                </div>
+                <div class="project-sound__note">
+                  <h4 class="project-sound__note-label font-lexend">Sound</h4>
+                  <p class="project-sound__note-text">
+                    A steady low musical drone with soft brass overtones. A continuous beacon tone that stays present while you stay on the marker, easy to point back to later in conversation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-sound__item">
+            <h3 class="project-sound__item-title font-lexend">Path</h3>
+            <div class="project-sound__layout">
+              <div class="project-sound__media">
+                <img
+                  src="../assets/media/path_image.png"
+                  alt="LEGO path of light gray bricks winding across a green baseplate"
+                  width="1536"
+                  height="1024"
+                />
+              </div>
+              <div class="project-sound__detail">
+                <div class="project-sound__player">
+                  <button
+                    type="button"
+                    class="project-sound__toggle"
+                    data-sound-toggle
+                    data-sound-src="../assets/media/pathM.mp3"
+                    aria-label="Play Path sound"
+                    aria-pressed="false"
+                  >
+                    <span class="project-sound__toggle-icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="project-sound__wave" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="project-sound__note">
+                  <h4 class="project-sound__note-label font-lexend">Visual</h4>
+                  <p class="project-sound__note-text">
+                    A winding light-gray route across green ground that ends at a tan destination brick. Encodes movement and direction, not a static place.
+                  </p>
+                </div>
+                <div class="project-sound__note">
+                  <h4 class="project-sound__note-label font-lexend">Sound</h4>
+                  <p class="project-sound__note-text">
+                    Rhythmic footsteps with a soft crunch, paced like walking a route. Reinforces path-based memory: sequence and motion instead of a single fixed spot.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-sound__item">
+            <h3 class="project-sound__item-title font-lexend">Quiet space</h3>
+            <div class="project-sound__layout">
+              <div class="project-sound__media">
+                <img
+                  src="../assets/media/quietspace_image.png"
+                  alt="LEGO quiet space with a small tree and blue and yellow seating on a green baseplate"
+                  width="1535"
+                  height="1024"
+                />
+              </div>
+              <div class="project-sound__detail">
+                <div class="project-sound__player">
+                  <button
+                    type="button"
+                    class="project-sound__toggle"
+                    data-sound-toggle
+                    data-sound-src="../assets/media/quietplaceM.mp3"
+                    aria-label="Play Quiet space sound"
+                    aria-pressed="false"
+                  >
+                    <span class="project-sound__toggle-icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="project-sound__wave" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="project-sound__note">
+                  <h4 class="project-sound__note-label font-lexend">Visual</h4>
+                  <p class="project-sound__note-text">
+                    A small tree beside a low blue-and-yellow seat. Sparse, set apart from denser builds so it reads as a pause in the environment.
+                  </p>
+                </div>
+                <div class="project-sound__note">
+                  <h4 class="project-sound__note-label font-lexend">Sound</h4>
+                  <p class="project-sound__note-text">
+                    Soft wind and rustling leaves over a quiet low hum. Low energy on purpose, so the place feels still rather than busy or social.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-sound__item">
+            <h3 class="project-sound__item-title font-lexend">Working space</h3>
+            <div class="project-sound__layout">
+              <div class="project-sound__media">
+                <img
+                  src="../assets/media/workingspace_image.png"
+                  alt="LEGO working space with a blue bridge structure and red blocks on a green baseplate"
+                  width="1535"
+                  height="1024"
+                />
+              </div>
+              <div class="project-sound__detail">
+                <div class="project-sound__player">
+                  <button
+                    type="button"
+                    class="project-sound__toggle"
+                    data-sound-toggle
+                    data-sound-src="../assets/media/activityplaceM.mp3"
+                    aria-label="Play Working space sound"
+                    aria-pressed="false"
+                  >
+                    <span class="project-sound__toggle-icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="project-sound__wave" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="project-sound__note">
+                  <h4 class="project-sound__note-label font-lexend">Visual</h4>
+                  <p class="project-sound__note-text">
+                    A blue-and-yellow bridge flanked by red blocks. Suggests an activity zone where something is being built or used.
+                  </p>
+                </div>
+                <div class="project-sound__note">
+                  <h4 class="project-sound__note-label font-lexend">Sound</h4>
+                  <p class="project-sound__note-text">
+                    Layered mechanical pulses with engine-like rhythm. Higher energy than the other cues, so the working area stands out as active rather than contemplative.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-phases reveal" aria-labelledby="phases-title">
+      <div class="project-column">
+        <h2 id="phases-title" class="project-block__label font-lexend">Four Study Phases</h2>
+        <p class="project-block__text">
+          The only intentional variable was the interaction model. Everything else &mdash; the task, the environment,
+          the team structure &mdash; remained constant. This structure allowed direct comparison between understanding
+          within a group and understanding after it transferred across groups &mdash; which is where the most
+          significant finding emerged.
+        </p>
+
+        <div class="project-phases__timeline" data-phases-timeline>
+          <div class="project-phases__rail" aria-hidden="true">
+            <span class="project-phases__rail-base"></span>
+            <span class="project-phases__rail-fill" data-phases-fill></span>
+          </div>
+          <ol class="project-phases__list">
+          <li class="project-phases__phase">
+            <div class="project-phases__label">
+              <p class="project-phases__side-title font-lexend">Build a LEGO-based spatial environment</p>
+              <p class="project-phases__side-num">Phase 1</p>
+            </div>
+            <span class="project-phases__dot" aria-hidden="true"></span>
+            <div class="project-phases__content">
+              <h3 class="project-phases__title font-lexend">Team Build</h3>
+              <p class="project-phases__text">
+                Both teams are given 10 minutes to build their environments to include an entrance, gathering space,
+                landmark, path, quiet space, and working space.
+              </p>
+              <div class="project-phases__media-grid">
+                <figure class="project-phases__figure">
+                  <div class="project-phases__media">
+                    <video
+                      class="project-phases__video"
+                      src="../assets/media/build-noar.MOV"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      data-phase-video
+                    ></video>
+                  </div>
+                  <figcaption class="project-phases__caption">Without AR</figcaption>
+                </figure>
+                <figure class="project-phases__figure">
+                  <div class="project-phases__media">
+                    <video
+                      class="project-phases__video"
+                      src="../assets/media/build-ar.mov"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      data-phase-video
+                    ></video>
+                  </div>
+                  <figcaption class="project-phases__caption">With AR</figcaption>
+                </figure>
+              </div>
+            </div>
+          </li>
+
+          <li class="project-phases__phase">
+            <div class="project-phases__label">
+              <p class="project-phases__side-title font-lexend">Within-group recall</p>
+              <p class="project-phases__side-num">Phase 2</p>
+            </div>
+            <span class="project-phases__dot" aria-hidden="true"></span>
+            <div class="project-phases__content">
+              <h3 class="project-phases__title font-lexend">Team Recall</h3>
+              <p class="project-phases__text">
+                Each team is asked to recall their environment&rsquo;s build. Consensus has to be reached about the
+                entrance, gathering space, landmark, path, quiet space, and working space.
+              </p>
+              <div class="project-phases__media-grid">
+                <figure class="project-phases__figure">
+                  <div class="project-phases__media">
+                    <video
+                      class="project-phases__video"
+                      src="../assets/media/within-recall-noar.MOV"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      data-phase-video
+                    ></video>
+                  </div>
+                  <figcaption class="project-phases__caption">Without AR</figcaption>
+                </figure>
+                <figure class="project-phases__figure">
+                  <div class="project-phases__media">
+                    <video
+                      class="project-phases__video"
+                      src="../assets/media/within-recall-ar.mov"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      data-phase-video
+                    ></video>
+                  </div>
+                  <figcaption class="project-phases__caption">With AR</figcaption>
+                </figure>
+              </div>
+            </div>
+          </li>
+
+          <li class="project-phases__phase">
+            <div class="project-phases__label">
+              <p class="project-phases__side-title font-lexend">Present the environment to another group</p>
+              <p class="project-phases__side-num">Phase 3</p>
+            </div>
+            <span class="project-phases__dot" aria-hidden="true"></span>
+            <div class="project-phases__content">
+              <h3 class="project-phases__title font-lexend">Between Teams Presentation</h3>
+              <p class="project-phases__text">
+                Each team presents their environment builds and the locations of their entrance, gathering space,
+                landmark, path, quiet space, and working space. The team with AR presents with the AR sound triggers.
+              </p>
+              <div class="project-phases__media-grid project-phases__media-grid--single">
+                <figure class="project-phases__figure">
+                  <div class="project-phases__media">
+                    <video
+                      class="project-phases__video"
+                      src="../assets/media/team-presentation.MOV"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      data-phase-video
+                    ></video>
+                  </div>
+                  <figcaption class="project-phases__caption">Without AR &amp; With AR</figcaption>
+                </figure>
+              </div>
+            </div>
+          </li>
+
+          <li class="project-phases__phase">
+            <div class="project-phases__label">
+              <p class="project-phases__side-title font-lexend">Between-group recall using another team&rsquo;s build</p>
+              <p class="project-phases__side-num">Phase 4</p>
+            </div>
+            <span class="project-phases__dot" aria-hidden="true"></span>
+            <div class="project-phases__content">
+              <h3 class="project-phases__title font-lexend">Between Teams Recall</h3>
+              <p class="project-phases__text">
+                Each team swaps their builds and are asked to recall the entrance, gathering space, landmark, path,
+                quiet space, and working space of the opposing team, which they just heard during the presentation.
+              </p>
+              <div class="project-phases__media-grid">
+                <figure class="project-phases__figure">
+                  <div class="project-phases__media">
+                    <video
+                      class="project-phases__video"
+                      src="../assets/media/betweenteams_recall-noar.MOV"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      data-phase-video
+                    ></video>
+                  </div>
+                  <figcaption class="project-phases__caption">Without AR | Other team recall</figcaption>
+                </figure>
+                <figure class="project-phases__figure">
+                  <div class="project-phases__media">
+                    <video
+                      class="project-phases__video"
+                      src="../assets/media/betweenteams-recall-ar.mov"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      data-phase-video
+                    ></video>
+                  </div>
+                  <figcaption class="project-phases__caption">With AR | Other team recall</figcaption>
+                </figure>
+              </div>
+            </div>
+          </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-coding reveal" aria-labelledby="coding-title">
+      <div class="project-column">
+        <h2 id="coding-title" class="project-block__label font-lexend">Coding Framework</h2>
+        <p class="project-block__text">
+          The only intentional variable was the interaction model. Everything else &mdash; the task, the environment,
+          the team structure &mdash; remained constant. This structure allowed direct comparison between understanding
+          within a group and understanding after it transferred across groups &mdash; which is where the most
+          significant finding emerged.
+        </p>
+
+        <p class="project-coding__pill font-lexend">Build Phase Coding</p>
+
+        <h3 class="project-coding__subtitle font-lexend">How was spatial understanding constructed?</h3>
+        <p class="project-block__text">
+          The build phase coding captured how spatial understanding was constructed &mdash; not just what participants
+          built, but how interaction unfolded over time and what spatial structures emerged through collaboration.
+        </p>
+
+        <h3 class="project-coding__subtitle font-lexend">Interaction Episode Types</h3>
+        <p class="project-block__text">
+          Each build session was segmented into behavioral episodes and coded using these four categories.
+        </p>
+
+        <img
+          class="project-coding__key"
+          src="../assets/media/buildcoding_key.png"
+          alt="Legend of interaction episode types: Discuss, Build, Discuss + Build, and Scan for AR only"
+          width="1952"
+          height="806"
+        />
+
+        <h3 class="project-coding__chart-title font-lexend">How a session unfolded over time</h3>
+
+        <div class="project-coding__chart" role="img" aria-label="Session timelines comparing with AR and without AR conditions">
+          <div class="project-coding__chart-plot">
+            <div class="project-coding__chart-stage">
+              <img
+                class="project-coding__chart-image"
+                src="../assets/media/buildcoding_barchart.png"
+                alt=""
+                width="1792"
+                height="460"
+              />
+              <div class="project-coding__chart-labels" aria-hidden="true">
+                <span>with AR</span>
+                <span>without AR</span>
+              </div>
+              <div class="project-coding__chart-notes" aria-hidden="true">
+                <p>Scan checkpoints<br />fragment collaboration.</p>
+                <p>Continuous discussion<br />and building.</p>
+              </div>
+            </div>
+            <div class="project-coding__axis" aria-hidden="true">
+              <span>0</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span><span>600</span>
+            </div>
+            <p class="project-coding__axis-label">Time (seconds)</p>
+          </div>
+        </div>
+
+        <p class="project-block__text project-coding__closing">
+          One example session per condition. The AR condition shows frequent scan interruptions breaking the flow of
+          discussion and building. The Non-AR condition remains continuous.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-block project-zones reveal" aria-labelledby="zones-title">
+      <div class="project-column">
+        <h2 id="zones-title" class="project-block__label font-lexend">Spatial Construction Zones</h2>
+        <p class="project-block__text">
+          Heatmap showing frequency of discussion and modification across the build environment. Each pin marks a coded
+          spatial zone. Coded zone pins include:
+        </p>
+
+        <div class="project-zones__legend" aria-label="Coded zone pin legend">
+          <ul class="project-zones__legend-row">
+            <li class="project-zones__pin" style="--pin: #c54f42">
+              <span class="project-zones__pin-label">Entrance</span>
+              <span class="project-zones__pin-mark" aria-hidden="true"></span>
+            </li>
+            <li class="project-zones__pin" style="--pin: #b8954a">
+              <span class="project-zones__pin-label">Working space</span>
+              <span class="project-zones__pin-mark" aria-hidden="true"></span>
+            </li>
+            <li class="project-zones__pin" style="--pin: #ceb34d">
+              <span class="project-zones__pin-label">Landmark</span>
+              <span class="project-zones__pin-mark" aria-hidden="true"></span>
+            </li>
+            <li class="project-zones__pin" style="--pin: #b85ca5">
+              <span class="project-zones__pin-label">Path</span>
+              <span class="project-zones__pin-mark" aria-hidden="true"></span>
+            </li>
+          </ul>
+          <ul class="project-zones__legend-row">
+            <li class="project-zones__pin" style="--pin: #327ba8">
+              <span class="project-zones__pin-label">Gathering space</span>
+              <span class="project-zones__pin-mark" aria-hidden="true"></span>
+            </li>
+            <li class="project-zones__pin" style="--pin: #3a9b45">
+              <span class="project-zones__pin-label">Quiet space</span>
+              <span class="project-zones__pin-mark" aria-hidden="true"></span>
+            </li>
+            <li class="project-zones__pin" style="--pin: #5a5a5a">
+              <span class="project-zones__pin-label">Table edge</span>
+              <span class="project-zones__pin-mark" aria-hidden="true"></span>
+            </li>
+          </ul>
+        </div>
+
+        <article class="project-zones__row">
+          <div class="project-zones__media">
+            <video
+              class="project-zones__video"
+              src="../assets/media/gplxc-research.mp4"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              data-phase-video
+            ></video>
+          </div>
+          <div class="project-zones__copy">
+            <h3 class="project-zones__row-title font-lexend">AR-supported build session in progress</h3>
+            <p class="project-zones__row-text">
+              Participants construct a shared LEGO environment while the AR system tracks spatial markers in real time.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-zones__row">
+          <div class="project-zones__media">
+            <video
+              class="project-zones__video"
+              src="../assets/media/heatmapvisual-legos.mp4"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              data-phase-video
+            ></video>
+            <div class="project-zones__scale" aria-hidden="true">
+              <div class="project-zones__scale-bar"></div>
+              <div class="project-zones__scale-labels">
+                <span>Low Activity</span>
+                <span>High Activity</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-zones__copy">
+            <h3 class="project-zones__row-title font-lexend">Spatial construction heatmap</h3>
+            <p class="project-zones__row-text">
+              Darker green indicates higher frequency of interaction. Zones represent spatial areas coded during the
+              build phase &mdash; where participants spent time, made decisions, and constructed shared understanding.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-block project-relationships reveal" aria-labelledby="relationships-title">
+      <div class="project-column">
+        <h2 id="relationships-title" class="project-block__label font-lexend">Spatial Relationships Observed</h2>
+        <p class="project-block__text">
+          Heatmap showing frequency of discussion and modification across the build environment. Each pin marks a coded
+          spatial zone. Coded zone pins include:
+        </p>
+
+        <img
+          class="project-relationships__figure"
+          src="../assets/media/spatialrelationshipsobserved-image.png"
+          alt="Three LEGO diagrams labeled Adjacency, Sequential, and Clustering showing how spatial relationships were observed during the build"
+          width="1774"
+          height="887"
+        />
+      </div>
+    </section>
+
+    <section class="project-transfer reveal" aria-label="What transfers when the build is done?">
+      <div class="project-transfer__frame">
+        <video
+          class="project-transfer__video"
+          src="../assets/media/breakvid-legos.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+        <div class="project-transfer__overlay" aria-hidden="true"></div>
+        <p class="project-transfer__text font-lexend">What transfers when the build is done?</p>
+      </div>
+    </section>
+
+    <section class="project-block project-recall reveal" aria-labelledby="recall-title">
+      <div class="project-column">
+        <p id="recall-title" class="project-coding__pill font-lexend">Recall Coding</p>
+        <p class="project-block__text">
+          How was spatial knowledge recalled, negotiated, and transferred &mdash; not just whether answers were
+          correct, but how they emerged through interaction.
+        </p>
+
+        <h3 class="project-coding__subtitle font-lexend">How Answers Arrived</h3>
+        <p class="project-block__text">
+          Response trajectories coded for every recall episode. Answers were rarely immediate &mdash; most emerged
+          through attempt, correction, and negotiation.
+        </p>
+
+        <img
+          class="project-recall__figure"
+          src="../assets/media/how-answers-arrived-image.png"
+          alt="Response trajectories: Correct immediately; Wrong then Correct; Wrong then Wrong then Correct; Wrong then Correct with peer correction; and Wrong then Wrong unresolved"
+          width="1535"
+          height="1024"
+        />
+      </div>
+    </section>
+
+    <section class="project-block project-resolve reveal" aria-labelledby="resolve-title">
+      <div class="project-column">
+        <h2 id="resolve-title" class="project-block__label font-lexend">How Quickly Did Groups Resolve Answers?</h2>
+        <p class="project-block__text">
+          AR groups took longer to reach correct answers and left more unresolved. Non-AR groups resolved immediately
+          at a higher rate with zero incorrect final answers.
+        </p>
+
+        <table class="project-resolve__table font-lexend">
+          <thead>
+            <tr>
+              <th scope="col">Resolution</th>
+              <th scope="col">AR</th>
+              <th scope="col">non-AR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Immediate</th>
+              <td><span class="project-resolve__mark">67%</span></td>
+              <td>83%</td>
+            </tr>
+            <tr>
+              <th scope="row">Delayed</th>
+              <td>17%</td>
+              <td>17%</td>
+            </tr>
+            <tr>
+              <th scope="row">Incorrect</th>
+              <td><span class="project-resolve__mark">17%</span></td>
+              <td>0%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote class="project-resolve__quote">
+          <span class="project-resolve__quote-mark font-lexend" aria-hidden="true">&ldquo;</span>
+          <div class="project-resolve__quote-body">
+            <p class="project-resolve__quote-text font-lexend">
+              Wait, was it the blue one or... I think it was near the scan point?
+            </p>
+            <cite class="project-resolve__quote-cite">- AR condition participant during mid-recall</cite>
+          </div>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="project-block project-produced reveal" aria-labelledby="produced-title">
+      <div class="project-column">
+        <h2 id="produced-title" class="project-block__label font-lexend">Who Produced the Answer?</h2>
+        <p class="project-block__text">
+          Recall was rarely individual. Most correct answers emerged through distributed negotiation &mdash; built
+          collectively rather than retrieved by one person.
+        </p>
+
+        <img
+          class="project-produced__legend"
+          src="../assets/media/who-produced-answer-legend.png"
+          alt="Legend: blue brick is Person A, green brick is Person B, yellow brick is Shared Answer"
+          width="1946"
+          height="808"
+        />
+
+        <div class="project-produced__grid">
+          <figure class="project-produced__item">
+            <img
+              class="project-produced__diagram"
+              src="../assets/media/who-produced-answer-diagram1.png"
+              alt="Blue brick pointing to a yellow shared-answer brick"
+              width="1664"
+              height="945"
+            />
+            <figcaption>
+              <h3 class="project-produced__item-title font-lexend">Individual</h3>
+              <p class="project-produced__item-text">One person, one answer. No negotiation.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="project-produced__item">
+            <img
+              class="project-produced__diagram"
+              src="../assets/media/who-produced-answer-diagram2.png"
+              alt="Blue and green bricks both pointing to a yellow shared-answer brick"
+              width="1426"
+              height="1103"
+            />
+            <figcaption>
+              <h3 class="project-produced__item-title font-lexend">Group</h3>
+              <p class="project-produced__item-text">Multiple people arriving at the same answer together.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="project-produced__item">
+            <img
+              class="project-produced__diagram"
+              src="../assets/media/who-produced-answer-diagram3.png"
+              alt="Blue and green bricks exchanging with each other while both pointing to a yellow shared-answer brick"
+              width="1448"
+              height="1086"
+            />
+            <figcaption>
+              <h3 class="project-produced__item-title font-lexend">Distributed</h3>
+              <p class="project-produced__item-text">
+                Answer built through exchange, correction, and back-and-forth.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-agreement reveal" aria-labelledby="agreement-title">
+      <div class="project-column">
+        <h2 id="agreement-title" class="project-block__label font-lexend">Agreement Pattern</h2>
+        <p class="project-block__text">A marker showing where most AR vs Non-AR episodes landed.</p>
+
+        <div
+          class="project-marker-chart"
+          style="--ar-pos: 38%; --non-ar-pos: 17%"
+          role="img"
+          aria-label="Agreement pattern: non-AR markers cluster nearer Immediate; AR markers sit further toward Delayed"
+        >
+          <ul class="project-marker-chart__legend" aria-hidden="true">
+            <li><span class="project-marker-chart__swatch project-marker-chart__swatch--ar"></span> AR</li>
+            <li><span class="project-marker-chart__swatch project-marker-chart__swatch--non-ar"></span> non-AR</li>
+          </ul>
+
+          <div class="project-marker-chart__plot">
+            <span class="project-marker-chart__dot project-marker-chart__dot--non-ar" style="left: var(--non-ar-pos)"></span>
+            <span class="project-marker-chart__dot project-marker-chart__dot--ar" style="left: var(--ar-pos)"></span>
+            <div class="project-marker-chart__axis"></div>
+            <div class="project-marker-chart__labels">
+              <span>Immediate</span>
+              <span>Delayed</span>
+              <span>Contested</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-confidence reveal" aria-labelledby="confidence-title">
+      <div class="project-column">
+        <h2 id="confidence-title" class="project-block__label font-lexend">Resolution Confidence</h2>
+        <p class="project-block__text">AR groups skewed lower confidence even when correct.</p>
+
+        <div
+          class="project-marker-chart"
+          style="--ar-pos: 50%; --non-ar-pos: 75%"
+          role="img"
+          aria-label="Resolution confidence: AR markers sit at Medium; non-AR markers sit between Medium and High"
+        >
+          <ul class="project-marker-chart__legend" aria-hidden="true">
+            <li><span class="project-marker-chart__swatch project-marker-chart__swatch--ar"></span> AR</li>
+            <li><span class="project-marker-chart__swatch project-marker-chart__swatch--non-ar"></span> non-AR</li>
+          </ul>
+
+          <div class="project-marker-chart__plot">
+            <span class="project-marker-chart__dot project-marker-chart__dot--ar" style="left: var(--ar-pos)"></span>
+            <span class="project-marker-chart__dot project-marker-chart__dot--non-ar" style="left: var(--non-ar-pos)"></span>
+            <div class="project-marker-chart__axis"></div>
+            <div class="project-marker-chart__labels">
+              <span>Low</span>
+              <span>Medium</span>
+              <span>High</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-nav-strategy reveal" aria-labelledby="nav-strategy-title">
+      <div class="project-column">
+        <h2 id="nav-strategy-title" class="project-block__label font-lexend">Navigation Strategy</h2>
+
+        <div class="project-nav-strategy__grid">
+          <article class="project-nav-strategy__card">
+            <img
+              class="project-nav-strategy__image"
+              src="../assets/media/navigationstrategy-image1.png"
+              alt="Blue question brick connected by a straight arrow to a yellow answer brick"
+              width="1774"
+              height="887"
+            />
+            <h3 class="project-nav-strategy__card-title font-lexend">Direct</h3>
+            <p class="project-nav-strategy__card-text">Straight line from question to answer.</p>
+          </article>
+
+          <article class="project-nav-strategy__card">
+            <img
+              class="project-nav-strategy__image"
+              src="../assets/media/navigationstrategy-image2.png"
+              alt="Circular path from a blue question brick through green landmark bricks to a yellow answer brick"
+              width="1536"
+              height="1024"
+            />
+            <h3 class="project-nav-strategy__card-title font-lexend">Path-based</h3>
+            <p class="project-nav-strategy__card-text">A route through intermediate landmarks.</p>
+          </article>
+
+          <article class="project-nav-strategy__card">
+            <img
+              class="project-nav-strategy__image"
+              src="../assets/media/navigationstrategy-image3.png"
+              alt="Winding path from a blue question brick through red bricks to a yellow answer brick"
+              width="1536"
+              height="1024"
+            />
+            <h3 class="project-nav-strategy__card-title font-lexend">Trial and Error</h3>
+            <p class="project-nav-strategy__card-text">A wandering line with backtracking.</p>
+          </article>
+        </div>
+
+        <blockquote class="project-nav-strategy__quote">
+          <span class="project-nav-strategy__quote-mark font-lexend" aria-hidden="true">&ldquo;</span>
+          <div class="project-nav-strategy__quote-body">
+            <p class="project-nav-strategy__quote-text font-lexend">
+              I think it was&mdash; no wait, remember the sound? oh right, yeah, it was next to that.
+            </p>
+            <cite class="project-nav-strategy__quote-cite">- AR condition participant during between-group recall</cite>
+          </div>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="project-block project-wrong reveal" aria-labelledby="wrong-title">
+      <div class="project-column">
+        <h2 id="wrong-title" class="project-block__label font-lexend">
+          When Groups Got It Wrong, How Did They Get It Wrong?
+        </h2>
+        <p class="project-block__text">
+          Both groups remembered their own environment perfectly. The gap emerged when knowledge had to move across
+          groups &mdash; and only the AR condition showed a drop.
+        </p>
+
+        <div class="project-wrong__chart">
+          <p class="project-wrong__chart-title font-lexend">
+            Within vs Between Group<br />
+            <span>Recall</span>
+          </p>
+
+          <div class="project-wrong__plot">
+            <div class="project-wrong__bars">
+              <div class="project-wrong__frame">
+                <div class="project-wrong__y" aria-hidden="true">
+                  <span class="project-wrong__y-100">100%</span>
+                  <span class="project-wrong__y-50">50%</span>
+                </div>
+                <span class="project-wrong__callout font-lexend" aria-hidden="true">67%</span>
+                <img
+                  class="project-wrong__image"
+                  src="../assets/media/when-the-groups-got-it-wrong-image1.png?v=3"
+                  alt="Bar chart of LEGO stacks comparing within-group and between-group recall for AR and non-AR conditions"
+                  width="1347"
+                  height="813"
+                />
+              </div>
+              <div class="project-wrong__x" aria-hidden="true">
+                <span class="project-wrong__x-1">Within-Group<br />AR</span>
+                <span class="project-wrong__x-2">Within-Group<br />non-AR</span>
+                <span class="project-wrong__x-3 project-wrong__x-highlight">Between-Group<br />AR</span>
+                <span class="project-wrong__x-4">Between-Group<br />non-AR</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-means reveal" aria-labelledby="means-title">
+      <div class="project-column">
+        <p id="means-title" class="project-coding__pill font-lexend">What this means for design</p>
+        <p class="project-block__text">
+          These patterns &mdash; fragmented trajectories, lower resolution confidence, concept-level errors, transfer
+          failure &mdash; all point to the same root cause:
+          <strong>AR structured interaction in a way that shaped memory before recall ever began.</strong>
+        </p>
+        <p class="project-means__note font-lexend">
+          * All recall episodes were coded independently. Each navigation prompt response was treated as a discrete
+          unit of analysis. Coding captured not just correctness but trajectory, social dynamics, and resolution
+          confidence.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-block project-implications reveal" aria-labelledby="implications-title">
+      <div class="project-column">
+        <h2 id="implications-title" class="project-block__label font-lexend">Design Implications</h2>
+        <p class="project-block__text">
+          This study does not conclude that AR is harmful to learning. It concludes that interaction structure shapes
+          the kind of understanding that forms &mdash; and that some structures produce understanding that travels
+          better than others.
+        </p>
+
+        <div class="project-implications__grid">
+          <article class="project-implications__card">
+            <img
+              class="project-implications__image"
+              src="../assets/media/designimplications-image1.png"
+              alt=""
+              width="1536"
+              height="1024"
+            />
+            <h3 class="project-implications__card-title font-lexend">
+              Design for the cognitive task, not the interaction layer.
+            </h3>
+            <p class="project-implications__card-text">
+              AR introduced a secondary task that competed with the primary one. Before adding interaction steps, ask
+              whether they support or interrupt the understanding you&rsquo;re trying to build.
+            </p>
+          </article>
+
+          <article class="project-implications__card">
+            <img
+              class="project-implications__image"
+              src="../assets/media/designimplications-image2.png"
+              alt=""
+              width="1827"
+              height="861"
+            />
+            <h3 class="project-implications__card-title font-lexend">Evaluate transfer, not just completion.</h3>
+            <p class="project-implications__card-text">
+              Within-group recall was identical across conditions. The gap only appeared when knowledge had to move
+              across people. Task completion metrics will never surface a transferability problem &mdash; you have to
+              design for the handoff.
+            </p>
+          </article>
+
+          <article class="project-implications__card">
+            <img
+              class="project-implications__image"
+              src="../assets/media/designimplications-image3.png"
+              alt=""
+              width="1536"
+              height="1024"
+            />
+            <h3 class="project-implications__card-title font-lexend">Design for the group, not the individual.</h3>
+            <p class="project-implications__card-text">
+              Correct answers emerged through discussion, correction, and convergence &mdash; not individual retrieval.
+              AR designed as a solo overlay misses the collaborative process through which understanding actually forms.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-shaped reveal" aria-labelledby="shaped-title">
+      <div class="project-column">
+        <div class="project-shaped__layout">
+          <div class="project-shaped__copy">
+            <h2 id="shaped-title" class="project-block__label font-lexend">Peque&ntilde;os So&ntilde;adores</h2>
+            <p class="project-block__text">
+              These implications shaped every major design decision in Peque&ntilde;os So&ntilde;adores &mdash; the
+              project this research was conducted to inform.
+            </p>
+            <p class="project-block__text">
+              Non-sequential triggers so children build relational, not episodic, spatial memory. Sound as ambient
+              ecological texture rather than a primary interaction mechanism. A Dragonfly tracker that celebrates
+              discovery without requiring completion &mdash; because collaborative exploration, not individual task
+              performance, is the point.
+            </p>
+            <p class="project-shaped__cta font-lexend">
+              See how these findings shaped
+              <a href="./pequenos-sonadores.html">Peque&ntilde;os So&ntilde;adores.</a>
+            </p>
+          </div>
+
+          <div class="project-shaped__media">
+            <video
+              class="project-shaped__video"
+              src="../assets/media/gplxc-research-argument.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-study-impact reveal" aria-labelledby="study-impact-title">
+      <div class="project-column">
+        <h2 id="study-impact-title" class="project-block__label font-lexend">Impact</h2>
+        <p class="project-block__text">
+          This study was small by design. The goal was to surface patterns in how interaction structure shapes spatial
+          understanding, generate hypotheses worth testing at scale, and produce findings specific enough to inform
+          real design decisions. It did all three.
+        </p>
+
+        <dl class="project-impact__stats">
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">33%</dt>
+            <dd class="project-impact__label">decrease when interpreting another group&rsquo;s build.</dd>
+          </div>
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">17%</dt>
+            <dd class="project-impact__label">incorrect recall in AR compared to 0% in non-AR.</dd>
+          </div>
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">16%</dt>
+            <dd class="project-impact__label">of interaction time was spent scanning AR markers.</dd>
+          </div>
+        </dl>
+
+        <figure class="project-study-impact__figure">
+          <div class="project-study-impact__media">
+            <video
+              class="project-study-impact__video"
+              src="../assets/media/impact-video.mov"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-block project-study-takeaways reveal" aria-labelledby="study-takeaways-title">
+      <div class="project-column">
+        <h2 id="study-takeaways-title" class="project-block__label font-lexend">Takeaways</h2>
+        <p class="project-block__text">
+          The most important thing this study produced wasn&rsquo;t a statistic. It was a reframe: that AR evaluation
+          has been asking the wrong question. Measuring whether users complete tasks tells you nothing about whether
+          the interaction built understanding worth keeping &mdash; or understanding worth sharing. These takeaways are
+          what that reframe looks like in practice.
+        </p>
+
+        <div class="project-takeaways__list">
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text"
+                >AR can interfere with the task it&rsquo;s meant to support.</span
+              >
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M4 6L8 10L12 6"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The scan-based checkpoint structure created a secondary task that competed with spatial learning
+                  rather than augmenting it. Technology that adds interaction steps without supporting the underlying
+                  cognitive goal doesn&rsquo;t just fail to help &mdash; it actively fragments understanding. This is a
+                  design problem, not a technology problem.
+                </p>
+                <blockquote class="project-study-takeaways__quote">
+                  <p class="project-study-takeaways__quote-text font-lexend">
+                    Wait, was it the blue one or... I think it was near the scan point?
+                  </p>
+                  <cite class="project-study-takeaways__quote-cite"
+                    >&mdash; AR condition participant during mid-recall</cite
+                  >
+                </blockquote>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text"
+                >Sequential memory doesn&rsquo;t transfer. Relational memory does.</span
+              >
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M4 6L8 10L12 6"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  AR participants described space as a sequence of triggers. Non-AR participants described space as a
+                  web of relationships. When knowledge had to move across groups, only one of those representations
+                  survived the transfer. Interaction designers should ask: does this structure produce understanding that
+                  another person could use?
+                </p>
+                <div class="project-study-takeaways__quote-pair">
+                  <blockquote class="project-study-takeaways__quote">
+                    <p class="project-study-takeaways__quote-text font-lexend">
+                      First you hit the entrance marker, then the path, then you&rsquo;re at the gathering space.
+                    </p>
+                    <cite class="project-study-takeaways__quote-cite">&mdash; AR condition participant</cite>
+                  </blockquote>
+                  <blockquote class="project-study-takeaways__quote">
+                    <p class="project-study-takeaways__quote-text font-lexend">
+                      The quiet space sits across from the landmark &mdash; you can see both from the working area.
+                    </p>
+                    <cite class="project-study-takeaways__quote-cite">&mdash; Non-AR condition participant</cite>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">Sound is context-dependent.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M4 6L8 10L12 6"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  Sound attached to AR landmarks added cognitive load for original participants but provided meaningful
+                  transfer cues for receiving groups. The same design element can hinder and help depending on which side
+                  of the knowledge transfer you&rsquo;re on. Design for the full interaction arc, not just the primary
+                  user.
+                </p>
+                <blockquote class="project-study-takeaways__quote">
+                  <p class="project-study-takeaways__quote-text font-lexend">
+                    I think it was&mdash; no wait, remember the sound? oh right, yeah, it was next to that.
+                  </p>
+                  <cite class="project-study-takeaways__quote-cite"
+                    >&mdash; AR condition participant during between-group recall</cite
+                  >
+                </blockquote>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">Correct answers are socially constructed.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M4 6L8 10L12 6"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  Neither condition produced recall through individual memory retrieval. Answers emerged through
+                  discussion, peer correction, and collaborative convergence. Designing AR for collaboration means
+                  designing for that process &mdash; not assuming each person is storing and retrieving information
+                  independently.
+                </p>
+                <blockquote class="project-study-takeaways__quote">
+                  <p class="project-study-takeaways__quote-text font-lexend">
+                    &ldquo;Was it left of the landmark?&rdquo; &ldquo;No&mdash; wait, you&rsquo;re right, but only if
+                    you&rsquo;re facing the entrance.&rdquo; &ldquo;Okay yeah, that&rsquo;s it.&rdquo;
+                  </p>
+                  <cite class="project-study-takeaways__quote-cite"
+                    >&mdash; Participants during collaborative recall</cite
+                  >
+                </blockquote>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer id="contact" class="site-main pb-16 mt-28 sm:mt-36">
+    <div class="project-column border-t border-neutral-100 pt-16">
+      <p class="font-medium text-[14px] text-body">Let&rsquo;s build something thoughtful.</p>
+      <ul class="mt-4 flex flex-col gap-[6px] text-[14px] text-body">
+        <li><a href="https://www.linkedin.com/in/carloscoding/" class="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><button type="button" class="nav-link footer-copy-email" data-email="c.a.rodriguez1999@gmail.com">Email</button></li>
+        <li><a href="https://github.com/CRodriguez245" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+      <p class="mt-10 text-[14px] text-body">&copy; 2026 Carlos Rodriguez</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/cursor/dist/index.js"></script>
+    <script src="../contact-nav.js?v=2"></script>
+  <script src="../script.js?v=14"></script>
+  <script src="../project.js?v=12"></script>
+</body>
+</html>

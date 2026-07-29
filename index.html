@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carlos Rodriguez — Applied AI Designer</title>
+  <meta name="description" content="Carlos Rodriguez — Applied AI Designer. Building AI systems that work for people and studying why they fail when they don't." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="./styles.css?v=382" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#80C343",
+            ink: "#000000",
+            indigo: "#130091",
+            muted: "#D3D3D3",
+            body: "#727272",
+            body2: "#737373",
+            card: "#f8f8f8",
+          },
+          fontFamily: {
+            lexend: ['Lexend', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+            helv: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+          maxWidth: {
+            shell: '1000px',
+            nav: '1120px',
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    /* Keep the page pinned to the top on load — avoids #top / scroll-restoration offset */
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    if (!location.hash || location.hash === "#top") {
+      window.scrollTo(0, 0);
+    }
+  </script>
+</head>
+
+<body class="bg-white text-body font-helv antialiased">
+  <span id="top" class="scroll-anchor" aria-hidden="true"></span>
+
+  <!-- ============================ NAV ============================ -->
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md">
+    <nav class="site-nav">
+      <a href="#top" class="nav-brand">Carlos Rodriguez</a>
+
+      <!-- Desktop menu -->
+      <ul class="nav-menu hidden md:flex">
+        <li><a href="#top" class="nav-link">Home</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="./about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+
+      <!-- Mobile toggle -->
+      <button id="menuToggle" class="flex flex-col gap-[5px] md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="hidden border-t border-neutral-100 bg-white md:hidden">
+      <ul class="mx-auto flex max-w-[70rem] flex-col gap-4 px-6 py-4 text-[13px] text-body">
+        <li><a href="#top" class="nav-link">Home</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="./about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+    </div>
+  </header>
+
+  <main class="site-main">
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero-section">
+      <p class="hero-eyebrow">Based in Chicago, IL</p>
+
+      <div class="hero-row">
+        <div class="hero-graphic">
+          <a
+            href="./projects/who-annotates-the-annotators.html"
+            class="hero-graphic__link"
+            data-cursor="large"
+            aria-describedby="hero-project-tooltip"
+            aria-label="View Who Annotates the Annotators?"
+          >
+            <svg class="hero-viz" width="256" height="260" viewBox="0 0 266.686 269.342" fill="none" overflow="visible" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="hero-gaussian" x="-80%" y="-80%" width="260%" height="260%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="6" />
+                </filter>
+              </defs>
+              <path class="hero-draw-stroke" data-order="1" d="M114 268.842C176.684 268.842 227.5 219.808 227.5 159.322C227.5 98.8363 176.684 49.8028 114 49.8028C51.3155 49.8028 0.5 98.8363 0.5 159.322C0.5 219.808 51.3155 268.842 114 268.842Z" stroke="#000000" stroke-width="1" fill="none" />
+              <path class="hero-draw-stroke" data-order="2" d="M162.5 158.364L220.5 146.296L202.21 201.297Z" stroke="#80C343" stroke-width="1" fill="none" stroke-linecap="butt" stroke-linejoin="miter" />
+              <g class="hero-draw-circle" data-order="3">
+                <path d="M221.5 139.541C240.278 139.541 255.5 125.069 255.5 107.216C255.5 89.3634 240.278 74.8909 221.5 74.8909C202.722 74.8909 187.5 89.3634 187.5 107.216C187.5 125.069 202.722 139.541 221.5 139.541Z" fill="#80C343" fill-opacity="0.8" />
+              </g>
+              <path class="hero-draw-stroke" data-order="4" d="M207.298 65.2417L204.5 8.31085L256.5 34.4022Z" stroke="#000000" stroke-width="10" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" />
+            </svg>
+            <span
+              id="hero-project-tooltip"
+              class="hero-graphic__tooltip"
+              role="tooltip"
+              aria-hidden="true"
+            >
+              <span class="hero-graphic__tooltip-label">Featured project</span>
+              <strong class="hero-graphic__tooltip-title">Who Annotates the Annotators?</strong>
+            </span>
+          </a>
+        </div>
+
+        <div class="hero-content">
+          <h1 class="font-lexend type-hero-title">
+            I&rsquo;m an Applied AI Designer.
+          </h1>
+          <p class="type-hero-body">
+            I build AI systems that work for people and study why they fail when they don&rsquo;t.<br />
+            My work spans
+            <strong>mechanistic interpretability</strong>,
+            <strong>responsible AI evaluation</strong>,<br />
+            and <strong>human-centered product design</strong>, with a focus on communities<br />
+            that existing systems underserve.
+          </p>
+          <p class="type-hero-meta">
+            Currently with
+            <a
+              class="hero-org-link hero-org-link--anthropic"
+              href="https://www.anthropic.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Anthropic</a>
+            and
+            <a
+              class="hero-org-link hero-org-link--nm"
+              href="https://www.nm.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Northwestern Medicine</a>.<br />
+            Previously with
+            <a
+              class="hero-org-link hero-org-link--microsoft"
+              href="https://www.microsoft.com/en-us/ai/health/life-sciences"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Microsoft</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PROJECTS ============================ -->
+    <section id="projects" class="projects-section">
+      <div class="projects-tabs">
+        <div class="projects-tabs__labels font-lexend">
+          <button class="filter-tab" data-filter="selected" aria-selected="true">SELECTED PROJECTS</button>
+          <button class="filter-tab" data-filter="products" aria-selected="false">PRODUCTS</button>
+          <button class="filter-tab" data-filter="research" aria-selected="false">RESEARCH</button>
+          <button class="filter-tab" data-filter="equity" aria-selected="false">AI EQUITY</button>
+        </div>
+        <span class="projects-tabs__line"></span>
+      </div>
+
+      <div class="projects-grid">
+
+
+        <article class="project-card reveal" data-category="selected research" data-research-order="4">
+          <a href="./projects/bluedot.html" class="project-card__surface" data-cursor="large" aria-label="View The Mechanistic Informed Audit Standard">
+            <span class="impact-tag">Governance Proposal</span>
+            <div class="project-card__content">
+              <div class="project-card__copy">
+                <h3 class="project-card__title">The Mechanistic Informed Audit Standard</h3>
+                <img src="./assets/logos/institution-bluedot.png" alt="BlueDot Impact" class="project-card__logo" width="123" height="16" />
+                <p class="project-card__desc">
+                  A governance intervention proposal developed with BlueDot Impact, arguing that
+                  AI safety evaluation fails because it measures behavior without interrogating the mechanisms underneath.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"><circle cx="16.5" cy="16.5" r="16.25" stroke="currentColor" stroke-width="0.5"/><path d="M14 10L20.5 17L14 24" stroke="currentColor" stroke-width="0.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div
+              class="project-card__media project-card__media--bluedot"
+              data-bluedot-draw
+              aria-hidden="true"
+            >
+              <img src="./assets/media/bluedot-projectcard.svg?v=7" alt="" width="885" height="396" />
+            </div>
+          </a>
+        </article>
+
+
+        <article class="project-card reveal" data-category="products" hidden>
+          <a href="./projects/researchbridge.html" class="project-card__surface" data-cursor="large" aria-label="View ResearchBridge">
+            <span class="impact-tag">18 <span class="impact-tag__arrow">&rarr;</span> 43 Students</span>
+            <div class="project-card__content">
+              <div class="project-card__copy">
+                <h3 class="project-card__title">ResearchBridge</h3>
+                <img src="./assets/logos/Northwestern_Medicine_logo.svg.webp" alt="Northwestern Medicine" class="project-card__logo" width="83" height="16" />
+                <p class="project-card__desc">
+                  Most research tools assume students already know how to read critically. ResearchBridge uses AI to help
+                  first-gen students interrogate assumptions, representation gaps, and framing in academic literature.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"><circle cx="16.5" cy="16.5" r="16.25" stroke="currentColor" stroke-width="0.5"/><path d="M14 10L20.5 17L14 24" stroke="currentColor" stroke-width="0.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-card__media">
+              <video
+                class="project-card__video"
+                src="./assets/media/nmrb-vid2.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                aria-hidden="true"
+              ></video>
+            </div>
+          </a>
+        </article>
+
+
+        <article class="project-card reveal" data-category="selected products research" data-research-order="2">
+          <a href="./projects/microsoft.html" class="project-card__surface" data-cursor="large" aria-label="View Microsoft Health and Life Sciences">
+            <span class="impact-tag">2 Years · FHIR Scale</span>
+            <div class="project-card__content">
+              <div class="project-card__copy">
+                <h3 class="project-card__title">Microsoft, Health &amp; Life Sciences</h3>
+                <img src="./assets/logos/institution-microsoft.png" alt="Microsoft" class="project-card__logo" width="75" height="16" />
+                <p class="project-card__desc">
+                  Led technical program management and customer success for the HLS emerging technology team,
+                  delivering custom Teams and Copilot applications that helped organizations operationalize interoperability at scale.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"><circle cx="16.5" cy="16.5" r="16.25" stroke="currentColor" stroke-width="0.5"/><path d="M14 10L20.5 17L14 24" stroke="currentColor" stroke-width="0.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-card__media">
+              <video
+                class="project-card__video"
+                src="./assets/media/copilot-herovid.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                aria-hidden="true"
+              ></video>
+            </div>
+          </a>
+        </article>
+
+
+        <article class="project-card reveal" data-category="selected products research" data-research-order="3">
+          <a href="https://decisioncoach.io" class="project-card__surface" data-cursor="large" target="_blank" rel="noopener noreferrer" aria-label="View AI-Augmented Decision Quality">
+            <span class="impact-tag">Decision Quality Focus</span>
+            <div class="project-card__content">
+              <div class="project-card__copy">
+                <h3 class="project-card__title">AI-Augmented Decision Quality</h3>
+                <span class="project-card__institution">DecisionCoach.io</span>
+                <p class="project-card__desc">
+                  Most AI tools optimize for speed. DecisionCoach optimizes for quality: a turn-based coaching system
+                  that scaffolds reasoning, surfaces blind spots, and measurably improves decisions in high-stakes contexts.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"><circle cx="16.5" cy="16.5" r="16.25" stroke="currentColor" stroke-width="0.5"/><path d="M14 10L20.5 17L14 24" stroke="currentColor" stroke-width="0.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-card__media">
+              <video
+                class="project-card__video"
+                src="./assets/media/DQ-projectcardvid.mp4"
+                poster="./assets/media/decision-coach.png"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-hidden="true"
+              ></video>
+            </div>
+          </a>
+        </article>
+
+
+        <article class="project-card reveal" data-category="selected products">
+          <a href="./projects/pequenos-sonadores.html" class="project-card__surface" data-cursor="large" aria-label="View Pequeños Soñadores">
+            <span class="impact-tag">20% <span class="impact-tag__arrow">&uarr;</span> Confidence</span>
+            <div class="project-card__content">
+              <div class="project-card__copy">
+                <h3 class="project-card__title">
+                  <span class="project-card__title-main">Pequeños Soñadores </span>
+                  <span class="project-card__title-sub">A Community AR Experience</span>
+                </h3>
+                <img src="./assets/logos/institution-gplxc.png" alt="Pequeños Soñadores" class="project-card__logo" width="70" height="16" />
+                <p class="project-card__desc">
+                  Designed and built a bilingual AR nature education experience anchored to a community mural in
+                  Southwest Chicago, using participatory design methods to give residents authorship over their own spatial narrative.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"><circle cx="16.5" cy="16.5" r="16.25" stroke="currentColor" stroke-width="0.5"/><path d="M14 10L20.5 17L14 24" stroke="currentColor" stroke-width="0.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-card__media">
+              <video
+                class="project-card__video"
+                src="./assets/media/butterflies-white-8s.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                aria-hidden="true"
+              ></video>
+            </div>
+          </a>
+        </article>
+
+
+        <article class="project-card reveal" data-category="research" hidden data-research-order="1">
+          <a href="./projects/pequenos-sonadores-research.html" class="project-card__surface" data-cursor="large" aria-label="View How AR Shapes What We Can Remember and Teach">
+            <span class="impact-tag">Mixed-Methods Study</span>
+            <div class="project-card__content">
+              <div class="project-card__copy">
+                <h3 class="project-card__title">How AR Shapes What We Can Remember and Teach</h3>
+                <img src="./assets/logos/institution-gplxc.png" alt="Pequeños Soñadores" class="project-card__logo" width="70" height="16" />
+                <p class="project-card__desc">
+                  Designed and conducted a mixed-methods study examining how interaction structure influences the way
+                  people build, recall, and transfer spatial understanding through collaboration.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"><circle cx="16.5" cy="16.5" r="16.25" stroke="currentColor" stroke-width="0.5"/><path d="M14 10L20.5 17L14 24" stroke="currentColor" stroke-width="0.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-card__media">
+              <video
+                class="project-card__video"
+                src="./assets/media/gplxc-research.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                aria-hidden="true"
+              ></video>
+            </div>
+          </a>
+        </article>
+
+
+        <article class="project-card reveal" data-category="research" hidden data-research-order="6">
+          <div
+            class="project-card__surface project-card__surface--inert"
+            data-cursor="default"
+            aria-label="Mechanistic Interpretability in Healthcare — Coming Soon"
+          >
+            <span class="impact-tag">Coming Soon</span>
+            <div class="project-card__content">
+              <div class="project-card__copy">
+                <h3 class="project-card__title">Mechanistic Interpretability in Healthcare</h3>
+                <img src="./assets/logos/Northwestern_Medicine_logo.svg.webp" alt="Northwestern Medicine" class="project-card__logo" width="83" height="16" />
+                <p class="project-card__desc">
+                  Ongoing research studying how demographic identity and clinical context shape model behavior
+                  in ways standard health AI benchmarks fail to detect.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"><circle cx="16.5" cy="16.5" r="16.25" stroke="currentColor" stroke-width="0.5"/><path d="M14 10L20.5 17L14 24" stroke="currentColor" stroke-width="0.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div
+              class="project-card__media project-card__media--heatmap"
+              data-heatmap-live
+              aria-hidden="true"
+            >
+              <div class="project-card__heatmap-overlay">
+                <span class="project-card__heatmap-soon font-lexend">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+
+        <article class="project-card reveal" data-category="research" hidden data-research-order="5">
+          <a href="./projects/advocate.html" class="project-card__surface" data-cursor="large" aria-label="View Well-Child Visit Initiative">
+            <span class="impact-tag">On-Site Health Equity</span>
+            <div class="project-card__content">
+              <div class="project-card__copy">
+                <h3 class="project-card__title">Well-Child Visit Initiative</h3>
+                <img src="./assets/logos/Advocate_Health_Care_Logo.png" alt="Advocate Health" class="project-card__logo" width="122" height="16" />
+                <p class="project-card__desc">
+                  On-site research and interpretation supporting the redesign of patient communication materials for
+                  Black and Latinx communities experiencing a decline in well-child visit rates.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"><circle cx="16.5" cy="16.5" r="16.25" stroke="currentColor" stroke-width="0.5"/><path d="M14 10L20.5 17L14 24" stroke="currentColor" stroke-width="0.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-card__media project-card__media--advocate">
+              <img src="./assets/media/advocatehero.jpg" alt="" width="1280" height="720" />
+            </div>
+          </a>
+        </article>
+
+
+        <article class="project-card reveal" data-category="equity" hidden>
+          <a href="./projects/anthropic.html" class="project-card__surface" data-cursor="large" aria-label="View Anthropic Ambassador">
+            <span class="impact-tag">500+ Members</span>
+            <div class="project-card__content">
+              <div class="project-card__copy">
+                <h3 class="project-card__title">Anthropic Ambassador</h3>
+                <img src="./assets/logos/institution-anthropic.png" alt="Anthropic" class="project-card__logo" width="142" height="16" />
+                <p class="project-card__desc">
+                  Founded a 500+ member organization in partnership with Anthropic, building AI literacy and workforce
+                  readiness among students, functioning as both a community of practice and a live research site for studying AI skill adoption.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"><circle cx="16.5" cy="16.5" r="16.25" stroke="currentColor" stroke-width="0.5"/><path d="M14 10L20.5 17L14 24" stroke="currentColor" stroke-width="0.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-card__media">
+              <img src="./assets/media/DSCF5002.JPG" alt="" />
+            </div>
+          </a>
+        </article>
+
+
+        <article class="project-card reveal" data-category="equity" hidden>
+          <a href="./projects/ai-in-healthcare.html" class="project-card__surface" data-cursor="large" aria-label="View AI in Healthcare">
+            <span class="impact-tag">3 Audiences · NM</span>
+            <div class="project-card__content">
+              <div class="project-card__copy">
+                <h3 class="project-card__title">AI in Healthcare</h3>
+                <img src="./assets/logos/Northwestern_Medicine_logo.svg.webp" alt="Northwestern Medicine" class="project-card__logo" width="83" height="16" />
+                <p class="project-card__desc">
+                  A research and facilitation initiative exploring how students, clinicians, and administrators across
+                  Northwestern Medicine understand, adopt, and relate to AI in healthcare contexts.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"><circle cx="16.5" cy="16.5" r="16.25" stroke="currentColor" stroke-width="0.5"/><path d="M14 10L20.5 17L14 24" stroke="currentColor" stroke-width="0.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div
+              class="project-card__media project-card__media--aisystem"
+              data-aisystem-sequence
+              aria-hidden="true"
+            >
+              <div class="project-card__aisystem-layer" data-aisystem-layer="0">
+                <img src="./assets/media/aisystem1.svg" alt="" width="788" height="787" />
+              </div>
+              <div class="project-card__aisystem-layer" data-aisystem-layer="1">
+                <img src="./assets/media/aisystem2.svg" alt="" width="1385" height="1329" />
+              </div>
+            </div>
+          </a>
+        </article>
+
+
+        <article class="project-card reveal" data-category="equity" hidden>
+          <a href="./projects/who-annotates-the-annotators.html" class="project-card__surface" data-cursor="large" aria-label="View Who Annotates the Annotators?">
+            <span class="impact-tag">AI Equity Zine</span>
+            <div class="project-card__content">
+              <div class="project-card__copy">
+                <h3 class="project-card__title">Who Annotates the Annotators?</h3>
+                <img src="./assets/logos/institution-id.png" alt="Institute of Design" class="project-card__logo" width="45" height="16" />
+                <p class="project-card__desc">
+                  A design zine examining the invisible labor of Global South data annotators and the human cost embedded
+                  in every AI system. It argues that AI equity begins not with the model but with the people who make it possible to train one.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"><circle cx="16.5" cy="16.5" r="16.25" stroke="currentColor" stroke-width="0.5"/><path d="M14 10L20.5 17L14 24" stroke="currentColor" stroke-width="0.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div
+              class="project-card__media project-card__media--annotators"
+              data-ven-shapes
+              aria-hidden="true"
+            >
+              <div class="project-card__ven-grid">
+                <img src="./assets/media/shapes/ven1-r1c1.svg" alt="" width="82" height="79" />
+                <img src="./assets/media/shapes/ven1-r1c2.svg" alt="" width="77" height="66" />
+                <img src="./assets/media/shapes/ven1-r1c3.svg" alt="" width="90" height="92" />
+                <img src="./assets/media/shapes/ven1-r1c4.svg" alt="" width="86" height="72" />
+                <img src="./assets/media/shapes/ven1-r1c5.svg" alt="" width="78" height="70" />
+                <img src="./assets/media/shapes/ven1-r2c1.svg" alt="" width="71" height="71" />
+                <img src="./assets/media/shapes/ven1-r2c2.svg" alt="" width="76" height="92" />
+                <img src="./assets/media/shapes/ven1-r2c3.svg" alt="" width="70" height="70" />
+                <img src="./assets/media/shapes/ven1-r2c4.svg" alt="" width="84" height="87" />
+                <img src="./assets/media/shapes/ven1-r2c5.svg" alt="" width="72" height="70" />
+                <img src="./assets/media/shapes/ven2-r1c1.svg" alt="" width="71" height="83" />
+                <img src="./assets/media/shapes/ven2-r1c2.svg" alt="" width="82" height="75" />
+                <img src="./assets/media/shapes/ven2-r1c3.svg" alt="" width="86" height="88" />
+                <img src="./assets/media/shapes/ven2-r1c4.svg" alt="" width="80" height="69" />
+                <img src="./assets/media/shapes/ven2-r1c5.svg" alt="" width="67" height="70" />
+                <img src="./assets/media/shapes/ven2-r2c1.svg" alt="" width="68" height="74" />
+                <img src="./assets/media/shapes/ven2-r2c2.svg" alt="" width="89" height="94" />
+                <img src="./assets/media/shapes/ven2-r2c3.svg" alt="" width="72" height="59" />
+                <img src="./assets/media/shapes/ven2-r2c4.svg" alt="" width="72" height="72" />
+                <img src="./assets/media/shapes/ven2-r2c5.svg" alt="" width="71" height="74" />
+              </div>
+            </div>
+          </a>
+        </article>
+
+
+        <article class="project-card reveal" data-category="equity" hidden>
+          <a href="./projects/pequenos-sonadores.html" class="project-card__surface" data-cursor="large" aria-label="View Pequeños Soñadores">
+            <span class="impact-tag">20% <span class="impact-tag__arrow">&uarr;</span> Confidence</span>
+            <div class="project-card__content">
+              <div class="project-card__copy">
+                <h3 class="project-card__title">
+                  <span class="project-card__title-main">Pequeños Soñadores </span>
+                  <span class="project-card__title-sub">A Community AR Experience</span>
+                </h3>
+                <img src="./assets/logos/institution-gplxc.png" alt="Gage Park Latinx Council" class="project-card__logo" width="70" height="16" />
+                <p class="project-card__desc">
+                  Built with the Gage Park Latinx Council, this bilingual AR nature education experience uses triggers
+                  anchored to a community mural. It gives residents authorship over their own spatial narrative.
+                </p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none"><circle cx="16.5" cy="16.5" r="16.25" stroke="currentColor" stroke-width="0.5"/><path d="M14 10L20.5 17L14 24" stroke="currentColor" stroke-width="0.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="project-card__media">
+              <video
+                class="project-card__video"
+                src="./assets/media/butterflies-white-8s.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                aria-hidden="true"
+              ></video>
+            </div>
+          </a>
+        </article>
+      
+
+      </div>
+    </section>
+
+    <!-- ============================ RESEARCH PROGRAM ============================ -->
+    <section id="research" class="research-section">
+      <div class="research-section__header">
+        <span class="research-section__label">RESEARCH PROGRAM</span>
+        <span class="research-section__line"></span>
+      </div>
+
+      <div class="research-section__layout">
+        <h2 class="research-section__statement">
+          <span class="research-section__statement-line">AI systems don&rsquo;t fail randomly.</span>
+          <span class="research-section__statement-line">They fail by design, at every scale.</span>
+        </h2>
+
+        <div class="research-section__items">
+          <div class="research-section__item reveal">
+            <div class="research-section__icon">
+              <img src="./assets/media/research-model.png" alt="" width="122" height="85" />
+            </div>
+            <div class="research-section__copy">
+              <h3>At the model level</h3>
+              <p>
+                I study how demographic identity gets encoded and distorted in ways behavioral benchmarks never catch.
+              </p>
+            </div>
+          </div>
+
+          <div class="research-section__item reveal">
+            <div class="research-section__icon">
+              <img src="./assets/media/research-institutional.png" alt="" width="111" height="106" />
+            </div>
+            <div class="research-section__copy">
+              <h3>At the institutional level</h3>
+              <p>
+                I design tools that help augment people&rsquo;s ability make better decisions with AI, not just automate faster ones.
+              </p>
+            </div>
+          </div>
+
+          <div class="research-section__item reveal">
+            <div class="research-section__icon">
+              <img src="./assets/media/research-community.png" alt="" width="155" height="78" />
+            </div>
+            <div class="research-section__copy">
+              <h3>At the community level</h3>
+              <p>
+                I build with communities that existing systems were never designed to serve.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ FOOTER ============================ -->
+    <footer id="contact" class="border-t border-neutral-100 py-16 mt-28 sm:mt-36">
+      <p class="font-medium text-[14px] text-body">Let&rsquo;s build something thoughtful.</p>
+      <ul class="mt-4 flex flex-col gap-[6px] text-[14px] text-body">
+        <li><a href="https://www.linkedin.com/in/carloscoding/" class="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><button type="button" class="nav-link footer-copy-email" data-email="c.a.rodriguez1999@gmail.com">Email</button></li>
+        <li><a href="https://github.com/CRodriguez245" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+      <p class="mt-10 text-[14px] text-body">&copy; 2026 Carlos Rodriguez</p>
+    </footer>
+
+  </main>
+
+  <script type="module" src="./js/cursor/dist/index.js"></script>
+    <script src="./contact-nav.js?v=2"></script>
+  <script src="./script.js?v=71"></script>
+</body>
+</html>

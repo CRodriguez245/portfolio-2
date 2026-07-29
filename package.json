@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-2",
+  "private": true,
+  "scripts": {
+    "build:cursor": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# OS / editor
+.DS_Store
+.Cursor/
+Cursor/
+*.swp
+*.swo
+
+# Local / source media too large for GitHub (>100MB) or superseded by web exports
+assets/media/nmaboutclient-video.mov
+assets/media/aiinhealthcare-heroimage.mov
+assets/media/modelcard-vid.mov
+assets/media/gplxc-about.mov
+assets/media/gplxc-research-argument.mov
+assets/media/cbc-howtoclaudecode/*.JPG
+assets/media/cbc-howtoclaudecode/*.jpg
+assets/media/cbc-howtoclaudecode/C.JPG
+assets/media/cbc-howtoclaudecode/C1.JPG
+!assets/media/cbc-howtoclaudecode/web/
+
+# Optional local scratch
+assets/dev-screenshots/

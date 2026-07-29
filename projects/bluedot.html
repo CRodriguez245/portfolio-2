@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Mechanistic Informed Audit Standard — Carlos Rodriguez</title>
+  <meta name="description" content="A governance intervention proposal developed with BlueDot Impact, arguing that AI safety evaluation fails because it measures behavior without interrogating the mechanisms underneath." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="../styles.css?v=392" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#80C343",
+            ink: "#000000",
+            indigo: "#130091",
+            muted: "#D3D3D3",
+            body: "#727272",
+            body2: "#737373",
+            card: "#f8f8f8",
+          },
+          fontFamily: {
+            lexend: ['Lexend', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+            helv: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+          maxWidth: {
+            shell: '1000px',
+            nav: '1120px',
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  </script>
+</head>
+
+<body class="bg-white text-body font-helv antialiased project-page project-page--bluedot">
+  <span id="top" class="scroll-anchor" aria-hidden="true"></span>
+
+  <!-- ============================ NAV ============================ -->
+  <header id="siteHeader" class="site-header sticky top-0 z-50 site-header--transparent">
+    <nav class="site-nav">
+      <a href="../index.html#top" class="nav-brand">Carlos Rodriguez</a>
+
+      <ul class="nav-menu hidden md:flex">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+
+      <button id="menuToggle" class="flex flex-col gap-[5px] md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-neutral-100 bg-white md:hidden">
+      <ul class="mx-auto flex max-w-[70rem] flex-col gap-4 px-6 py-4 text-[13px] text-body">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+    </div>
+  </header>
+
+  <!-- ============================ PROJECT HERO ============================ -->
+  <section class="project-hero project-hero--bluedot" aria-labelledby="project-title">
+    <div class="project-hero__media project-hero__media--bluedot">
+      <p class="project-hero__bluedot-headline font-lexend">
+        <span class="project-hero__bluedot-headline-line">
+          <span class="project-hero__bluedot-headline-regular">AI Governance</span>
+        </span>
+        <span class="project-hero__bluedot-headline-line">
+          <span class="project-hero__bluedot-headline-regular">has a </span>
+          <span class="project-hero__bluedot-headline-emphasis">design problem</span>
+        </span>
+      </p>
+      <video
+        class="project-hero__video"
+        src="../assets/media/bluedot-doodle.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+      ></video>
+    </div>
+
+    <div class="project-hero__inner">
+      <div class="project-hero__content reveal">
+        <span class="impact-tag">Governance Proposal</span>
+
+        <h1 id="project-title" class="project-hero__title font-lexend">
+          The Mechanistic Informed Audit Standard
+        </h1>
+
+        <p class="project-hero__lede">
+          AI safety evaluation fails when it measures behavior without interrogating the mechanisms underneath.
+        </p>
+
+        <dl class="project-hero__meta">
+          <div class="project-hero__meta-item">
+            <dt>Role</dt>
+            <dd>Designer<br />&amp; Researcher</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Grant Funder</dt>
+            <dd>BlueDot Impact</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Duration</dt>
+            <dd>6 months</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Tools</dt>
+            <dd>Transformer Lens, PyTorch</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Paper</dt>
+            <dd>
+              <a
+                class="project-hero__meta-link"
+                href="../assets/media/beyond-behavioral-benchmarks.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >BBB PDF</a>
+            </dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>GitHub</dt>
+            <dd>
+              <a
+                class="project-hero__meta-link"
+                href="https://github.com/CRodriguez245/BBB"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Repository</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <main class="site-main project-main">
+    <section class="project-about reveal" aria-labelledby="about-client-title">
+      <img
+        src="../assets/logos/institution-bluedot.png"
+        alt="BlueDot Impact"
+        class="project-about__logo"
+        width="123"
+        height="16"
+      />
+
+      <div class="project-column">
+        <div class="project-about__media">
+          <video
+            class="project-about__video"
+            src="../assets/media/gplxc-about.mp4"
+            controls
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+
+        <div class="project-about__copy">
+          <h3 id="about-client-title" class="project-about__label font-lexend">About Client</h3>
+          <p class="project-about__text">
+            The Gage Park Latinx Council is a Queer, DACA, and Latinx-led grassroots organization rooted in
+            the Southwest Side of Chicago. Through art, popular education, and mutual aid, they run two Cultural
+            Centers that serve as sanctuaries for healing, creativity, and resistance &mdash; centering the
+            experiences of immigrant, queer, and Latinx communities that dominant institutions have historically ignored.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="project-bluedot-argument reveal"
+      data-bluedot-argument
+      aria-label="Project brief and problem"
+    >
+      <div class="project-bluedot-argument__sticky">
+        <div class="project-column">
+          <div class="project-bluedot-argument__copy">
+            <div
+              class="project-bluedot-argument__panel is-active"
+              data-bluedot-panel="brief"
+            >
+              <h2 id="project-brief-title" class="project-block__label font-lexend">Project Brief</h2>
+              <p class="project-block__text">
+                Every major AI safety framework in use today evaluates behavior. Models are red-teamed, benchmarked, and
+                fine-tuned until their outputs appear aligned. Then they are deployed.
+              </p>
+              <p class="project-block__text">
+                But behavioral compliance and mechanistic alignment are not the same thing. A model can pass every safety
+                evaluation while carrying causally active demographic encoding in its residual streams &mdash; encoding that
+                behavioral benchmarks will never surface, that no current governance instrument requires anyone to look for,
+                and that affects real decisions about real people in healthcare, hiring, and public benefits.
+              </p>
+              <p class="project-block__text">
+                The gap is not technical. The methodology to run representation-level audits exists. The gap is governance: no
+                framework requires it, no institution demands it, and no instrument exists to communicate its findings to the
+                humans who need to act on them.
+              </p>
+              <p class="project-block__text">This proposal designs that instrument.</p>
+            </div>
+
+            <div
+              class="project-bluedot-argument__panel"
+              data-bluedot-panel="problem"
+              aria-hidden="true"
+            >
+              <h2 id="project-problem-title" class="project-block__label font-lexend">Problem</h2>
+              <p class="project-block__text">
+                Current AI safety evaluation captures the output. It misses everything that happens in between.
+              </p>
+              <p class="project-block__text">
+                Demographic identity gets encoded and transformed across the internal layers of a model during pretraining
+                and representation formation. By the time instruction tuning and behavioral evaluation occur, that encoding
+                is already causally active. Behavioral evaluation &mdash; red-teaming, benchmark testing, RLHF &mdash;
+                operates at the output layer. It cannot see what happened in layers 1 through 32. It was never designed to.
+              </p>
+              <p class="project-block__text">
+                This is not a flaw in any specific model. It is a structural gap in how the entire evaluation ecosystem is
+                designed.
+              </p>
+            </div>
+          </div>
+
+          <figure class="project-bluedot-argument__figure" data-bluedot-argument-draw>
+            <img
+              src="../assets/media/bluedot-projectcard.svg?v=8"
+              alt="Diagram showing unaudited demographic encoding across model layers while behavioral audits capture only the output"
+              width="885"
+              height="396"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="project-bluedot-lifecycle reveal"
+      data-bluedot-lifecycle
+      aria-label="The gap in the AI lifecycle"
+    >
+      <div class="project-column project-bluedot-lifecycle__intro">
+        <h2 id="lifecycle-title" class="project-block__label font-lexend">The Gap in the AI Lifecycle</h2>
+        <p class="project-block__text">
+          AI governance assumes that safety and equity frameworks together cover the full model lifecycle. They do not.
+          Scroll through to see where each field operates &mdash; and where neither of them reaches.
+        </p>
+      </div>
+
+      <div class="project-bluedot-lifecycle__sticky">
+        <div class="project-column">
+          <figure class="project-bluedot-lifecycle__figure">
+            <div
+              class="project-bluedot-lifecycle__caption project-bluedot-lifecycle__caption--equity"
+              data-bluedot-lifecycle-caption="equity"
+              aria-hidden="true"
+            >
+              <h3 id="lifecycle-equity-title" class="project-bluedot-lifecycle__equity-label font-lexend">
+                AI Equity
+              </h3>
+              <p class="project-bluedot-lifecycle__caption-text">
+                AI Equity frameworks operate primarily at the deployment end of the lifecycle &mdash; measuring outcomes,
+                monitoring capability diffusion, and advocating for communities affected by AI decisions. This is essential
+                work. But it enters the lifecycle after the model has already been built, trained, and released. The encoding
+                has already happened.
+              </p>
+            </div>
+
+            <div
+              class="project-bluedot-lifecycle__caption project-bluedot-lifecycle__caption--safety"
+              data-bluedot-lifecycle-caption="safety"
+              aria-hidden="true"
+            >
+              <h3 id="lifecycle-safety-title" class="project-bluedot-lifecycle__safety-label font-lexend">
+                AI Safety
+              </h3>
+              <p class="project-bluedot-lifecycle__caption-text">
+                AI Safety frameworks operate at behavioral evaluation and model release &mdash; red-teaming, benchmarking,
+                RLHF, alignment checks. This is where most governance attention and investment is concentrated. But
+                behavioral evaluation only sees outputs. It operates at the end of the computational process, after every
+                internal representation has already been formed.
+              </p>
+            </div>
+
+            <div
+              class="project-bluedot-lifecycle__caption project-bluedot-lifecycle__caption--gap"
+              data-bluedot-lifecycle-caption="gap"
+              aria-hidden="true"
+            >
+              <h3 id="lifecycle-gap-title" class="project-bluedot-lifecycle__gap-label font-lexend">
+                The gap
+              </h3>
+              <p class="project-bluedot-lifecycle__caption-text">
+                Pretraining and Representation Formation &mdash; the stages where demographic identity gets encoded into
+                residual streams, where the model learns what race, gender, and nationality mean in relation to capability,
+                criminality, and care &mdash; are covered by neither framework. AI Equity lacks the technical depth to reach
+                this layer. AI Safety enters the lifecycle too late to see it. This is not an oversight. It is a structural
+                gap in how the entire evaluation ecosystem was designed.
+              </p>
+            </div>
+
+            <div class="project-bluedot-lifecycle__diagram">
+              <img
+                class="project-bluedot-lifecycle__layer project-bluedot-lifecycle__layer--equity"
+                src="../assets/media/bluedotimpact_ailifecycle-equity.svg?v=2"
+                alt=""
+                width="901"
+                height="730"
+                aria-hidden="true"
+                data-bluedot-lifecycle-highlight="equity"
+              />
+              <img
+                class="project-bluedot-lifecycle__layer project-bluedot-lifecycle__layer--safety"
+                src="../assets/media/bluedotimpact_ailifecycle-safety.svg?v=1"
+                alt=""
+                width="901"
+                height="730"
+                aria-hidden="true"
+                data-bluedot-lifecycle-highlight="safety"
+              />
+              <img
+                class="project-bluedot-lifecycle__layer project-bluedot-lifecycle__layer--gap"
+                src="../assets/media/bluedotimpact_ailifecycle-gap.svg?v=1"
+                alt=""
+                width="901"
+                height="730"
+                aria-hidden="true"
+                data-bluedot-lifecycle-highlight="gap"
+              />
+              <img
+                class="project-bluedot-lifecycle__layer project-bluedot-lifecycle__layer--nodes"
+                src="../assets/media/bluedotimpact_ailifecycle-nodes.svg?v=2"
+                alt="The AI model lifecycle as a ring of nodes: Data Collection, Pretraining, Representation Formation, Instruction Tuning, Behavioral Evaluation, Model Release, Deployment, Outcome Measurement, and Capability Diffusion"
+                width="901"
+                height="730"
+              />
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-bluedot-lifecycle-closer reveal">
+      <div class="project-column">
+        <p class="project-bluedot-lifecycle-closer__text font-lexend">
+          The encoding that shapes real decisions about real people happens here. No
+          framework currently requires anyone to look.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="project-block project-bluedot-people reveal"
+      aria-labelledby="bluedot-people-title"
+    >
+      <div class="project-bluedot-people__inner">
+        <div class="project-column project-bluedot-people__intro">
+          <h2 id="bluedot-people-title" class="project-block__label font-lexend">
+            The People This Gap Affects
+          </h2>
+          <p class="project-block__text">
+            The gap is not abstract. Four specific users encounter it in practice &mdash; and all six currently lack
+            the instrument they need to act on what they know.
+          </p>
+        </div>
+
+        <div class="project-column project-bluedot-people__grid">
+          <article class="project-bluedot-people__card">
+            <img
+              class="project-bluedot-people__card-icon"
+              src="../assets/media/hospitalprocurement-icon.png"
+              alt="Hospital procurement iceberg illustration showing surface accuracy above hidden demographic encoding"
+              width="1535"
+              height="1024"
+            />
+            <img
+              class="project-bluedot-people__card-copy"
+              src="../assets/media/bluedotimpact-fourdecisions-01-procurement.svg?v=1"
+              alt="Hospital Procurement Officer scenario and sources"
+              width="460"
+              height="384"
+            />
+          </article>
+
+          <article class="project-bluedot-people__card">
+            <img
+              class="project-bluedot-people__card-icon"
+              src="../assets/media/civilrightsattorney-icon.png"
+              alt="Civil rights attorney illustration of the missing causal link between AI output and court"
+              width="1535"
+              height="1024"
+            />
+            <img
+              class="project-bluedot-people__card-copy"
+              src="../assets/media/bluedotimpact-fourdecisions-02-attorney.svg?v=1"
+              alt="Civil Rights Attorney scenario and sources"
+              width="460"
+              height="384"
+            />
+          </article>
+
+          <article class="project-bluedot-people__card">
+            <img
+              class="project-bluedot-people__card-icon"
+              src="../assets/media/benefitsagencyadmin-icon.png"
+              alt="Benefits agency illustration of missing plain-language population review outputs"
+              width="1254"
+              height="1254"
+            />
+            <img
+              class="project-bluedot-people__card-copy"
+              src="../assets/media/bluedotimpact-fourdecisions-03-benefits.svg?v=1"
+              alt="Benefits Agency Administrator scenario and sources"
+              width="460"
+              height="384"
+            />
+          </article>
+
+          <article class="project-bluedot-people__card">
+            <img
+              class="project-bluedot-people__card-icon"
+              src="../assets/media/hhs-icon.png"
+              alt="HHS and EEOC regulator illustration of missing standardized vendor audit methodology"
+              width="1254"
+              height="1254"
+            />
+            <img
+              class="project-bluedot-people__card-copy"
+              src="../assets/media/bluedotimpact-fourdecisions-04-regulator.svg?v=1"
+              alt="HHS / EEOC Regulator scenario and sources"
+              width="429"
+              height="384"
+            />
+          </article>
+        </div>
+
+        <div class="project-column project-bluedot-people__outro">
+          <p class="project-bluedot-people__outro-text font-lexend">
+            Each of these users faces the same structural problem from a different angle. The hospital procurement
+            officer needs a deploy/don&rsquo;t-deploy signal. The civil rights attorney needs legally admissible causal
+            evidence. The benefits administrator needs plain-language population risk disclosure. The regulator needs a
+            standardized methodology that works across vendors.
+          </p>
+          <p class="project-bluedot-people__outro-text font-lexend">
+            None of them need the same output. But all of them need the same underlying thing: a representation-level
+            audit that is independent, legible, timely, and comparable. The requirements matrix below maps exactly what
+            each user needs &mdash; functionally, contextually, and against the current state of the field.
+          </p>
+          <p class="project-bluedot-people__outro-text font-lexend">
+            The current state column tells the same story eight times. Nothing exists.
+          </p>
+        </div>
+
+        <figure class="project-bluedot-people__matrix">
+          <h3 class="project-bluedot-people__matrix-label font-lexend">Stakeholder Needs Framework</h3>
+          <img
+            src="../assets/media/bluedotimpact-needsframework.svg?v=2"
+            alt="Requirements matrix mapping functional needs, contextual needs, and current state across stakeholder users"
+            width="1258"
+            height="818"
+          />
+        </figure>
+
+        <div class="project-column project-bluedot-people__matrix-copy">
+          <p class="project-bluedot-people__outro-text font-lexend">
+            The requirements matrix surfaces the full scope of the instrument design problem. Each user needs the audit
+            to be:
+          </p>
+          <ul class="project-bluedot-people__requirements font-lexend">
+            <li>Legible without ML expertise</li>
+            <li>Comparable across vendors and model families</li>
+            <li>Independent of the developer being audited</li>
+            <li>Actionable within real procurement and litigation timelines</li>
+            <li>Scalable beyond frontier lab compute budgets</li>
+          </ul>
+          <p class="project-bluedot-people__outro-text font-lexend">
+            No existing instrument satisfies any of these simultaneously.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="project-bluedot-intervention reveal"
+      data-bluedot-intervention
+      aria-labelledby="bluedot-intervention-title"
+    >
+      <div class="project-bluedot-intervention__sticky">
+        <div class="project-column">
+          <h2 id="bluedot-intervention-title" class="project-block__label font-lexend">
+            Mechanistic-Informed Audit Standard
+          </h2>
+          <div class="project-bluedot-intervention__intro">
+            <div
+              class="project-bluedot-intervention__copy is-active"
+              data-bluedot-intervention-copy="base"
+            >
+              <p class="project-bluedot-intervention__text font-lexend">
+                The AI governance ecosystem is not empty. Behavioral audits, red-team evaluations, model cards,
+                procurement requirements, community audits, whistleblower protections &mdash; all of these exist. The map
+                below shows every major governance instrument currently operating across Prevention, Accountability,
+                Detection, and Verification.
+              </p>
+              <p class="project-bluedot-intervention__text font-lexend">
+                Look at it as a system. Now find the Mechanistic-Informed Audit Standard.
+              </p>
+              <p class="project-bluedot-intervention__text font-lexend">
+                It isn&rsquo;t there.
+              </p>
+            </div>
+
+            <div
+              class="project-bluedot-intervention__copy"
+              data-bluedot-intervention-copy="missing"
+              aria-hidden="true"
+            >
+              <p class="project-bluedot-intervention__text font-lexend">
+                A Mechanistic-Informed Audit Standard &mdash; a governance instrument that requires representation-level
+                inspection as a condition of high-risk deployment &mdash; does not exist anywhere in the current
+                ecosystem. It sits between Prevention and Verification, with connections into both, and into the
+                Representation Probe node that current frameworks treat as optional and internal to developers.
+              </p>
+              <p class="project-bluedot-intervention__text font-lexend">
+                The gap is not technical. The methodology to run this audit exists. The gap is governance: no framework
+                requires it, no institution demands it, and no instrument exists to communicate its findings to the
+                humans who need to act on them.
+              </p>
+            </div>
+          </div>
+          <figure class="project-bluedot-intervention__figure">
+            <h3 class="project-bluedot-intervention__map-label font-lexend">Intervention System Map</h3>
+            <div class="project-bluedot-intervention__diagram">
+              <img
+                class="project-bluedot-intervention__layer project-bluedot-intervention__layer--base"
+                src="../assets/media/bluedotimpact-interventionsystem1.svg?v=1"
+                alt="Intervention system diagram mapping Prevention, Accountability, Verification, and Detection"
+                width="1314"
+                height="961"
+                data-bluedot-intervention-layer="base"
+              />
+              <img
+                class="project-bluedot-intervention__layer project-bluedot-intervention__layer--missing"
+                src="../assets/media/bluedotimpact-interventionsystem.svg?v=3"
+                alt=""
+                width="1314"
+                height="961"
+                aria-hidden="true"
+                data-bluedot-intervention-layer="missing"
+              />
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="project-block project-bluedot-instrument reveal"
+      aria-labelledby="bluedot-instrument-title"
+    >
+      <div class="project-column">
+        <h2 id="bluedot-instrument-title" class="project-block__label font-lexend">
+          AI Governance Instrument Design
+        </h2>
+      </div>
+
+      <figure class="project-bluedot-instrument__figure" data-bluedot-instrument-draw>
+        <img
+          src="../assets/media/bluedot-govinstrumentdesign2.svg?v=4"
+          alt="Three-domain diagram of Mechanistic Interpretability, Community Accountability, and Instrument Design overlapping to produce Governance Verification"
+          width="1393"
+          height="1269"
+        />
+      </figure>
+
+      <div class="project-column project-bluedot-instrument__copy">
+        <p class="project-bluedot-instrument__text font-lexend">
+          Three fields exist that are each necessary but none sufficient:
+        </p>
+        <p class="project-bluedot-instrument__text font-lexend">
+          Mechanistic Interpretability &mdash; from AI Safety. Has technical access to model internals, can run causal
+          intervention, residual stream analysis, linear probing, activation patching. Currently stays inside labs.
+          Findings do not reach governance actors.
+        </p>
+        <p class="project-bluedot-instrument__text font-lexend">
+          Community Accountability &mdash; from AI Equity. Has legitimacy, community standing, civil rights framing,
+          participatory design methods. Currently lacks the technical depth to reach the representation layer.
+        </p>
+        <p class="project-bluedot-instrument__text font-lexend">
+          Instrument Design &mdash; from Design and HCI. Has methods for building governance artifacts that work for
+          non-technical users, artifact evaluation, think-aloud protocols, co-design methods. Currently has no
+          established domain in AI governance.
+        </p>
+        <p class="project-bluedot-instrument__text font-lexend">
+          Governance Verification &mdash; an independent, standardized, representation-level audit that produces outputs
+          legible to the six users in the stakeholder framework &mdash; is what the intersection of all three must
+          produce. It currently does not exist in any field&rsquo;s scope.
+        </p>
+        <p class="project-bluedot-instrument__text font-lexend">
+          AI Governance Instrument Design is the name of the domain that would produce it.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="project-block project-bluedot-proposal reveal"
+      aria-labelledby="bluedot-proposal-title"
+    >
+      <div class="project-column">
+        <h2 id="bluedot-proposal-title" class="project-block__label font-lexend">The Proposal</h2>
+        <p class="project-bluedot-proposal__lede font-lexend">
+          The Mechanistic-Informed Audit Standard specifies four requirements for high-risk AI deployment contexts:
+        </p>
+
+        <ol class="project-bluedot-proposal__list">
+          <li class="project-bluedot-proposal__item">
+            <h3 class="project-bluedot-proposal__item-title font-lexend">
+              <span class="project-bluedot-proposal__num" aria-hidden="true">1.</span>
+              Representation-Level Inspection
+            </h3>
+            <p class="project-bluedot-proposal__item-text font-lexend">
+              The audit must operate at the residual stream level &mdash; not behavioral outputs. Linear probing and
+              causal activation patching are the minimum methodological requirements. The audit must identify whether
+              demographic encoding is causally active, not merely present.
+            </p>
+          </li>
+          <li class="project-bluedot-proposal__item">
+            <h3 class="project-bluedot-proposal__item-title font-lexend">
+              <span class="project-bluedot-proposal__num" aria-hidden="true">2.</span>
+              Independence
+            </h3>
+            <p class="project-bluedot-proposal__item-text font-lexend">
+              The auditor must be independent of the developer. No self-certification. No internal interpretability team
+              producing findings that never leave the organization. An independent audit infrastructure for
+              representation-level analysis does not currently exist and must be built.
+            </p>
+          </li>
+          <li class="project-bluedot-proposal__item">
+            <h3 class="project-bluedot-proposal__item-title font-lexend">
+              <span class="project-bluedot-proposal__num" aria-hidden="true">3.</span>
+              Legibility
+            </h3>
+            <p class="project-bluedot-proposal__item-text font-lexend">
+              Findings must be communicable to non-technical users &mdash; hospital procurement officers, civil rights
+              attorneys, community health workers &mdash; without requiring ML expertise to interpret. The current output
+              of mechanistic interpretability research is academic papers. That is not a governance instrument.
+            </p>
+          </li>
+          <li class="project-bluedot-proposal__item">
+            <h3 class="project-bluedot-proposal__item-title font-lexend">
+              <span class="project-bluedot-proposal__num" aria-hidden="true">4.</span>
+              Standardization
+            </h3>
+            <p class="project-bluedot-proposal__item-text font-lexend">
+              The methodology must produce comparable results across model families and vendors. Every audit being
+              bespoke and non-comparable is not a minor inconvenience &mdash; it is the reason regulators cannot do
+              their jobs. Standardization is a prerequisite for enforcement.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section
+      class="project-block project-bluedot-prose reveal"
+      aria-labelledby="bluedot-design-problem-title"
+    >
+      <div class="project-column">
+        <h2 id="bluedot-design-problem-title" class="project-block__label font-lexend">
+          Why This Is a Design Problem
+        </h2>
+        <p class="project-block__text">
+          The technical methodology to run representation-level audits exists. TransformerLens, linear probing, causal
+          activation patching &mdash; these are established tools. The BBB study used them across eight open-weight models
+          and confirmed that instruction-tuned models carry causally active demographic encoding in their residual streams
+          while displaying behavioral compliance.
+        </p>
+        <p class="project-block__text">The gap is not in the science. It is in the instrument.</p>
+        <p class="project-block__text">
+          A governance instrument is a designed artifact &mdash; it has users, contexts, constraints, legibility
+          requirements, and failure modes. Designing one requires the same methods used to design any artifact that
+          non-expert users must act on under real-world constraints: user research, requirements analysis, contextual
+          inquiry, artifact evaluation, iterative prototyping.
+        </p>
+        <p class="project-block__text">
+          That is why this proposal sits at the intersection of mechanistic interpretability and HCI. The science surfaces
+          the finding. The design makes it actionable.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="project-block project-bluedot-prose reveal"
+      aria-labelledby="bluedot-bbb-title"
+    >
+      <div class="project-column">
+        <h2 id="bluedot-bbb-title" class="project-block__label font-lexend">Connection to BBB</h2>
+        <p class="project-block__text">
+          This proposal is the governance response to the empirical findings of Beyond Behavioral Benchmarks &mdash; a
+          mechanistic interpretability study across eight open-weight models confirming that instruction-tuned models
+          display behavioral compliance while carrying causally active demographic encoding in their residual streams.
+        </p>
+        <p class="project-block__text">
+          BBB establishes that the problem is real, measurable, and reproducible. The Mechanistic-Informed Audit Standard
+          establishes what governance must do about it.
+        </p>
+        <p class="project-bluedot-prose__link font-lexend">
+          <a href="../assets/media/beyond-behavioral-benchmarks.pdf" target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true">&rarr;</span> See Beyond Behavioral Benchmarks
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section class="project-block project-impact reveal" aria-labelledby="impact-title">
+      <div class="project-column">
+        <h2 id="impact-title" class="project-block__label font-lexend">Impact</h2>
+        <p class="project-block__text">
+          BlueDot Rapid Grant awarded to extend the replication pipeline.
+        </p>
+
+        <dl class="project-impact__stats">
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">6</dt>
+            <dd class="project-impact__label">stakeholder users<br />mapped</dd>
+          </div>
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">4</dt>
+            <dd class="project-impact__label">governance instrument<br />requirements</dd>
+          </div>
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">3</dt>
+            <dd class="project-impact__label">fields synthesized into<br />one proposed domain</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="project-block project-takeaways project-bluedot-reflection reveal" aria-labelledby="reflection-title">
+      <div class="project-column">
+        <h2 id="reflection-title" class="project-block__label font-lexend">Reflection</h2>
+        <p class="project-block__text">
+          A proposal this early forces a kind of honesty: what it claims, what it still cannot deliver, and what has to
+          be true before an argument becomes infrastructure.
+        </p>
+        <p class="project-block__text">
+          The points below sit with that tension &mdash; the claim itself, the design work still ahead, the kill-chain that
+          motivated it, and the distance between a framework on the page and an instrument in the world.
+        </p>
+
+        <div class="project-takeaways__list">
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">What the proposal actually argues.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The central claim is not that AI systems are biased &mdash; that claim is well established. The central
+                  claim is that the governance infrastructure built to address bias is structurally incapable of seeing
+                  the layer where bias is encoded. Behavioral evaluation is not a flawed implementation of the right idea.
+                  It is the wrong instrument applied at the wrong layer of the lifecycle. The proposal does not ask for
+                  better behavioral benchmarks. It asks for a different kind of audit at a different point in the system.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">What would make this real.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The proposal specifies what the instrument must do. It does not yet specify the full methodology for
+                  producing audit outputs that satisfy all six user requirements simultaneously &mdash; particularly the
+                  tension between legibility for non-technical users and technical rigor sufficient for litigation. That
+                  tension is a design problem that requires co-design with affected stakeholders, empirical testing of
+                  output formats, and iterative refinement across real procurement and legal contexts. That work is what
+                  the BlueDot grant funds the beginning of.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">What the kill-chain analysis revealed.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The AGI Strategy course required a kill-chain analysis &mdash; a structured examination of how a specific
+                  catastrophic risk pathway could materialize. The analysis centered on power concentration via unaudited
+                  demographic encoding: a scenario in which AI systems deployed at scale in healthcare, hiring, and public
+                  benefits systematically disadvantage specific populations in ways that behavioral evaluation cannot
+                  detect, producing compounding harm that becomes structurally embedded before anyone with standing to act
+                  has the evidence to do so. The Mechanistic-Informed Audit Standard is a direct response to that
+                  kill-chain. It is designed to interrupt the pathway at the governance layer before the compounding
+                  begins.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">The gap between proposal and implementation.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  A proposal is not an instrument. The Mechanistic-Informed Audit Standard exists as an argument and a
+                  framework. The instrument itself &mdash; the standardized methodology, the output format, the independent
+                  audit infrastructure, the regulatory mandate &mdash; does not yet exist. Building it requires cooperation
+                  between mechanistic interpretability researchers, governance institutions, affected communities, and the
+                  legal system. This proposal is the design brief for that collaboration.
+                </p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer id="contact" class="site-main pb-16 mt-28 sm:mt-36">
+    <div class="project-column border-t border-neutral-100 pt-16">
+      <p class="font-medium text-[14px] text-body">Let&rsquo;s build something thoughtful.</p>
+      <ul class="mt-4 flex flex-col gap-[6px] text-[14px] text-body">
+        <li><a href="https://www.linkedin.com/in/carloscoding/" class="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><button type="button" class="nav-link footer-copy-email" data-email="c.a.rodriguez1999@gmail.com">Email</button></li>
+        <li><a href="https://github.com/CRodriguez245" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+      <p class="mt-10 text-[14px] text-body">&copy; 2026 Carlos Rodriguez</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/cursor/dist/index.js"></script>
+    <script src="../contact-nav.js?v=2"></script>
+  <script src="../script.js?v=67"></script>
+  <script src="../project.js?v=22"></script>
+</body>
+</html>

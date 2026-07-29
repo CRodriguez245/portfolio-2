@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pequeños Soñadores — Carlos Rodriguez</title>
+  <meta name="description" content="Pequeños Soñadores: a bilingual AR nature education experience built with the Gage Park Latinx Council in Southwest Chicago." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="../styles.css?v=391" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#80C343",
+            ink: "#000000",
+            indigo: "#130091",
+            muted: "#D3D3D3",
+            body: "#727272",
+            body2: "#737373",
+            card: "#f8f8f8",
+          },
+          fontFamily: {
+            lexend: ['Lexend', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+            helv: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+          maxWidth: {
+            shell: '1000px',
+            nav: '1120px',
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  </script>
+</head>
+
+<body class="bg-white text-body font-helv antialiased project-page project-page--gplxc">
+  <span id="top" class="scroll-anchor" aria-hidden="true"></span>
+
+  <!-- ============================ NAV ============================ -->
+  <header id="siteHeader" class="site-header sticky top-0 z-50 site-header--transparent">
+    <nav class="site-nav">
+      <a href="../index.html#top" class="nav-brand">Carlos Rodriguez</a>
+
+      <ul class="nav-menu hidden md:flex">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+
+      <button id="menuToggle" class="flex flex-col gap-[5px] md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-neutral-100 bg-white md:hidden">
+      <ul class="mx-auto flex max-w-[70rem] flex-col gap-4 px-6 py-4 text-[13px] text-body">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+    </div>
+  </header>
+
+  <!-- ============================ PROJECT HERO ============================ -->
+  <section class="project-hero" aria-labelledby="project-title">
+    <div class="project-hero__media" aria-hidden="true">
+      <video
+        class="project-hero__video"
+        src="../assets/media/butterflies-white-8s.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+    </div>
+
+    <div class="project-hero__inner">
+      <div class="project-hero__content reveal">
+        <span class="impact-tag">20% <span class="impact-tag__arrow">&uarr;</span> Confidence</span>
+
+        <h1 id="project-title" class="project-hero__title font-lexend">
+          <span class="project-hero__title-main">Pequeños Soñadores </span>
+          <span class="project-hero__title-sub">A Community AR Experience</span>
+        </h1>
+
+        <p class="project-hero__lede">
+          Giving a Southwest Chicago community authorship over their own spatial narrative.
+        </p>
+
+        <dl class="project-hero__meta">
+          <div class="project-hero__meta-item">
+            <dt>Role</dt>
+            <dd>Designer<br />&amp; Developer</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Duration</dt>
+            <dd>6 months</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Client</dt>
+            <dd>Gage Park<br />Latinx Council</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Tools</dt>
+            <dd>MindAR.js, A-Frame, Figma, Cursor, User Testing, User Research</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <main class="site-main project-main">
+    <section class="project-about reveal" aria-labelledby="about-client-title">
+      <img
+        src="../assets/logos/institution-gplxc.png"
+        alt="GPLXC"
+        class="project-about__logo"
+        width="105"
+        height="24"
+      />
+
+      <div class="project-column">
+        <div class="project-about__media">
+          <video
+            class="project-about__video"
+            src="../assets/media/gplxc-about.mp4"
+            controls
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+
+        <div class="project-about__copy">
+          <h3 id="about-client-title" class="project-about__label font-lexend">About Client</h3>
+          <p class="project-about__text">
+            The Gage Park Latinx Council is a Queer, DACA, and Latinx-led grassroots organization rooted in
+            the Southwest Side of Chicago. Through art, popular education, and mutual aid, they run two Cultural
+            Centers that serve as sanctuaries for healing, creativity, and resistance &mdash; centering the
+            experiences of immigrant, queer, and Latinx communities that dominant institutions have historically ignored.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block reveal" aria-labelledby="project-brief-title">
+      <div class="project-column">
+        <h2 id="project-brief-title" class="project-block__label font-lexend">Project Brief</h2>
+        <p class="project-block__text">
+          How might a Southwest Chicago community encode their own stories into public space, rather than having
+          institutions narrate their neighborhood for them?
+        </p>
+      </div>
+    </section>
+
+    <section class="project-block reveal" aria-labelledby="project-problem-title">
+      <div class="project-column">
+        <h2 id="project-problem-title" class="project-block__label font-lexend">Problem</h2>
+        <p class="project-block__text">
+          Most AR and spatial computing experiences are designed for communities, not with them. A developer or
+          institution identifies a wall, builds an overlay, and calls it community technology. The community becomes
+          the backdrop.
+        </p>
+        <p class="project-block__text">
+          Gage Park had a mural painted by and for its residents. It encoded local memory, cultural identity, and
+          ecological presence &mdash; a bee pollinating, a neighborhood in bloom. What it didn&rsquo;t have was a way
+          to extend that story into an interactive layer that residents could activate themselves.
+        </p>
+        <figure class="project-block__figure">
+          <div class="project-block__media">
+            <img
+              src="../assets/media/gplxc-problem.jpg"
+              alt="GPLXC mural featuring a river, mushrooms, and fairies inside the cultural center"
+              width="647"
+              height="479"
+            />
+          </div>
+          <figcaption class="project-block__caption">
+            <span class="project-block__caption-title">GPLXC Mural</span>
+            <span class="project-block__caption-credit">Created by Camila Duarte</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-reframe reveal" aria-labelledby="reframe-title">
+      <div class="project-reframe__scene">
+        <div class="project-reframe__clouds" aria-hidden="true">
+          <img src="../assets/ui/clouds.svg" alt="" width="1512" height="478" />
+        </div>
+
+        <div class="project-reframe__content project-column">
+          <h2 id="reframe-title" class="project-block__label font-lexend">Reframed Problem Statement</h2>
+          <p class="project-block__text">
+            How might emerging spatial technology give a Latinx community on Chicago&rsquo;s Southwest Side
+            authorship over their own narrative rather than becoming another surface for outside institutions
+            to project onto?
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="project-bee reveal" aria-label="Bee pollination AR demonstration">
+    <div class="project-bee__frame">
+      <video
+        class="project-bee__video"
+        src="../assets/media/bee-white-cross-16s.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+    </div>
+  </section>
+
+  <main class="site-main project-main">
+    <section class="project-block reveal" aria-labelledby="build-title">
+      <div class="project-column">
+        <h2 id="build-title" class="project-block__label font-lexend">Build</h2>
+        <p class="project-block__text">
+          Peque&ntilde;os So&ntilde;adores is a browser-based, bilingual AR nature education experience anchored to
+          the GPLXC mural. Using MindAR.js and A-Frame, I built ten independent image-target triggers &mdash; each one
+          tied to a specific element of the mural &mdash; that unlock animated 3D nature scenes in both English and
+          Spanish when viewed through a mobile device. No app download required. Deployed to Netlify for immediate
+          public access.
+        </p>
+        <p class="project-block__text">
+          The bee pollination sequence became the signature interaction &mdash; a rendered 3D bee moving through the
+          air above the physical wall, connecting ecological education to the visual language the community had
+          already chosen for itself.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-block project-triggers reveal" aria-labelledby="triggers-title">
+      <div class="project-column">
+        <h2 id="triggers-title" class="project-block__label font-lexend">Triggers</h2>
+        <p class="project-block__text">
+          Peque&ntilde;os So&ntilde;adores is a browser-based, bilingual AR nature education experience anchored to
+          the GPLXC mural.
+        </p>
+
+        <div class="project-triggers__demo" data-triggers>
+          <div class="project-triggers__controls" role="tablist" aria-label="AR mural triggers">
+            <button
+              type="button"
+              class="project-triggers__button is-active"
+              role="tab"
+              id="trigger-tree"
+              aria-selected="true"
+              aria-controls="trigger-panel-tree"
+              data-trigger-button="tree"
+            >
+              <img
+                src="../assets/media/tree-button-on.png"
+                alt=""
+                class="project-triggers__icon project-triggers__icon--on"
+              />
+              <img
+                src="../assets/media/tree-button-off.png"
+                alt=""
+                class="project-triggers__icon project-triggers__icon--off"
+                aria-hidden="true"
+              />
+              <span class="sr-only">Tree trigger</span>
+            </button>
+
+            <button
+              type="button"
+              class="project-triggers__button"
+              role="tab"
+              id="trigger-flower"
+              aria-selected="false"
+              aria-controls="trigger-panel-flower"
+              data-trigger-button="flower"
+              tabindex="-1"
+            >
+              <img
+                src="../assets/media/flower-button-on.png"
+                alt=""
+                class="project-triggers__icon project-triggers__icon--on"
+              />
+              <img
+                src="../assets/media/flower-button-off.png"
+                alt=""
+                class="project-triggers__icon project-triggers__icon--off"
+                aria-hidden="true"
+              />
+              <span class="sr-only">Flower trigger</span>
+            </button>
+
+            <button
+              type="button"
+              class="project-triggers__button"
+              role="tab"
+              id="trigger-sprout"
+              aria-selected="false"
+              aria-controls="trigger-panel-sprout"
+              data-trigger-button="sprout"
+              tabindex="-1"
+            >
+              <img
+                src="../assets/media/sprout-button-on.png"
+                alt=""
+                class="project-triggers__icon project-triggers__icon--on"
+              />
+              <img
+                src="../assets/media/sprout-button-off.png"
+                alt=""
+                class="project-triggers__icon project-triggers__icon--off"
+                aria-hidden="true"
+              />
+              <span class="sr-only">Sprout trigger</span>
+            </button>
+          </div>
+
+          <div class="project-triggers__stage">
+            <div
+              class="project-triggers__panel is-active"
+              id="trigger-panel-tree"
+              role="tabpanel"
+              aria-labelledby="trigger-tree"
+              data-trigger-panel="tree"
+            >
+              <div class="project-triggers__media">
+                <video
+                  class="project-triggers__video"
+                  src="../assets/media/tree-video.mp4"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="auto"
+                ></video>
+              </div>
+              <p class="project-triggers__caption">
+                A CO<sub>2</sub> molecule travels toward the tree canopy as the mural comes alive. The goal is to
+                connect neighborhood green space to the climate cycle.
+              </p>
+            </div>
+
+            <div
+              class="project-triggers__panel"
+              id="trigger-panel-flower"
+              role="tabpanel"
+              aria-labelledby="trigger-flower"
+              data-trigger-panel="flower"
+              aria-hidden="true"
+            >
+              <div class="project-triggers__media">
+                <video
+                  class="project-triggers__video"
+                  src="../assets/media/flower-video.mp4"
+                  muted
+                  loop
+                  playsinline
+                  preload="auto"
+                ></video>
+              </div>
+              <p class="project-triggers__caption">
+                A flower blooms above the mural in animated space. The goal is to show how flowers and pollinators
+                support urban ecosystems.
+              </p>
+            </div>
+
+            <div
+              class="project-triggers__panel"
+              id="trigger-panel-sprout"
+              role="tabpanel"
+              aria-labelledby="trigger-sprout"
+              data-trigger-panel="sprout"
+              aria-hidden="true"
+            >
+              <div class="project-triggers__media">
+                <video
+                  class="project-triggers__video"
+                  src="../assets/media/sprout-video.mp4"
+                  muted
+                  loop
+                  playsinline
+                  preload="auto"
+                ></video>
+              </div>
+              <p class="project-triggers__caption">
+                A sprout emerges from the ground in layered 3D motion. The goal is to introduce plant life cycles and
+                green growth in the neighborhood.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-spotlight reveal" aria-labelledby="spotlight-title">
+      <div class="project-column">
+        <span class="project-spotlight__tag">Spotlight</span>
+      </div>
+
+      <div class="project-spotlight__media">
+        <div class="project-spotlight__frame">
+          <video
+            class="project-spotlight__video"
+            src="../assets/media/butterfly-migration-video.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
+      </div>
+
+      <div class="project-column project-spotlight__copy">
+        <h2 id="spotlight-title" class="project-block__label font-lexend">Butterflies Have No Borders</h2>
+        <p class="project-block__text">
+          Of the ten triggers, the Monarch Butterfly carries the most weight. When a child points their phone at the
+          mural, a border-free map of North America appears in the air. A migration arc sweeps from Mexico to Canada
+          &mdash; no lines, no checkpoints, no nations. Just movement.
+        </p>
+        <p class="project-block__text">
+          This interaction wasn&rsquo;t designed in isolation. It was built for a community led by DACA recipients and
+          undocumented immigrants, painted on a wall in a neighborhood where borders are not abstract. The Monarch
+          doesn&rsquo;t just teach ecology. It makes an argument: that movement is natural, that belonging doesn&rsquo;t
+          require permission, and that the same butterfly a child sees in Gage Park will one day visit a child in Oaxaca.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-block project-principles reveal" aria-labelledby="principles-title">
+      <div class="project-column project-principles__inner">
+        <h2 id="principles-title" class="project-block__label font-lexend">Design Principles</h2>
+
+        <div class="project-principles__grid">
+          <article class="project-principles__card">
+            <div class="project-principles__icon-slot">
+              <img
+                src="../assets/media/opensource-icon.svg"
+                alt=""
+                class="project-principles__icon"
+                width="120"
+                height="86"
+              />
+            </div>
+            <div class="project-principles__copy">
+              <h3 class="project-principles__title font-lexend">Open-source</h3>
+              <p class="project-principles__text">
+                This experience was built with the Gage Park Latinx Council, not for them. Residents shaped the narrative,
+                the mural&rsquo;s visual language, and what each trigger would teach.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-principles__card">
+            <div class="project-principles__icon-slot">
+              <img
+                src="../assets/media/mobile-icon.svg"
+                alt=""
+                class="project-principles__icon"
+                width="49"
+                height="84"
+              />
+            </div>
+            <div class="project-principles__copy">
+              <h3 class="project-principles__title font-lexend">Mobile</h3>
+              <p class="project-principles__text">
+                Peque&ntilde;os So&ntilde;adores runs in the browser &mdash; no app download required. Any phone pointed at
+                the mural can unlock the experience on the spot.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-principles__card">
+            <div class="project-principles__icon-slot">
+              <img
+                src="../assets/media/bilingual-icon.png"
+                alt=""
+                class="project-principles__icon project-principles__icon--bilingual"
+                width="88"
+                height="72"
+              />
+            </div>
+            <div class="project-principles__copy">
+              <h3 class="project-principles__title font-lexend">Bilingual</h3>
+              <p class="project-principles__text">
+                Every trigger unlocks content in both English and Spanish, so the education reflects the bilingual reality
+                of the community it serves.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-research-argument reveal" aria-labelledby="research-argument-title">
+      <div class="project-column">
+        <div class="project-research-argument__layout">
+          <div class="project-research-argument__copy">
+            <h2 id="research-argument-title" class="project-block__label font-lexend">Research Argument</h2>
+            <p class="project-block__text">
+              This project sits at the intersection of counter-mapping theory and participatory design. Spatial memory
+              research suggests communities encode identity and resistance through place &mdash; murals, corner stores,
+              block club signs. AR has typically been deployed on top of that meaning by outside actors. Peque&ntilde;os
+              So&ntilde;adores inverts that relationship.
+            </p>
+            <p class="project-block__text">
+              By anchoring every AR trigger to imagery the community already authored, the technology becomes an
+              extension of existing spatial memory rather than a replacement for it. The design question was never
+              &ldquo;what should the AR show?&rdquo; It was &ldquo;what has this community already said, and how do we
+              let technology carry it further?&rdquo; The Monarch Butterfly trigger makes this argument most explicitly
+              &mdash; a border-free map of North America appearing over a mural painted by a DACA and immigrant-led
+              organization is not incidental. It&rsquo;s the project&rsquo;s clearest political and ecological statement
+              made visible.
+            </p>
+          </div>
+
+          <div class="project-research-argument__media">
+            <video
+              class="project-research-argument__video"
+              src="../assets/media/gplxc-research-argument.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-impact reveal" aria-labelledby="impact-title">
+      <div class="project-column">
+        <h2 id="impact-title" class="project-block__label font-lexend">Impact</h2>
+        <p class="project-block__text">
+          Peque&ntilde;os So&ntilde;adores is a browser-based, bilingual AR nature education experience anchored to
+          the GPLXC mural.
+        </p>
+
+        <dl class="project-impact__stats">
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">98%</dt>
+            <dd class="project-impact__label">task completion rate across triggers</dd>
+          </div>
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">25</dt>
+            <dd class="project-impact__label">children engaged<br />in live deployment</dd>
+          </div>
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">10</dt>
+            <dd class="project-impact__label">AR triggers built<br />and deployed</dd>
+          </div>
+        </dl>
+
+        <figure class="project-impact__figure">
+          <div class="project-impact__media">
+            <img
+              src="../assets/media/gplxc-impact.jpg.webp"
+              alt="A child writing in a notebook during a GPLXC deployment event"
+              width="2500"
+              height="1864"
+            />
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-block project-takeaways reveal" aria-labelledby="takeaways-title">
+      <div class="project-column">
+        <h2 id="takeaways-title" class="project-block__label font-lexend">Takeaways</h2>
+        <p class="project-block__text">
+          Participatory design is not a methodology. It&rsquo;s a power relationship.
+        </p>
+        <p class="project-block__text">
+          The most consequential design decision on this project wasn&rsquo;t technical &mdash; it was the choice to
+          treat the mural as the primary text and the AR as a footnote to it. Every interaction had to earn its place by
+          serving something the community had already made. The Dragonfly tracker that celebrates but never requires
+          completion isn&rsquo;t a UX decision. It&rsquo;s a stance on what learning should feel like for kids who are
+          told too often that they haven&rsquo;t done enough.
+        </p>
+        <p class="project-block__text">
+          That constraint made the work better. It also made it honest.
+        </p>
+
+        <div class="project-takeaways__list">
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">Accessibility is a design constraint, not an afterthought</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  Peque&ntilde;os So&ntilde;adores runs in the browser on the phones families already carry &mdash; no app
+                  store, no download, no account. Every trigger is bilingual from the start, not translated after the fact.
+                  Accessibility wasn&rsquo;t a final audit. It shaped what we built, how we tested, and who could use it on
+                  day one.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">Watch the kids before you finalize anything</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  Live deployment with 25 children surfaced what no prototype review could: where triggers confused, where
+                  delight landed, and where kids moved on before an interaction finished. Watching them point phones at the
+                  mural, swap languages, and chase the Dragonfly tracker reshaped pacing, copy, and what we chose to
+                  celebrate versus require.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">The community names the argument &mdash; the designer just builds it</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  GPLXC residents shaped what each trigger would teach and what the mural&rsquo;s imagery would carry into
+                  AR. The Monarch&rsquo;s border-free migration map, the bee&rsquo;s pollination arc, the bilingual voice
+                  throughout &mdash; those arguments came from the community. My role was to build technology faithful enough
+                  to carry what they had already said on the wall.
+                </p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer id="contact" class="site-main pb-16 mt-28 sm:mt-36">
+    <div class="project-column border-t border-neutral-100 pt-16">
+      <p class="font-medium text-[14px] text-body">Let&rsquo;s build something thoughtful.</p>
+      <ul class="mt-4 flex flex-col gap-[6px] text-[14px] text-body">
+        <li><a href="https://www.linkedin.com/in/carloscoding/" class="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><button type="button" class="nav-link footer-copy-email" data-email="c.a.rodriguez1999@gmail.com">Email</button></li>
+        <li><a href="https://github.com/CRodriguez245" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+      <p class="mt-10 text-[14px] text-body">&copy; 2026 Carlos Rodriguez</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/cursor/dist/index.js"></script>
+    <script src="../contact-nav.js?v=2"></script>
+  <script src="../script.js?v=14"></script>
+  <script src="../project.js?v=5"></script>
+</body>
+</html>

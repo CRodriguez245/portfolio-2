@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResearchBridge — Carlos Rodriguez</title>
+  <meta name="description" content="ResearchBridge: an AI tool that helps first-gen students interrogate assumptions, representation gaps, and framing in academic literature." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="../styles.css?v=391" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#80C343",
+            ink: "#000000",
+            indigo: "#130091",
+            muted: "#D3D3D3",
+            body: "#727272",
+            body2: "#737373",
+            card: "#f8f8f8",
+          },
+          fontFamily: {
+            lexend: ['Lexend', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+            helv: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+          maxWidth: {
+            shell: '1000px',
+            nav: '1120px',
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  </script>
+</head>
+
+<body class="bg-white text-body font-helv antialiased project-page project-page--researchbridge">
+  <span id="top" class="scroll-anchor" aria-hidden="true"></span>
+
+  <!-- ============================ NAV ============================ -->
+  <header id="siteHeader" class="site-header sticky top-0 z-50 site-header--transparent">
+    <nav class="site-nav">
+      <a href="../index.html#top" class="nav-brand">Carlos Rodriguez</a>
+
+      <ul class="nav-menu hidden md:flex">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+
+      <button id="menuToggle" class="flex flex-col gap-[5px] md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-neutral-100 bg-white md:hidden">
+      <ul class="mx-auto flex max-w-[70rem] flex-col gap-4 px-6 py-4 text-[13px] text-body">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+    </div>
+  </header>
+
+  <!-- ============================ PROJECT HERO ============================ -->
+  <section class="project-hero" aria-labelledby="project-title">
+    <div class="project-hero__media" aria-hidden="true">
+      <video
+        class="project-hero__video"
+        src="../assets/media/rb-heroimage.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+    </div>
+
+    <div class="project-hero__inner">
+      <div class="project-hero__content reveal">
+        <span class="impact-tag">18 <span class="impact-tag__arrow">&rarr;</span> 43 Students</span>
+
+        <h1 id="project-title" class="project-hero__title font-lexend">
+          ResearchBridge
+        </h1>
+
+        <p class="project-hero__lede">
+          Helping first-gen students interrogate assumptions, representation gaps, and framing in academic literature.
+        </p>
+
+        <dl class="project-hero__meta">
+          <div class="project-hero__meta-item">
+            <dt>Role</dt>
+            <dd>Designer<br />&amp; Developer</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Duration</dt>
+            <dd>6 months</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Client</dt>
+            <dd>Northwestern<br />Medicine</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Tools</dt>
+            <dd>Figma, Cursor, User Testing, User Research</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <main class="site-main project-main">
+    <section class="project-about reveal" aria-labelledby="about-client-title">
+      <img
+        src="../assets/logos/Northwestern_Medicine_logo.svg.webp"
+        alt="Northwestern Medicine"
+        class="project-about__logo"
+        width="124"
+        height="24"
+      />
+
+      <div class="project-column">
+        <div class="project-about__media project-about__media--embed">
+          <iframe
+            class="project-about__video--embed"
+            src="https://www.youtube.com/embed/ZayDRmFJBSU?si=umzc5faCIkt54SWz"
+            title="About Northwestern Medicine NM Scholars"
+            width="560"
+            height="315"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <div class="project-about__copy">
+          <h3 id="about-client-title" class="project-about__label font-lexend">About Client</h3>
+          <p class="project-about__text">
+            Northwestern Medicine NM Scholars is a competitive summer pipeline program introducing high school
+            students &mdash; primarily first-generation and students of color &mdash; to medicine and clinical
+            research. The program is designed to build the next generation of physician-scientists by giving
+            students early, authentic exposure to the research process before they enter undergraduate education.
+          </p>
+          <p class="project-about__text">
+            The program is selective, rigorous, and growing. When it nearly doubled in size, the infrastructure
+            supporting student learning did not scale with it. That gap is what ResearchBridge was built to close.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block reveal" aria-labelledby="project-brief-title">
+      <div class="project-column">
+        <h2 id="project-brief-title" class="project-block__label font-lexend">Project Brief</h2>
+        <p class="project-block__text">
+          When NM Scholars grew from 18 to 43 students, the existing model broke. Students were overwhelmed by
+          research tasks they had never been taught to do. Faculty were spending most of their time answering
+          the same questions instead of doing the mentorship work only they could do.
+        </p>
+        <p class="project-block__text">
+          The opportunity was not to digitize the existing curriculum. It was to redesign how research was taught,
+          and to use AI to do it without removing student agency in the process.
+        </p>
+        <figure class="project-block__figure project-block__figure--wide">
+          <div class="project-block__media">
+            <video
+              class="project-block__video"
+              src="../assets/media/nm-projectbriefvid.mp4"
+              poster="../assets/media/nm-projectbriefvid-frame1.png"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              aria-label="Project brief video"
+            ></video>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-block project-conditions reveal" aria-labelledby="project-problem-title">
+      <div class="project-column">
+        <h2 id="project-problem-title" class="project-block__label font-lexend">Problem</h2>
+        <p class="project-block__text">
+          Research is hard for high school students not because they lack ability but because the process is
+          invisible. Academic papers feel inaccessible. Literature reviews require synthesizing across sources
+          before students know what synthesis means. Every assignment assumed skills that had never been
+          explicitly taught.
+        </p>
+        <p class="project-block__text">
+          The result was a predictable failure pattern. Students got stuck, waited for faculty, asked the same
+          questions everyone else had already asked, and fell behind. Faculty answered the same questions
+          repeatedly instead of doing the mentorship work only they could do.
+        </p>
+        <p class="project-block__text">
+          When the cohort grew from 18 to 43 students, that failure pattern became a program-level problem.
+          The existing model was not scalable.
+        </p>
+
+        <div class="project-conditions__grid project-conditions__grid--pain">
+          <article class="project-conditions__card">
+            <img
+              class="project-conditions__icon"
+              src="../assets/media/nmproblem-teacher-icon.png"
+              alt=""
+              width="512"
+              height="512"
+            />
+            <h3 class="project-conditions__name font-lexend">Faculty pain points</h3>
+            <ul class="project-conditions__list">
+              <li>Repetitive questions consuming mentorship time</li>
+              <li>No visibility into where students were struggling</li>
+              <li>Slow feedback cycles</li>
+              <li>No structured way to identify which students needed intervention</li>
+            </ul>
+          </article>
+
+          <article class="project-conditions__card">
+            <img
+              class="project-conditions__icon"
+              src="../assets/media/nmproblem-student-icon.png"
+              alt=""
+              width="512"
+              height="512"
+            />
+            <h3 class="project-conditions__name font-lexend">Student pain points</h3>
+            <ul class="project-conditions__list">
+              <li>Research papers felt inaccessible</li>
+              <li>Assignments felt disconnected from each other</li>
+              <li>No sense of what &ldquo;good&rdquo; looked like</li>
+              <li>Dependent on faculty for every step</li>
+              <li>Overwhelmed by the full scope of the research process at once</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block reveal" aria-labelledby="project-discovery-title">
+      <div class="project-column">
+        <h2 id="project-discovery-title" class="project-block__label font-lexend">Discovery</h2>
+        <p class="project-block__text">
+          Six faculty interviews surfaced the core insight: the problem was not that students lacked intelligence.
+          It was that the research process had never been made legible to them. Faculty wanted two things from any
+          solution: qualitative feedback on how students were engaging with the work, and quantitative data on
+          outcomes. Not one or the other. Both.
+        </p>
+        <p class="project-block__text">
+          Student observation revealed a second insight: overwhelm was structural, not motivational. When students
+          could see the whole research process at once, they froze. Progressive disclosure was not a UX preference.
+          It was a pedagogical requirement.
+        </p>
+        <p class="project-block__text">
+          Curriculum mapping revealed a third insight: every assignment in the program built on the previous one,
+          but nothing in the existing experience made those connections visible. Students treated each assignment
+          as isolated. Faculty treated them as cumulative. That gap was where most of the confusion lived.
+        </p>
+      </div>
+
+      <div class="project-rb-lifecycle-story" data-rb-lifecycle>
+        <div class="project-rb-lifecycle-story__sticky">
+          <figure
+            class="project-rb-lifecycle"
+            aria-labelledby="rb-lifecycle-label"
+          >
+            <figcaption id="rb-lifecycle-label" class="project-rb-lifecycle__label font-lexend">
+              Student Research Lifecycle
+            </figcaption>
+            <div class="project-rb-lifecycle__host" data-rb-lifecycle-host></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-rb-strategy reveal" aria-labelledby="product-strategy-title">
+      <div class="project-column">
+        <h2 id="product-strategy-title" class="project-block__label font-lexend">Product Strategy</h2>
+
+        <h3 class="project-rb-strategy__subtitle font-lexend">Vision</h3>
+        <p class="project-block__text">
+          An AI-powered learning platform that guides students through the entire research journey while preserving
+          instructor mentorship. The goal was never automation. The goal was structured learning.
+        </p>
+
+        <h3 class="project-rb-strategy__subtitle font-lexend">The core product bet</h3>
+        <p class="project-block__text">
+          Most edtech AI products are chatbots bolted onto existing workflows. ResearchBridge was designed from the
+          opposite direction: start with the learning objectives, map the research process to explicit stages, and
+          design AI interactions that serve each stage specifically rather than offering a generic assistant that
+          serves none of them well.
+        </p>
+
+        <p class="project-block__text">Four principles that governed every decision:</p>
+
+        <div class="project-rb-strategy__grid">
+          <article class="project-rb-strategy__card">
+            <h3 class="project-rb-strategy__card-title font-lexend">AI scaffolds, students decide</h3>
+            <p class="project-rb-strategy__card-text font-lexend">
+              The assistant guides rather than produces. Students remain responsible for every conclusion. The AI asks
+              questions more than it answers them.
+            </p>
+          </article>
+
+          <article class="project-rb-strategy__card">
+            <h3 class="project-rb-strategy__card-title font-lexend">Keep instructors in control</h3>
+            <p class="project-rb-strategy__card-text font-lexend">
+              Faculty maintain oversight. AI supports the learning. Faculty do the mentorship. Those are not the same
+              thing and the product never conflates them.
+            </p>
+          </article>
+
+          <article class="project-rb-strategy__card">
+            <h3 class="project-rb-strategy__card-title font-lexend">Learning happens in stages</h3>
+            <p class="project-rb-strategy__card-text font-lexend">
+              Research is overwhelming because everything appears at once. Divide the experience into modules. Students
+              always understand what they&rsquo;re doing now and why it matters next.
+            </p>
+          </article>
+
+          <article class="project-rb-strategy__card">
+            <h3 class="project-rb-strategy__card-title font-lexend">Every feature maps to a teaching need</h3>
+            <p class="project-rb-strategy__card-text font-lexend">
+              No AI capability exists because it is technically impressive. Every feature traces directly to a specific
+              learning objective identified in the curriculum mapping.
+            </p>
+          </article>
+        </div>
+
+        <h3 class="project-rb-strategy__subtitle font-lexend">Success metrics</h3>
+        <ul class="project-rb-strategy__metrics">
+          <li>Program able to scale from 18 to 43 students without proportional increase in faculty load</li>
+          <li>Faculty time spent on repetitive questions decreases</li>
+          <li>Students able to complete research lifecycle with less intervention</li>
+          <li>Faculty satisfaction with visibility into student progress</li>
+          <li>Student confidence at symposium presentation</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-block project-rb-innovation reveal" aria-labelledby="core-innovation-title">
+      <div class="project-column">
+        <h2 id="core-innovation-title" class="project-rb-pill font-lexend">
+          The Core Innovation: Classic vs Critical
+        </h2>
+
+        <figure class="project-block__figure project-block__figure--wide">
+          <div class="project-block__media">
+            <img
+              src="../assets/media/coreinnovation-image.png"
+              alt="Classic versus Critical mode comparison for ResearchBridge AI scaffolding"
+              width="1862"
+              height="398"
+            />
+          </div>
+        </figure>
+
+        <p class="project-block__text">
+          Most AI edtech products ask: what should the AI do? ResearchBridge asked a different question.
+        </p>
+        <p class="project-block__text">
+          Can changing when AI helps produce better learning than changing what AI does?
+        </p>
+        <p class="project-block__text">
+          The four cognitive scaffolding tools &mdash; Summarize, Ask, Outline, Citations &mdash; remain identical in
+          both modes. What changes is the interaction design. The toggle is not a feature. It is the answer to the
+          hardest product question in AI education: how do you prevent AI from doing the thinking for the student?
+        </p>
+        <p class="project-block__text">
+          Most products answer this with policy &mdash; usage limits, honor codes, instructor monitoring. ResearchBridge
+          answered it architecturally. Critical mode introduces a moment of productive struggle before AI assistance
+          arrives. That moment is where learning happens. The AI does not remove it. It waits for it.
+        </p>
+
+        <h3 class="project-rb-pill project-rb-pill--sub font-lexend">The Four Tools</h3>
+        <p class="project-block__text">Each tool supports a different kind of thinking:</p>
+
+        <div class="project-rb-tools__grid">
+          <article class="project-rb-tools__card">
+            <h4 class="project-rb-tools__name font-lexend">Summarize</h4>
+            <p class="project-rb-tools__text font-lexend">
+              Condense an article into its essential ideas. Helps students identify the main argument and key findings
+              without getting lost in dense academic text.
+            </p>
+          </article>
+
+          <article class="project-rb-tools__card">
+            <h4 class="project-rb-tools__name font-lexend">Ask</h4>
+            <p class="project-rb-tools__text font-lexend">
+              Generate or answer questions about the article. Encourages curiosity, clarifies confusing concepts, and
+              deepens comprehension through inquiry.
+            </p>
+          </article>
+
+          <article class="project-rb-tools__card">
+            <h4 class="project-rb-tools__name font-lexend">Outline</h4>
+            <p class="project-rb-tools__text font-lexend">
+              Organize the article into a logical structure. Helps students understand how ideas connect and recognize
+              the flow of an argument.
+            </p>
+          </article>
+
+          <article class="project-rb-tools__card">
+            <h4 class="project-rb-tools__name font-lexend">Citations</h4>
+            <p class="project-rb-tools__text font-lexend">
+              Extract and format references from the article. Teaches proper source attribution while reducing the
+              mechanical burden of citation formatting.
+            </p>
+          </article>
+        </div>
+
+        <h3 class="project-rb-pill project-rb-pill--sub font-lexend">How Classic vs Critical Works</h3>
+
+        <div class="project-rb-compare" role="region" aria-label="Classic versus Critical comparison">
+          <table class="project-rb-compare__table font-lexend">
+            <thead>
+              <tr>
+                <th scope="col" class="project-rb-compare__corner">
+                  <span class="sr-only">Category</span>
+                </th>
+                <th scope="col">Classic</th>
+                <th scope="col">Critical</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">AI role</th>
+                <td data-label="Classic">Provides immediate assistance</td>
+                <td data-label="Critical">Withholds full assistance until student attempts first</td>
+              </tr>
+              <tr>
+                <th scope="row">Student role</th>
+                <td data-label="Classic">Receives answers, summaries, outlines right away</td>
+                <td data-label="Critical">Must attempt the task before receiving AI feedback</td>
+              </tr>
+              <tr>
+                <th scope="row">Goal</th>
+                <td data-label="Classic">Efficiency and accessibility</td>
+                <td data-label="Critical">Active thinking, reflection, deeper learning</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-rb-experience reveal" aria-labelledby="designing-experience-title">
+      <div class="project-column">
+        <h2 id="designing-experience-title" class="project-block__label font-lexend">
+          Designing the Experience
+        </h2>
+
+        <h3 class="project-rb-experience__subtitle font-lexend">Module system</h3>
+        <p class="project-block__text">
+          The research lifecycle was broken into seven discrete modules, each with its own AI interaction model, each
+          building explicitly on the previous:
+        </p>
+
+        <ul class="project-rb-modules">
+          <li>
+            <span class="project-rb-modules__name font-lexend">Health in the News</span>
+            <span class="project-rb-modules__sep" aria-hidden="true">&mdash;</span>
+            <span class="project-rb-modules__desc font-lexend">critical evaluation of medical news coverage</span>
+          </li>
+          <li>
+            <span class="project-rb-modules__name font-lexend">Journal Reflection</span>
+            <span class="project-rb-modules__sep" aria-hidden="true">&mdash;</span>
+            <span class="project-rb-modules__desc font-lexend">summarizing and critiquing scientific literature</span>
+          </li>
+          <li>
+            <span class="project-rb-modules__name font-lexend">Literature Review</span>
+            <span class="project-rb-modules__sep" aria-hidden="true">&mdash;</span>
+            <span class="project-rb-modules__desc font-lexend">identifying themes, gaps, and evidence across papers</span>
+          </li>
+          <li>
+            <span class="project-rb-modules__name font-lexend">Research Proposal</span>
+            <span class="project-rb-modules__sep" aria-hidden="true">&mdash;</span>
+            <span class="project-rb-modules__desc font-lexend">formulating original research questions</span>
+          </li>
+          <li>
+            <span class="project-rb-modules__name font-lexend">Op-Ed</span>
+            <span class="project-rb-modules__sep" aria-hidden="true">&mdash;</span>
+            <span class="project-rb-modules__desc font-lexend">communicating research for public audiences</span>
+          </li>
+          <li>
+            <span class="project-rb-modules__name font-lexend">Research Poster</span>
+            <span class="project-rb-modules__sep" aria-hidden="true">&mdash;</span>
+            <span class="project-rb-modules__desc font-lexend">transforming research into visual presentations</span>
+          </li>
+          <li>
+            <span class="project-rb-modules__name font-lexend">Symposium Preparation</span>
+            <span class="project-rb-modules__sep" aria-hidden="true">&mdash;</span>
+            <span class="project-rb-modules__desc font-lexend">preparing to present confidently</span>
+          </li>
+        </ul>
+
+        <p class="project-block__text">
+          Each module made its connection to the next explicit. Students always knew where they were in the arc and
+          what they were building toward.
+        </p>
+
+        <h3 class="project-rb-experience__subtitle font-lexend">The Google Docs prototype</h3>
+        <p class="project-block__text">
+          The first version of ResearchBridge was built as a Google Docs sidebar. The decision was deliberate: students
+          were already writing in Google Docs. Adding a separate platform would introduce context switching at exactly
+          the moment when cognitive load was already high. The AI remained contextual to the current assignment &mdash;
+          no copy-pasting, no switching tabs, no losing the thread.
+        </p>
+
+        <figure class="project-block__figure project-block__figure--wide">
+          <div class="project-block__media">
+            <img
+              src="../assets/media/googledoc-prototype-image.png"
+              alt="ResearchBridge Google Docs sidebar prototype beside a student document"
+              width="3024"
+              height="1646"
+            />
+          </div>
+        </figure>
+
+        <h3 class="project-rb-experience__subtitle font-lexend">The Current Platform</h3>
+        <figure class="project-block__figure project-block__figure--wide">
+          <div class="project-block__media">
+            <video
+              class="project-block__video"
+              src="../assets/media/nm-projectbriefvid.mp4"
+              poster="../assets/media/nm-projectbriefvid-frame1.png"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="ResearchBridge current platform"
+            ></video>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-block project-rb-decisions reveal" aria-labelledby="product-decisions-title">
+      <div class="project-column">
+        <h2 id="product-decisions-title" class="project-block__label font-lexend">
+          Product Decisions and Tradeoffs
+        </h2>
+
+        <h3 class="project-rb-strategy__subtitle font-lexend">Modular over monolithic</h3>
+        <p class="project-block__text">
+          The alternative was a single AI assistant for the entire research process. That would have been faster to
+          build. It would also have reproduced the exact problem it was meant to solve &mdash; presenting the full
+          research process to students all at once without structure. Modular was the right call. It was also the
+          harder build.
+        </p>
+
+        <h3 class="project-rb-strategy__subtitle font-lexend">Embedded over standalone</h3>
+        <p class="project-block__text">
+          Building a standalone platform from the start was considered and deferred. The Google Docs integration
+          validated the interaction model before committing to infrastructure. That sequencing was correct &mdash; the
+          prototype surfaced interaction design problems that would have been expensive to fix in a full platform.
+        </p>
+
+        <h3 class="project-rb-strategy__subtitle font-lexend">Tool over agent</h3>
+        <p class="project-block__text">
+          The product could have been designed as an autonomous agent &mdash; completing assignments on behalf of
+          students, generating first drafts, producing literature reviews. That would have been technically
+          straightforward and pedagogically catastrophic. The decision to build a tool rather than an agent was the
+          most important product decision in the entire project. The Classic vs Critical toggle is the architectural
+          expression of that philosophy. Everything else follows from it.
+        </p>
+
+        <h3 class="project-rb-strategy__subtitle font-lexend">What was excluded</h3>
+        <p class="project-block__text">
+          Peer comparison features were cut. Knowing how other students were performing created competitive anxiety
+          that worked against learning. Automated grading was cut. Assessment required faculty judgment, not
+          algorithmic scoring. Open-ended chat was cut. Unconstrained conversation with an AI in an educational
+          context produces exactly the dependency the product was designed to prevent.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-block project-rb-outcomes reveal" aria-labelledby="outcomes-title">
+      <div class="project-column">
+        <h2 id="outcomes-title" class="project-block__label font-lexend">Outcomes</h2>
+
+        <ul class="project-rb-outcomes__list">
+          <li>
+            <span class="project-rb-outcomes__name font-lexend">18 &rarr; 43 students</span>
+            <span class="project-rb-outcomes__sep" aria-hidden="true">&mdash;</span>
+            <span class="project-rb-outcomes__desc font-lexend">
+              program nearly doubled without proportional increase in faculty load
+            </span>
+          </li>
+          <li>
+            <span class="project-rb-outcomes__name font-lexend">Immediate support</span>
+            <span class="project-rb-outcomes__sep" aria-hidden="true">&mdash;</span>
+            <span class="project-rb-outcomes__desc font-lexend">
+              students received guidance without waiting for faculty availability
+            </span>
+          </li>
+          <li>
+            <span class="project-rb-outcomes__name font-lexend">Reduced repetition</span>
+            <span class="project-rb-outcomes__sep" aria-hidden="true">&mdash;</span>
+            <span class="project-rb-outcomes__desc font-lexend">
+              faculty time freed from repetitive questions redirected to mentorship
+            </span>
+          </li>
+          <li>
+            <span class="project-rb-outcomes__name font-lexend">Structured journey</span>
+            <span class="project-rb-outcomes__sep" aria-hidden="true">&mdash;</span>
+            <span class="project-rb-outcomes__desc font-lexend">
+              students experienced the research lifecycle as a coherent arc rather than disconnected assignments
+            </span>
+          </li>
+          <li>
+            <span class="project-rb-outcomes__name font-lexend">Central to curriculum</span>
+            <span class="project-rb-outcomes__sep" aria-hidden="true">&mdash;</span>
+            <span class="project-rb-outcomes__desc font-lexend">
+              ResearchBridge became the program&rsquo;s primary learning infrastructure
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-block project-takeaways project-rb-reflection reveal" aria-labelledby="reflection-title">
+      <div class="project-column">
+        <h2 id="reflection-title" class="project-block__label font-lexend">Reflection</h2>
+        <p class="project-block__text">
+          ResearchBridge shipped, scaled, and became central to the program&rsquo;s curriculum. By the metrics that
+          mattered &mdash; cohort size, faculty load, student support &mdash; it worked. But the most interesting
+          questions about this product are not whether it worked. They are about what it revealed about building AI tools
+          for learning contexts, and what a more rigorous next version would need to answer.
+        </p>
+
+        <div class="project-takeaways__list">
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">The toggle is the product.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The Classic vs Critical toggle is not a settings feature. It is the core pedagogical argument of
+                  ResearchBridge made into an interaction. Every other decision &mdash; the four tools, the module
+                  structure, the Google Docs integration, the instructor dashboard &mdash; supports it. Products that
+                  add AI to education without answering the question of when AI helps tend to produce students who are
+                  better at using AI, not better at thinking. The toggle is ResearchBridge&rsquo;s answer to that
+                  problem. It should have been designed first, not discovered midway through.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">Prompt design is product design.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The AI prompts governing each module interaction were not an engineering detail. They were the
+                  product. Getting them right required the same iteration cycle as any other feature &mdash; hypothesis,
+                  prototype, test, revise. Faculty feedback on prompt quality was as important as faculty feedback on
+                  UI. That should have been clearer from the start.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">The hypothesis is still open.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The underlying research question &mdash; whether introducing desirable difficulty before AI assistance
+                  strengthens comprehension and critical thinking compared to immediate AI help &mdash; was not
+                  validated through a controlled study in this version. That is the most important question the next
+                  iteration needs to answer. ResearchBridge built the instrument. The study has not been run.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">The Google Docs prototype was the right call and the wrong long-term home.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  Validating the interaction model in Google Docs before building a platform was correct sequencing. But
+                  the sidebar format imposed real constraints on what the AI could show students and how modules could
+                  connect to each other. The move to a dedicated platform was inevitable. Building there from the start,
+                  with the interaction model already validated, would have been cleaner.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">Scaling a program is a product problem.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The cohort growing from 18 to 43 students was not just a logistics challenge. It was a design
+                  constraint that shaped every decision about AI interaction, module structure, and instructor
+                  visibility. Designing for scale from the beginning rather than retrofitting it would have changed
+                  some early choices &mdash; specifically around how faculty oversight was structured and how student
+                  progress was tracked across the full program arc.
+                </p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact" class="site-main pb-16 mt-28 sm:mt-36">
+    <div class="project-column border-t border-neutral-100 pt-16">
+      <p class="font-medium text-[14px] text-body">Let&rsquo;s build something thoughtful.</p>
+      <ul class="mt-4 flex flex-col gap-[6px] text-[14px] text-body">
+        <li><a href="https://www.linkedin.com/in/carloscoding/" class="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><button type="button" class="nav-link footer-copy-email" data-email="c.a.rodriguez1999@gmail.com">Email</button></li>
+        <li><a href="https://github.com/CRodriguez245" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+      <p class="mt-10 text-[14px] text-body">&copy; 2026 Carlos Rodriguez</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/cursor/dist/index.js"></script>
+    <script src="../contact-nav.js?v=2"></script>
+  <script src="../script.js?v=14"></script>
+  <script src="../project.js?v=7"></script>
+</body>
+</html>

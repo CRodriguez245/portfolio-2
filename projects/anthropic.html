@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthropic Ambassador — Carlos Rodriguez</title>
+  <meta name="description" content="Anthropic Ambassador: a 500+ member organization building AI literacy and workforce readiness among students, in partnership with Anthropic." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="../styles.css?v=391" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#80C343",
+            ink: "#000000",
+            indigo: "#130091",
+            muted: "#D3D3D3",
+            body: "#727272",
+            body2: "#737373",
+            card: "#f8f8f8",
+          },
+          fontFamily: {
+            lexend: ['Lexend', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+            helv: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+          maxWidth: {
+            shell: '1000px',
+            nav: '1120px',
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  </script>
+</head>
+
+<body class="bg-white text-body font-helv antialiased project-page project-page--anthropic">
+  <span id="top" class="scroll-anchor" aria-hidden="true"></span>
+
+  <!-- ============================ NAV ============================ -->
+  <header id="siteHeader" class="site-header sticky top-0 z-50 site-header--transparent">
+    <nav class="site-nav">
+      <a href="../index.html#top" class="nav-brand">Carlos Rodriguez</a>
+
+      <ul class="nav-menu hidden md:flex">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+
+      <button id="menuToggle" class="flex flex-col gap-[5px] md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-neutral-100 bg-white md:hidden">
+      <ul class="mx-auto flex max-w-[70rem] flex-col gap-4 px-6 py-4 text-[13px] text-body">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+    </div>
+  </header>
+
+  <!-- ============================ PROJECT HERO ============================ -->
+  <section class="project-hero" aria-labelledby="project-title">
+    <div class="project-hero__media" aria-hidden="true">
+      <img
+        class="project-hero__image"
+        src="../assets/media/cbc-image.JPG"
+        alt=""
+        width="6240"
+        height="4160"
+      />
+    </div>
+
+    <div class="project-hero__inner">
+      <div class="project-hero__content reveal">
+        <span class="impact-tag">500+ Members</span>
+
+        <h1 id="project-title" class="project-hero__title font-lexend">
+          Anthropic Ambassador
+        </h1>
+
+        <p class="project-hero__lede">
+          Building AI literacy and workforce readiness among students, as both a community of practice<br />
+          and a live research site.
+        </p>
+
+        <dl class="project-hero__meta">
+          <div class="project-hero__meta-item">
+            <dt>Role</dt>
+            <dd>Founder<br />&amp; Ambassador</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Duration</dt>
+            <dd>Ongoing</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Partner</dt>
+            <dd>Anthropic</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Scale</dt>
+            <dd>500+ members</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <main class="site-main project-main">
+    <section class="project-about reveal" aria-labelledby="about-title">
+      <img
+        src="../assets/logos/institution-anthropic.png"
+        alt="Anthropic"
+        class="project-about__logo"
+        width="142"
+        height="16"
+      />
+
+      <div class="project-column">
+        <div class="project-about__media project-about__media--embed">
+          <iframe
+            class="project-about__video--embed"
+            src="https://www.youtube.com/embed/I3NGtWZTGGg?si=RyfE8ICbXDCg8qR3"
+            title="YouTube video player"
+            width="560"
+            height="315"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <div class="project-about__copy">
+          <h2 id="about-title" class="project-about__label font-lexend">About</h2>
+          <p class="project-about__text">
+            As an Anthropic Ambassador, I founded an organization at Illinois Tech to close the gap between
+            AI capability and AI literacy among the next generation of builders. In partnership with Anthropic, the
+            club hosts workshops, hackathons, and learning sessions designed to give students hands-on experience with
+            AI tools, responsible AI practice, and the research thinking behind modern language models.
+          </p>
+          <p class="project-about__text">
+            The student kickoff was one of the largest AI-focused student events in Anthropic&rsquo;s recent history.
+            What followed was a series of sessions spanning prompt engineering, AI product thinking, mechanistic
+            interpretability concepts, and applied project work. All were designed around one premise: that students
+            who understand how AI works are better positioned to shape how it gets used.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-cbc-events reveal" aria-labelledby="events-title">
+      <div class="project-column">
+        <h2 id="events-title" class="project-block__label font-lexend">Events</h2>
+      </div>
+
+      <div
+        class="project-coverflow"
+        data-coverflow
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="How to Claude Code event photos. Drag or scroll horizontally to browse."
+      >
+        <div class="project-coverflow__stage" data-coverflow-stage>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-01.jpg?v=2" alt="How to Claude Code event photo 1" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-02.jpg?v=2" alt="How to Claude Code event photo 2" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-03.jpg" alt="How to Claude Code event photo 3" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-04.jpg" alt="How to Claude Code event photo 4" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-05.jpg" alt="How to Claude Code event photo 5" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-06.jpg" alt="How to Claude Code event photo 6" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-07.jpg" alt="How to Claude Code event photo 7" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-08.jpg" alt="How to Claude Code event photo 8" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-09.jpg" alt="How to Claude Code event photo 9" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-10.jpg" alt="How to Claude Code event photo 10" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-11.jpg" alt="How to Claude Code event photo 11" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-12.jpg" alt="How to Claude Code event photo 12" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-13.jpg" alt="How to Claude Code event photo 13" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-14.jpg" alt="How to Claude Code event photo 14" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-15.jpg" alt="How to Claude Code event photo 15" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-16.jpg" alt="How to Claude Code event photo 16" draggable="false" /></div>
+          <div class="project-coverflow__item"><img src="../assets/media/cbc-howtoclaudecode/web/photo-17.jpg" alt="How to Claude Code event photo 17" draggable="false" /></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer id="contact" class="site-main pb-16 mt-28 sm:mt-36">
+    <div class="project-column border-t border-neutral-100 pt-16">
+      <p class="font-medium text-[14px] text-body">Let&rsquo;s build something thoughtful.</p>
+      <ul class="mt-4 flex flex-col gap-[6px] text-[14px] text-body">
+        <li><a href="https://www.linkedin.com/in/carloscoding/" class="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><button type="button" class="nav-link footer-copy-email" data-email="c.a.rodriguez1999@gmail.com">Email</button></li>
+        <li><a href="https://github.com/CRodriguez245" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+      <p class="mt-10 text-[14px] text-body">&copy; 2026 Carlos Rodriguez</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/cursor/dist/index.js"></script>
+    <script src="../contact-nav.js?v=2"></script>
+  <script src="../script.js?v=14"></script>
+  <script src="../project.js?v=15"></script>
+</body>
+</html>

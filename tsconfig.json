@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ES2020",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "js/cursor/dist",
+    "rootDir": "js/cursor/src",
+    "declaration": false,
+    "sourceMap": true
+  },
+  "include": ["js/cursor/src/**/*.ts"]
+}

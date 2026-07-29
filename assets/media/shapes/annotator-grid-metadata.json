@@ -1,0 +1,962 @@
+{
+  "R1C1": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "There's more data than there are searches.",
+    "theme": "Precarity"
+  },
+  "R1C2": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "We are slaves to the Latin American system.",
+    "theme": "Exploitation"
+  },
+  "R1C3": {
+    "annotator": "Anonymous",
+    "quote": "The work is enslaving and poorly-paid.",
+    "theme": "Exploitation"
+  },
+  "R1C4": {
+    "annotator": "Anonymous woman from Cabimas",
+    "quote": "I have trouble sleeping… I live with the computer on 24 hours a day.",
+    "theme": "Exploitation"
+  },
+  "R1C5": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "In Venezuela, you don't live, you survive.",
+    "theme": "Precarity"
+  },
+  "R1C6": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "I don't like the uncertainty of not knowing when an assignment will come out.",
+    "theme": "Uncertainty"
+  },
+  "R1C7": {
+    "annotator": "Anonymous",
+    "quote": "I was terrified they would close my account and I'd lose everything.",
+    "theme": "Isolation"
+  },
+  "R1C8": {
+    "annotator": "Anonymous",
+    "quote": "There could come a time when there are simply no more tasks.",
+    "theme": "Exploitation"
+  },
+  "R1C9": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "Annotation work was attractive because it had so few access barriers.",
+    "theme": "Exploitation"
+  },
+  "R1C10": {
+    "annotator": "Anonymous",
+    "quote": "The salary doesn't cover half a dozen eggs… not enough to buy bread.",
+    "theme": "Precarity"
+  },
+  "R1C11": {
+    "annotator": "Melba",
+    "quote": "It's creepy the things we do for pennies.",
+    "theme": "Precarity"
+  },
+  "R1C12": {
+    "annotator": "Anonymous annotator",
+    "quote": "Our paychecks don't cover anything.",
+    "theme": "Precarity"
+  },
+  "R2C1": {
+    "annotator": "Melba",
+    "quote": "We all cooperate; we are a team.",
+    "theme": "Precarity"
+  },
+  "R2C2": {
+    "annotator": "Maria",
+    "quote": "I used to be an engineer. Now I spend my days clicking.",
+    "theme": "Exploitation"
+  },
+  "R2C3": {
+    "annotator": "Anonymous",
+    "quote": "I am treated like a robot; they would prefer I were a robot.",
+    "theme": "Precarity"
+  },
+  "R2C4": {
+    "annotator": "Anonymous",
+    "quote": "They treat us like we're not human.",
+    "theme": "Precarity"
+  },
+  "R2C5": {
+    "annotator": "Anonymous",
+    "quote": "It has been difficult to earn the minimum, which is ten dollars a week.",
+    "theme": "Precarity"
+  },
+  "R2C6": {
+    "annotator": "Anonymous older man",
+    "quote": "I leave my computer and phone charging all night hoping a task shows up.",
+    "theme": "Infrastructure"
+  },
+  "R2C7": {
+    "annotator": "Anonymous Venezuelan worker",
+    "quote": "If the electricity goes out, I lose the task and get penalized.",
+    "theme": "Infrastructure"
+  },
+  "R2C8": {
+    "annotator": "Anonymous Venezuelan annotator",
+    "quote": "I failed a task because my internet dropped for seconds.",
+    "theme": "Infrastructure"
+  },
+  "R2C9": {
+    "annotator": "Anonymous Venezuelan clickworker",
+    "quote": "I cried when they suspended my account. It meant no food that week.",
+    "theme": "Precarity"
+  },
+  "R2C10": {
+    "annotator": "Anonymous Venezuelan mother",
+    "quote": "It feels like gambling. Maybe today there is work, maybe not.",
+    "theme": "Exploitation"
+  },
+  "R2C11": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "If a task doesn't come up, I'm just waiting… days, weeks, even months can go by without anything coming up at all.",
+    "theme": "Uncertainty"
+  },
+  "R2C12": {
+    "annotator": "Anonymous",
+    "quote": "My son helps me with the English words when the tasks are too hard.",
+    "theme": "Exploitation"
+  },
+  "R3C1": {
+    "annotator": "Anonymous TolokaAI worker",
+    "quote": "I worked eight hours and earned less than two dollars.",
+    "theme": "Precarity"
+  },
+  "R3C2": {
+    "annotator": "Anonymous",
+    "quote": "They said I did 'poor quality work' but gave no explanation.",
+    "theme": "Exploitation"
+  },
+  "R3C3": {
+    "annotator": "Anonymous",
+    "quote": "I don't understand why the system rejected me. They never tell you.",
+    "theme": "Dehumanization"
+  },
+  "R3C4": {
+    "annotator": "Anonymous engineer",
+    "quote": "The instructions contradict each other. You end up guessing.",
+    "theme": "Precarity"
+  },
+  "R3C5": {
+    "annotator": "Anonymous",
+    "quote": "If you ask for help, they tell you to read the instructions again.",
+    "theme": "Precarity"
+  },
+  "R3C6": {
+    "annotator": "Anonymous",
+    "quote": "I fail tasks I haven't even started yet.",
+    "theme": "Exploitation"
+  },
+  "R3C7": {
+    "annotator": "Anonymous content labeler",
+    "quote": "I have a degree, but this is the only job that pays in dollars.",
+    "theme": "Precarity"
+  },
+  "R3C8": {
+    "annotator": "Anonymous mother",
+    "quote": "I never know how much I will earn this week.",
+    "theme": "Precarity"
+  },
+  "R3C9": {
+    "annotator": "Anonymous Venezuelan Telegram groups",
+    "quote": "When the electricity cuts, everything collapses.",
+    "theme": "Infrastructure"
+  },
+  "R3C10": {
+    "annotator": "Anonymous",
+    "quote": "The platform banned my husband for no reason. We depended on that money.",
+    "theme": "Precarity"
+  },
+  "R3C11": {
+    "annotator": "Anonymous",
+    "quote": "Sometimes the tasks are disturbing; we have to see violent things.",
+    "theme": "Exploitation"
+  },
+  "R3C12": {
+    "annotator": "Anonymous teacher",
+    "quote": "I don't want my kids to see what I have to label.",
+    "theme": "Precarity"
+  },
+  "R4C1": {
+    "annotator": "Anonymous",
+    "quote": "I get migraines from staring at the screen for so long.",
+    "theme": "Precarity"
+  },
+  "R4C2": {
+    "annotator": "Anonymous",
+    "quote": "I wake up at 3 AM to catch the good tasks.",
+    "theme": "Exploitation"
+  },
+  "R4C3": {
+    "annotator": "Anonymous",
+    "quote": "Sometimes I fall asleep at the keyboard.",
+    "theme": "Precarity"
+  },
+  "R4C4": {
+    "annotator": "Anonymous",
+    "quote": "I prayed they wouldn't close my account. It was all I had.",
+    "theme": "Isolation"
+  },
+  "R4C5": {
+    "annotator": "Anonymous",
+    "quote": "I used to teach. Now I just click.",
+    "theme": "Exploitation"
+  },
+  "R4C6": {
+    "annotator": "Anonymous",
+    "quote": "We do the hard work; the AI gets the credit.",
+    "theme": "Exploitation"
+  },
+  "R4C7": {
+    "annotator": "Anonymous",
+    "quote": "I only eat once a day when the tasks are slow.",
+    "theme": "Precarity"
+  },
+  "R4C8": {
+    "annotator": "Anonymous",
+    "quote": "My family depends on every cent I make here.",
+    "theme": "Precarity"
+  },
+  "R4C9": {
+    "annotator": "Anonymous",
+    "quote": "It's humiliating. They score everything we do.",
+    "theme": "Isolation"
+  },
+  "R4C10": {
+    "annotator": "Anonymous",
+    "quote": "My account was closed for 'fraud' even though I did nothing wrong.",
+    "theme": "Dehumanization"
+  },
+  "R4C11": {
+    "annotator": "Anonymous",
+    "quote": "The platform feels like a lottery. Some days you win, most days you lose.",
+    "theme": "Uncertainty"
+  },
+  "R4C12": {
+    "annotator": "Anonymous",
+    "quote": "I work 12 hours but only get paid for tasks they accept.",
+    "theme": "Exploitation"
+  },
+  "R5C1": {
+    "annotator": "Anonymous",
+    "quote": "I'm scared AI will replace even this miserable job.",
+    "theme": "Isolation"
+  },
+  "R5C2": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "There's more data than there are searches.",
+    "theme": "Precarity"
+  },
+  "R5C3": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "We are slaves to the Latin American system.",
+    "theme": "Exploitation"
+  },
+  "R5C4": {
+    "annotator": "Anonymous",
+    "quote": "The work is enslaving and poorly-paid.",
+    "theme": "Exploitation"
+  },
+  "R5C5": {
+    "annotator": "Anonymous woman from Cabimas",
+    "quote": "I have trouble sleeping… I live with the computer on 24 hours a day.",
+    "theme": "Exploitation"
+  },
+  "R5C6": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "In Venezuela, you don't live, you survive.",
+    "theme": "Precarity"
+  },
+  "R5C7": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "I don't like the uncertainty of not knowing when an assignment will come out.",
+    "theme": "Uncertainty"
+  },
+  "R5C8": {
+    "annotator": "Anonymous",
+    "quote": "I was terrified they would close my account and I'd lose everything.",
+    "theme": "Isolation"
+  },
+  "R5C9": {
+    "annotator": "Anonymous",
+    "quote": "There could come a time when there are simply no more tasks.",
+    "theme": "Exploitation"
+  },
+  "R5C10": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "Annotation work was attractive because it had so few access barriers.",
+    "theme": "Exploitation"
+  },
+  "R5C11": {
+    "annotator": "Anonymous",
+    "quote": "The salary doesn't cover half a dozen eggs… not enough to buy bread.",
+    "theme": "Precarity"
+  },
+  "R5C12": {
+    "annotator": "Melba",
+    "quote": "It's creepy the things we do for pennies.",
+    "theme": "Precarity"
+  },
+  "R6C1": {
+    "annotator": "Anonymous annotator",
+    "quote": "Our paychecks don't cover anything.",
+    "theme": "Precarity"
+  },
+  "R6C2": {
+    "annotator": "Melba",
+    "quote": "We all cooperate; we are a team.",
+    "theme": "Precarity"
+  },
+  "R6C3": {
+    "annotator": "Maria",
+    "quote": "I used to be an engineer. Now I spend my days clicking.",
+    "theme": "Exploitation"
+  },
+  "R6C4": {
+    "annotator": "Anonymous",
+    "quote": "I am treated like a robot; they would prefer I were a robot.",
+    "theme": "Precarity"
+  },
+  "R6C5": {
+    "annotator": "Anonymous",
+    "quote": "They treat us like we're not human.",
+    "theme": "Precarity"
+  },
+  "R6C6": {
+    "annotator": "Anonymous",
+    "quote": "It has been difficult to earn the minimum, which is ten dollars a week.",
+    "theme": "Precarity"
+  },
+  "R6C7": {
+    "annotator": "Anonymous older man",
+    "quote": "I leave my computer and phone charging all night hoping a task shows up.",
+    "theme": "Infrastructure"
+  },
+  "R6C8": {
+    "annotator": "Anonymous Venezuelan worker",
+    "quote": "If the electricity goes out, I lose the task and get penalized.",
+    "theme": "Infrastructure"
+  },
+  "R6C9": {
+    "annotator": "Anonymous Venezuelan annotator",
+    "quote": "I failed a task because my internet dropped for seconds.",
+    "theme": "Infrastructure"
+  },
+  "R6C10": {
+    "annotator": "Anonymous Venezuelan clickworker",
+    "quote": "I cried when they suspended my account. It meant no food that week.",
+    "theme": "Precarity"
+  },
+  "R6C11": {
+    "annotator": "Anonymous Venezuelan mother",
+    "quote": "It feels like gambling. Maybe today there is work, maybe not.",
+    "theme": "Exploitation"
+  },
+  "R6C12": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "If a task doesn't come up, I'm just waiting… days, weeks, even months can go by without anything coming up at all.",
+    "theme": "Uncertainty"
+  },
+  "R7C1": {
+    "annotator": "Anonymous",
+    "quote": "My son helps me with the English words when the tasks are too hard.",
+    "theme": "Exploitation"
+  },
+  "R7C2": {
+    "annotator": "Anonymous TolokaAI worker",
+    "quote": "I worked eight hours and earned less than two dollars.",
+    "theme": "Precarity"
+  },
+  "R7C3": {
+    "annotator": "Anonymous",
+    "quote": "They said I did 'poor quality work' but gave no explanation.",
+    "theme": "Exploitation"
+  },
+  "R7C4": {
+    "annotator": "Anonymous",
+    "quote": "I don't understand why the system rejected me. They never tell you.",
+    "theme": "Dehumanization"
+  },
+  "R7C5": {
+    "annotator": "Anonymous engineer",
+    "quote": "The instructions contradict each other. You end up guessing.",
+    "theme": "Precarity"
+  },
+  "R7C6": {
+    "annotator": "Anonymous",
+    "quote": "If you ask for help, they tell you to read the instructions again.",
+    "theme": "Precarity"
+  },
+  "R7C7": {
+    "annotator": "Anonymous",
+    "quote": "I fail tasks I haven't even started yet.",
+    "theme": "Exploitation"
+  },
+  "R7C8": {
+    "annotator": "Anonymous content labeler",
+    "quote": "I have a degree, but this is the only job that pays in dollars.",
+    "theme": "Precarity"
+  },
+  "R7C9": {
+    "annotator": "Anonymous mother",
+    "quote": "I never know how much I will earn this week.",
+    "theme": "Precarity"
+  },
+  "R7C10": {
+    "annotator": "Anonymous Venezuelan Telegram groups",
+    "quote": "When the electricity cuts, everything collapses.",
+    "theme": "Infrastructure"
+  },
+  "R7C11": {
+    "annotator": "Anonymous",
+    "quote": "The platform banned my husband for no reason. We depended on that money.",
+    "theme": "Precarity"
+  },
+  "R7C12": {
+    "annotator": "Anonymous",
+    "quote": "Sometimes the tasks are disturbing; we have to see violent things.",
+    "theme": "Exploitation"
+  },
+  "R8C1": {
+    "annotator": "Anonymous teacher",
+    "quote": "I don't want my kids to see what I have to label.",
+    "theme": "Precarity"
+  },
+  "R8C2": {
+    "annotator": "Anonymous",
+    "quote": "I get migraines from staring at the screen for so long.",
+    "theme": "Precarity"
+  },
+  "R8C3": {
+    "annotator": "Anonymous",
+    "quote": "I wake up at 3 AM to catch the good tasks.",
+    "theme": "Exploitation"
+  },
+  "R8C4": {
+    "annotator": "Anonymous",
+    "quote": "Sometimes I fall asleep at the keyboard.",
+    "theme": "Precarity"
+  },
+  "R8C5": {
+    "annotator": "Anonymous",
+    "quote": "I prayed they wouldn't close my account. It was all I had.",
+    "theme": "Isolation"
+  },
+  "R8C6": {
+    "annotator": "Anonymous",
+    "quote": "I used to teach. Now I just click.",
+    "theme": "Exploitation"
+  },
+  "R8C7": {
+    "annotator": "Anonymous",
+    "quote": "We do the hard work; the AI gets the credit.",
+    "theme": "Exploitation"
+  },
+  "R8C8": {
+    "annotator": "Anonymous",
+    "quote": "I only eat once a day when the tasks are slow.",
+    "theme": "Precarity"
+  },
+  "R8C9": {
+    "annotator": "Anonymous",
+    "quote": "My family depends on every cent I make here.",
+    "theme": "Precarity"
+  },
+  "R8C10": {
+    "annotator": "Anonymous",
+    "quote": "It's humiliating. They score everything we do.",
+    "theme": "Isolation"
+  },
+  "R8C11": {
+    "annotator": "Anonymous",
+    "quote": "My account was closed for 'fraud' even though I did nothing wrong.",
+    "theme": "Dehumanization"
+  },
+  "R8C12": {
+    "annotator": "Anonymous",
+    "quote": "The platform feels like a lottery. Some days you win, most days you lose.",
+    "theme": "Uncertainty"
+  },
+  "R9C1": {
+    "annotator": "Anonymous",
+    "quote": "I work 12 hours but only get paid for tasks they accept.",
+    "theme": "Exploitation"
+  },
+  "R9C2": {
+    "annotator": "Anonymous",
+    "quote": "I'm scared AI will replace even this miserable job.",
+    "theme": "Isolation"
+  },
+  "R9C3": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "There's more data than there are searches.",
+    "theme": "Precarity"
+  },
+  "R9C4": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "We are slaves to the Latin American system.",
+    "theme": "Exploitation"
+  },
+  "R9C5": {
+    "annotator": "Anonymous",
+    "quote": "The work is enslaving and poorly-paid.",
+    "theme": "Exploitation"
+  },
+  "R9C6": {
+    "annotator": "Anonymous woman from Cabimas",
+    "quote": "I have trouble sleeping… I live with the computer on 24 hours a day.",
+    "theme": "Exploitation"
+  },
+  "R9C7": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "In Venezuela, you don't live, you survive.",
+    "theme": "Precarity"
+  },
+  "R9C8": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "I don't like the uncertainty of not knowing when an assignment will come out.",
+    "theme": "Uncertainty"
+  },
+  "R9C9": {
+    "annotator": "Anonymous",
+    "quote": "I was terrified they would close my account and I'd lose everything.",
+    "theme": "Isolation"
+  },
+  "R9C10": {
+    "annotator": "Anonymous",
+    "quote": "There could come a time when there are simply no more tasks.",
+    "theme": "Exploitation"
+  },
+  "R9C11": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "Annotation work was attractive because it had so few access barriers.",
+    "theme": "Exploitation"
+  },
+  "R9C12": {
+    "annotator": "Anonymous",
+    "quote": "The salary doesn't cover half a dozen eggs… not enough to buy bread.",
+    "theme": "Precarity"
+  },
+  "R10C1": {
+    "annotator": "Melba",
+    "quote": "It's creepy the things we do for pennies.",
+    "theme": "Precarity"
+  },
+  "R10C2": {
+    "annotator": "Anonymous annotator",
+    "quote": "Our paychecks don't cover anything.",
+    "theme": "Precarity"
+  },
+  "R10C3": {
+    "annotator": "Melba",
+    "quote": "We all cooperate; we are a team.",
+    "theme": "Precarity"
+  },
+  "R10C4": {
+    "annotator": "Maria",
+    "quote": "I used to be an engineer. Now I spend my days clicking.",
+    "theme": "Exploitation"
+  },
+  "R10C5": {
+    "annotator": "Anonymous",
+    "quote": "I am treated like a robot; they would prefer I were a robot.",
+    "theme": "Precarity"
+  },
+  "R10C6": {
+    "annotator": "Anonymous",
+    "quote": "They treat us like we're not human.",
+    "theme": "Precarity"
+  },
+  "R10C7": {
+    "annotator": "Anonymous",
+    "quote": "It has been difficult to earn the minimum, which is ten dollars a week.",
+    "theme": "Precarity"
+  },
+  "R10C8": {
+    "annotator": "Anonymous older man",
+    "quote": "I leave my computer and phone charging all night hoping a task shows up.",
+    "theme": "Infrastructure"
+  },
+  "R10C9": {
+    "annotator": "Anonymous Venezuelan worker",
+    "quote": "If the electricity goes out, I lose the task and get penalized.",
+    "theme": "Infrastructure"
+  },
+  "R10C10": {
+    "annotator": "Anonymous Venezuelan annotator",
+    "quote": "I failed a task because my internet dropped for seconds.",
+    "theme": "Infrastructure"
+  },
+  "R10C11": {
+    "annotator": "Anonymous Venezuelan clickworker",
+    "quote": "I cried when they suspended my account. It meant no food that week.",
+    "theme": "Precarity"
+  },
+  "R10C12": {
+    "annotator": "Anonymous Venezuelan mother",
+    "quote": "It feels like gambling. Maybe today there is work, maybe not.",
+    "theme": "Exploitation"
+  },
+  "R11C1": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "If a task doesn't come up, I'm just waiting… days, weeks, even months can go by without anything coming up at all.",
+    "theme": "Uncertainty"
+  },
+  "R11C2": {
+    "annotator": "Anonymous",
+    "quote": "My son helps me with the English words when the tasks are too hard.",
+    "theme": "Exploitation"
+  },
+  "R11C3": {
+    "annotator": "Anonymous TolokaAI worker",
+    "quote": "I worked eight hours and earned less than two dollars.",
+    "theme": "Precarity"
+  },
+  "R11C4": {
+    "annotator": "Anonymous",
+    "quote": "They said I did 'poor quality work' but gave no explanation.",
+    "theme": "Exploitation"
+  },
+  "R11C5": {
+    "annotator": "Anonymous",
+    "quote": "I don't understand why the system rejected me. They never tell you.",
+    "theme": "Dehumanization"
+  },
+  "R11C6": {
+    "annotator": "Anonymous engineer",
+    "quote": "The instructions contradict each other. You end up guessing.",
+    "theme": "Precarity"
+  },
+  "R11C7": {
+    "annotator": "Anonymous",
+    "quote": "If you ask for help, they tell you to read the instructions again.",
+    "theme": "Precarity"
+  },
+  "R11C8": {
+    "annotator": "Anonymous",
+    "quote": "I fail tasks I haven't even started yet.",
+    "theme": "Exploitation"
+  },
+  "R11C9": {
+    "annotator": "Anonymous content labeler",
+    "quote": "I have a degree, but this is the only job that pays in dollars.",
+    "theme": "Precarity"
+  },
+  "R11C10": {
+    "annotator": "Anonymous mother",
+    "quote": "I never know how much I will earn this week.",
+    "theme": "Precarity"
+  },
+  "R11C11": {
+    "annotator": "Anonymous Venezuelan Telegram groups",
+    "quote": "When the electricity cuts, everything collapses.",
+    "theme": "Infrastructure"
+  },
+  "R11C12": {
+    "annotator": "Anonymous",
+    "quote": "The platform banned my husband for no reason. We depended on that money.",
+    "theme": "Precarity"
+  },
+  "R12C1": {
+    "annotator": "Anonymous",
+    "quote": "Sometimes the tasks are disturbing; we have to see violent things.",
+    "theme": "Exploitation"
+  },
+  "R12C2": {
+    "annotator": "Anonymous teacher",
+    "quote": "I don't want my kids to see what I have to label.",
+    "theme": "Precarity"
+  },
+  "R12C3": {
+    "annotator": "Anonymous",
+    "quote": "I get migraines from staring at the screen for so long.",
+    "theme": "Precarity"
+  },
+  "R12C4": {
+    "annotator": "Anonymous",
+    "quote": "I wake up at 3 AM to catch the good tasks.",
+    "theme": "Exploitation"
+  },
+  "R12C5": {
+    "annotator": "Anonymous",
+    "quote": "Sometimes I fall asleep at the keyboard.",
+    "theme": "Precarity"
+  },
+  "R12C6": {
+    "annotator": "Anonymous",
+    "quote": "I prayed they wouldn't close my account. It was all I had.",
+    "theme": "Isolation"
+  },
+  "R12C7": {
+    "annotator": "Anonymous",
+    "quote": "I used to teach. Now I just click.",
+    "theme": "Exploitation"
+  },
+  "R12C8": {
+    "annotator": "Anonymous",
+    "quote": "We do the hard work; the AI gets the credit.",
+    "theme": "Exploitation"
+  },
+  "R12C9": {
+    "annotator": "Anonymous",
+    "quote": "I only eat once a day when the tasks are slow.",
+    "theme": "Precarity"
+  },
+  "R12C10": {
+    "annotator": "Anonymous",
+    "quote": "My family depends on every cent I make here.",
+    "theme": "Precarity"
+  },
+  "R12C11": {
+    "annotator": "Anonymous",
+    "quote": "It's humiliating. They score everything we do.",
+    "theme": "Isolation"
+  },
+  "R12C12": {
+    "annotator": "Anonymous",
+    "quote": "My account was closed for 'fraud' even though I did nothing wrong.",
+    "theme": "Dehumanization"
+  },
+  "R13C1": {
+    "annotator": "Anonymous",
+    "quote": "The platform feels like a lottery. Some days you win, most days you lose.",
+    "theme": "Uncertainty"
+  },
+  "R13C2": {
+    "annotator": "Anonymous",
+    "quote": "I work 12 hours but only get paid for tasks they accept.",
+    "theme": "Exploitation"
+  },
+  "R13C3": {
+    "annotator": "Anonymous",
+    "quote": "I'm scared AI will replace even this miserable job.",
+    "theme": "Isolation"
+  },
+  "R13C4": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "There's more data than there are searches.",
+    "theme": "Precarity"
+  },
+  "R13C5": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "We are slaves to the Latin American system.",
+    "theme": "Exploitation"
+  },
+  "R13C6": {
+    "annotator": "Anonymous",
+    "quote": "The work is enslaving and poorly-paid.",
+    "theme": "Exploitation"
+  },
+  "R13C7": {
+    "annotator": "Anonymous woman from Cabimas",
+    "quote": "I have trouble sleeping… I live with the computer on 24 hours a day.",
+    "theme": "Exploitation"
+  },
+  "R13C8": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "In Venezuela, you don't live, you survive.",
+    "theme": "Precarity"
+  },
+  "R13C9": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "I don't like the uncertainty of not knowing when an assignment will come out.",
+    "theme": "Uncertainty"
+  },
+  "R13C10": {
+    "annotator": "Anonymous",
+    "quote": "I was terrified they would close my account and I'd lose everything.",
+    "theme": "Isolation"
+  },
+  "R13C11": {
+    "annotator": "Anonymous",
+    "quote": "There could come a time when there are simply no more tasks.",
+    "theme": "Exploitation"
+  },
+  "R13C12": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "Annotation work was attractive because it had so few access barriers.",
+    "theme": "Exploitation"
+  },
+  "R14C1": {
+    "annotator": "Anonymous",
+    "quote": "The salary doesn't cover half a dozen eggs… not enough to buy bread.",
+    "theme": "Precarity"
+  },
+  "R14C2": {
+    "annotator": "Melba",
+    "quote": "It's creepy the things we do for pennies.",
+    "theme": "Precarity"
+  },
+  "R14C3": {
+    "annotator": "Anonymous annotator",
+    "quote": "Our paychecks don't cover anything.",
+    "theme": "Precarity"
+  },
+  "R14C4": {
+    "annotator": "Melba",
+    "quote": "We all cooperate; we are a team.",
+    "theme": "Precarity"
+  },
+  "R14C5": {
+    "annotator": "Maria",
+    "quote": "I used to be an engineer. Now I spend my days clicking.",
+    "theme": "Exploitation"
+  },
+  "R14C6": {
+    "annotator": "Anonymous",
+    "quote": "I am treated like a robot; they would prefer I were a robot.",
+    "theme": "Precarity"
+  },
+  "R14C7": {
+    "annotator": "Anonymous",
+    "quote": "They treat us like we're not human.",
+    "theme": "Precarity"
+  },
+  "R14C8": {
+    "annotator": "Anonymous",
+    "quote": "It has been difficult to earn the minimum, which is ten dollars a week.",
+    "theme": "Precarity"
+  },
+  "R14C9": {
+    "annotator": "Anonymous older man",
+    "quote": "I leave my computer and phone charging all night hoping a task shows up.",
+    "theme": "Infrastructure"
+  },
+  "R14C10": {
+    "annotator": "Anonymous Venezuelan worker",
+    "quote": "If the electricity goes out, I lose the task and get penalized.",
+    "theme": "Infrastructure"
+  },
+  "R14C11": {
+    "annotator": "Anonymous Venezuelan annotator",
+    "quote": "I failed a task because my internet dropped for seconds.",
+    "theme": "Infrastructure"
+  },
+  "R14C12": {
+    "annotator": "Anonymous Venezuelan clickworker",
+    "quote": "I cried when they suspended my account. It meant no food that week.",
+    "theme": "Precarity"
+  },
+  "R15C1": {
+    "annotator": "Anonymous Venezuelan mother",
+    "quote": "It feels like gambling. Maybe today there is work, maybe not.",
+    "theme": "Exploitation"
+  },
+  "R15C2": {
+    "annotator": "Oskarina Fuentes",
+    "quote": "If a task doesn't come up, I'm just waiting… days, weeks, even months can go by without anything coming up at all.",
+    "theme": "Uncertainty"
+  },
+  "R15C3": {
+    "annotator": "Anonymous",
+    "quote": "My son helps me with the English words when the tasks are too hard.",
+    "theme": "Exploitation"
+  },
+  "R15C4": {
+    "annotator": "Anonymous TolokaAI worker",
+    "quote": "I worked eight hours and earned less than two dollars.",
+    "theme": "Precarity"
+  },
+  "R15C5": {
+    "annotator": "Anonymous",
+    "quote": "They said I did 'poor quality work' but gave no explanation.",
+    "theme": "Exploitation"
+  },
+  "R15C6": {
+    "annotator": "Anonymous",
+    "quote": "I don't understand why the system rejected me. They never tell you.",
+    "theme": "Dehumanization"
+  },
+  "R15C7": {
+    "annotator": "Anonymous engineer",
+    "quote": "The instructions contradict each other. You end up guessing.",
+    "theme": "Precarity"
+  },
+  "R15C8": {
+    "annotator": "Anonymous",
+    "quote": "If you ask for help, they tell you to read the instructions again.",
+    "theme": "Precarity"
+  },
+  "R15C9": {
+    "annotator": "Anonymous",
+    "quote": "I fail tasks I haven't even started yet.",
+    "theme": "Exploitation"
+  },
+  "R15C10": {
+    "annotator": "Anonymous content labeler",
+    "quote": "I have a degree, but this is the only job that pays in dollars.",
+    "theme": "Precarity"
+  },
+  "R15C11": {
+    "annotator": "Anonymous mother",
+    "quote": "I never know how much I will earn this week.",
+    "theme": "Precarity"
+  },
+  "R15C12": {
+    "annotator": "Anonymous Venezuelan Telegram groups",
+    "quote": "When the electricity cuts, everything collapses.",
+    "theme": "Infrastructure"
+  },
+  "R16C1": {
+    "annotator": "Anonymous",
+    "quote": "The platform banned my husband for no reason. We depended on that money.",
+    "theme": "Precarity"
+  },
+  "R16C2": {
+    "annotator": "Anonymous",
+    "quote": "Sometimes the tasks are disturbing; we have to see violent things.",
+    "theme": "Exploitation"
+  },
+  "R16C3": {
+    "annotator": "Anonymous teacher",
+    "quote": "I don't want my kids to see what I have to label.",
+    "theme": "Precarity"
+  },
+  "R16C4": {
+    "annotator": "Anonymous",
+    "quote": "I get migraines from staring at the screen for so long.",
+    "theme": "Precarity"
+  },
+  "R16C5": {
+    "annotator": "Anonymous",
+    "quote": "I wake up at 3 AM to catch the good tasks.",
+    "theme": "Exploitation"
+  },
+  "R16C6": {
+    "annotator": "Anonymous",
+    "quote": "Sometimes I fall asleep at the keyboard.",
+    "theme": "Precarity"
+  },
+  "R16C7": {
+    "annotator": "Anonymous",
+    "quote": "I prayed they wouldn't close my account. It was all I had.",
+    "theme": "Isolation"
+  },
+  "R16C8": {
+    "annotator": "Anonymous",
+    "quote": "I used to teach. Now I just click.",
+    "theme": "Exploitation"
+  },
+  "R16C9": {
+    "annotator": "Anonymous",
+    "quote": "We do the hard work; the AI gets the credit.",
+    "theme": "Exploitation"
+  },
+  "R16C10": {
+    "annotator": "Anonymous",
+    "quote": "I only eat once a day when the tasks are slow.",
+    "theme": "Precarity"
+  },
+  "R16C11": {
+    "annotator": "Anonymous",
+    "quote": "My family depends on every cent I make here.",
+    "theme": "Precarity"
+  },
+  "R16C12": {
+    "annotator": "Anonymous",
+    "quote": "It's humiliating. They score everything we do.",
+    "theme": "Isolation"
+  }
+}

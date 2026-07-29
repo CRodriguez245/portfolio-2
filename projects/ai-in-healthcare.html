@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI in Healthcare - Carlos Rodriguez</title>
+  <meta
+    name="description"
+    content="A research and facilitation initiative exploring how students, clinicians, and administrators across Northwestern Medicine understand, adopt, and relate to AI in healthcare contexts."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="../styles.css?v=390" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#80C343",
+            ink: "#000000",
+            indigo: "#130091",
+            muted: "#D3D3D3",
+            body: "#727272",
+            body2: "#737373",
+            card: "#f8f8f8",
+          },
+          fontFamily: {
+            lexend: ['Lexend', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+            helv: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+          maxWidth: {
+            shell: '1000px',
+            nav: '1120px',
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  </script>
+</head>
+
+<body class="bg-white text-body font-helv antialiased project-page project-page--nm">
+  <span id="top" class="scroll-anchor" aria-hidden="true"></span>
+
+  <!-- ============================ NAV ============================ -->
+  <header id="siteHeader" class="site-header sticky top-0 z-50 site-header--transparent">
+    <nav class="site-nav">
+      <a href="../index.html#top" class="nav-brand">Carlos Rodriguez</a>
+
+      <ul class="nav-menu hidden md:flex">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+
+      <button id="menuToggle" class="flex flex-col gap-[5px] md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-neutral-100 bg-white md:hidden">
+      <ul class="mx-auto flex max-w-[70rem] flex-col gap-4 px-6 py-4 text-[13px] text-body">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+    </div>
+  </header>
+
+  <!-- ============================ PROJECT HERO ============================ -->
+  <section class="project-hero project-hero--nm" aria-labelledby="project-title">
+    <div class="project-hero__media project-hero__media--nm" aria-hidden="true">
+      <video
+        class="project-hero__video"
+        src="../assets/media/aiinhealthcare-heroimage.mp4"
+        autoplay
+        muted
+        defaultMuted
+        loop
+        playsinline
+        preload="auto"
+      ></video>
+    </div>
+
+    <div class="project-hero__inner">
+      <div class="project-hero__content reveal">
+        <span class="impact-tag">3 Audiences · NM</span>
+        <div class="project-hero__title-row">
+          <h1 id="project-title" class="project-hero__title font-lexend">
+            AI in Healthcare
+          </h1>
+          <img
+            src="../assets/logos/Northwestern_Medicine_logo.svg.webp"
+            alt="Northwestern Medicine"
+            class="project-hero__title-logo"
+            width="83"
+            height="16"
+          />
+        </div>
+
+        <p class="project-hero__lede">
+          A research and facilitation initiative exploring how students, clinicians, and administrators across
+          Northwestern Medicine understand, adopt, and relate to AI in healthcare contexts.
+        </p>
+
+        <dl class="project-hero__meta">
+          <div class="project-hero__meta-item">
+            <dt>Role</dt>
+            <dd>AI Researcher<br />&amp; Facilitator</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Institution</dt>
+            <dd>Northwestern<br />Medicine</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Audiences</dt>
+            <dd>Students, Clinical<br />Staff, Admin</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Format</dt>
+            <dd>Workshops, Research,<br />Tool Design</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <main class="site-main project-main">
+    <section class="project-block project-nm-brief reveal" aria-labelledby="project-brief-title">
+      <div class="project-column">
+        <h2 id="project-brief-title" class="project-block__label font-lexend">Project Brief</h2>
+        <p class="project-block__text">
+          AI is being deployed across healthcare at every level, in clinical decision support, administrative
+          workflows, patient communication, and research infrastructure. But the people working inside health systems
+          experience that deployment very differently depending on where they sit. A high school student in a research
+          pipeline, a clinician making diagnostic decisions, and an administrator managing operational workflows each
+          bring fundamentally different relationships to AI: different fears, different fluencies, different stakes.
+        </p>
+        <p class="project-block__text">
+          This initiative worked across all three. The through-line was not the technology. It was the question: what
+          does it mean for AI to actually serve the people inside a health system, rather than simply being deployed at
+          them?
+        </p>
+      </div>
+    </section>
+
+    <section class="project-block project-nm-audiences reveal" aria-labelledby="audiences-title">
+      <div class="project-column">
+        <h2 id="audiences-title" class="project-block__label font-lexend">The Three Audiences</h2>
+
+        <div class="project-nm-audiences__grid">
+          <article class="project-nm-audiences__card">
+            <div class="project-nm-audiences__icon-slot">
+              <img
+                src="../assets/media/aiinhealthcare-studenticon.png"
+                alt=""
+                class="project-nm-audiences__icon"
+                width="512"
+                height="512"
+              />
+            </div>
+            <h3 class="project-nm-audiences__title font-lexend">NM Scholars</h3>
+            <p class="project-nm-audiences__text">
+              Students entering medicine and clinical research for the first time. For this audience the challenge was
+              not AI adoption. It was research literacy. ResearchBridge was designed specifically for this population,
+              scaffolding the full research lifecycle with AI support that augmented student thinking rather than
+              bypassing it.
+            </p>
+          </article>
+
+          <article class="project-nm-audiences__card">
+            <div class="project-nm-audiences__icon-slot">
+              <img
+                src="../assets/media/aiinhealthcare-clinicalstafficon.png"
+                alt=""
+                class="project-nm-audiences__icon"
+                width="512"
+                height="512"
+              />
+            </div>
+            <h3 class="project-nm-audiences__title font-lexend">Clinical Staff</h3>
+            <p class="project-nm-audiences__text">
+              Clinicians navigating AI tools entering their workflows: diagnostic support, documentation assistance,
+              ambient AI in patient encounters. For this audience the challenge was critical fluency. Helping
+              practitioners ask better questions about AI tools rather than simply adopting or rejecting them. Workshops
+              focused on what AI can and cannot see, where its outputs should be trusted and where they should be
+              interrogated, and how clinical judgment relates to algorithmic recommendation.
+            </p>
+          </article>
+
+          <article class="project-nm-audiences__card">
+            <div class="project-nm-audiences__icon-slot">
+              <img
+                src="../assets/media/aiinhealthcare-adminicon.png"
+                alt=""
+                class="project-nm-audiences__icon"
+                width="512"
+                height="512"
+              />
+            </div>
+            <h3 class="project-nm-audiences__title font-lexend">Administrative Staff</h3>
+            <p class="project-nm-audiences__text">
+              Administrators managing operational workflows increasingly mediated by AI: scheduling, documentation,
+              resource allocation. For this audience the challenge was practical fluency combined with appropriate
+              skepticism. Workshops focused on understanding what AI tools actually do versus what they claim to do, and
+              how to evaluate new tools before committing to them organizationally.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-nm-findings reveal" aria-labelledby="findings-title">
+      <div class="project-column">
+        <h2 id="findings-title" class="project-block__label font-lexend">Findings</h2>
+        <p class="project-block__text">
+          Each audience experienced a version of the same underlying problem: AI was arriving in their context faster
+          than the frameworks for evaluating it. Students didn&rsquo;t have the research vocabulary to interrogate
+          AI-generated summaries. Clinicians didn&rsquo;t have the mechanistic vocabulary to understand when AI diagnostic
+          tools might fail their specific patient populations. Administrators didn&rsquo;t have the evaluation vocabulary
+          to compare AI tools across vendors.
+        </p>
+        <p class="project-block__text">
+          The facilitation and research work across all three audiences was designed to build that vocabulary: specific
+          to each context, grounded in the actual workflows people were already navigating, and honest about what AI
+          does and does not do well in healthcare settings.
+        </p>
+
+        <div
+          class="project-nm-findings__media"
+          data-nm-findings-pan
+          aria-hidden="true"
+        >
+          <div class="project-nm-findings__panel project-nm-findings__panel--a">
+            <img src="../assets/media/aisystem1.svg" alt="" width="788" height="787" />
+          </div>
+          <div class="project-nm-findings__panel project-nm-findings__panel--b">
+            <img src="../assets/media/aisystem2.svg" alt="" width="1385" height="1329" />
+          </div>
+        </div>
+
+        <div class="project-nm-findings__captions">
+          <p class="project-nm-findings__caption">
+            The AI triad: a common and simple way to understand AI systems, but void of context and human-centered
+            understanding.
+          </p>
+          <p class="project-nm-findings__caption">
+            A diagram showing the non-binary nature of these systems, with people at the core informing these
+            experiences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-nm-themes reveal" aria-labelledby="themes-title">
+      <div class="project-column">
+        <h2 id="themes-title" class="project-block__label font-lexend">Key Themes Across All Three</h2>
+
+        <div class="project-nm-themes__grid">
+          <article class="project-nm-themes__card">
+            <h3 class="project-nm-themes__card-title font-lexend">AI literacy is not one thing</h3>
+            <p class="project-nm-themes__card-text">
+              What fluency means for a high school researcher is completely different from what it means for a
+              cardiologist or a scheduling coordinator. One-size-fits-all AI education fails all three.
+            </p>
+          </article>
+
+          <article class="project-nm-themes__card">
+            <h3 class="project-nm-themes__card-title font-lexend">The stakes are not abstract</h3>
+            <p class="project-nm-themes__card-text">
+              In healthcare contexts, AI failures have consequences for real patients. That stakes framing was present
+              in every session regardless of audience.
+            </p>
+          </article>
+
+          <article class="project-nm-themes__card">
+            <h3 class="project-nm-themes__card-title font-lexend">Adoption is not the goal</h3>
+            <p class="project-nm-themes__card-text">
+              The goal was critical engagement. Participants who left more skeptical but more informed were a better
+              outcome than participants who left enthusiastic but uncritical.
+            </p>
+          </article>
+
+          <article class="project-nm-themes__card">
+            <h3 class="project-nm-themes__card-title font-lexend">Who the system was built for matters</h3>
+            <p class="project-nm-themes__card-text">
+              Across all three audiences, the question of whose data trained the AI, whose workflows it was optimized
+              for, and whose patient population it had been validated on surfaced consistently as the most important
+              question practitioners weren&rsquo;t asking.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-nm-impact reveal" aria-labelledby="impact-title">
+      <div class="project-column">
+        <h2 id="impact-title" class="project-block__label font-lexend">Impact</h2>
+
+        <ul class="project-nm-impact__list">
+          <li>
+            <span class="project-nm-impact__name font-lexend">3 distinct audiences served</span>
+            <span class="project-nm-impact__sep" aria-hidden="true">·</span>
+            <span class="project-nm-impact__desc font-lexend">students, clinical staff, administrative staff</span>
+          </li>
+          <li>
+            <span class="project-nm-impact__name font-lexend">Northwestern Medicine</span>
+            <span class="project-nm-impact__sep" aria-hidden="true">·</span>
+            <span class="project-nm-impact__desc font-lexend">one institution, multiple points of entry</span>
+          </li>
+          <li>
+            <span class="project-nm-impact__name font-lexend">Research and facilitation combined</span>
+            <span class="project-nm-impact__sep" aria-hidden="true">·</span>
+            <span class="project-nm-impact__desc font-lexend">
+              not just workshops, but ongoing study of how AI literacy develops across healthcare roles
+            </span>
+          </li>
+          <li>
+            <span class="project-nm-impact__name font-lexend">ResearchBridge</span>
+            <span class="project-nm-impact__sep" aria-hidden="true">·</span>
+            <span class="project-nm-impact__desc font-lexend">the product that emerged from the student-facing work</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer id="contact" class="site-main pb-16 mt-28 sm:mt-36">
+    <div class="project-column border-t border-neutral-100 pt-16">
+      <p class="font-medium text-[14px] text-body">Let&rsquo;s build something thoughtful.</p>
+      <ul class="mt-4 flex flex-col gap-[6px] text-[14px] text-body">
+        <li><a href="https://www.linkedin.com/in/carloscoding/" class="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><button type="button" class="nav-link footer-copy-email" data-email="c.a.rodriguez1999@gmail.com">Email</button></li>
+        <li><a href="https://github.com/CRodriguez245" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+      <p class="mt-10 text-[14px] text-body">&copy; 2026 Carlos Rodriguez</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/cursor/dist/index.js"></script>
+  <script src="../contact-nav.js?v=2"></script>
+  <script src="../script.js?v=71"></script>
+  <script src="../project.js?v=24"></script>
+</body>
+</html>

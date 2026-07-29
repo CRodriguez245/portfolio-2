@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Carlos Rodriguez</title>
+  <meta
+    name="description"
+    content="First-generation Mexican American AI systems researcher from Chicago. Work spanning model, institutional, and community scales of AI accountability."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="./styles.css?v=386" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#80C343",
+            ink: "#000000",
+            indigo: "#130091",
+            muted: "#D3D3D3",
+            body: "#727272",
+            body2: "#737373",
+            card: "#f8f8f8",
+          },
+          fontFamily: {
+            lexend: ['Lexend', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+            helv: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+          maxWidth: {
+            shell: '1000px',
+            nav: '1120px',
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  </script>
+</head>
+
+<body class="bg-white text-body font-helv antialiased about-page">
+  <span id="top" class="scroll-anchor" aria-hidden="true"></span>
+
+  <!-- ============================ NAV ============================ -->
+  <header id="siteHeader" class="site-header sticky top-0 z-50 site-header--transparent">
+    <nav class="site-nav">
+      <a href="./index.html#top" class="nav-brand">Carlos Rodriguez</a>
+
+      <ul class="nav-menu hidden md:flex">
+        <li><a href="./index.html#top" class="nav-link">Home</a></li>
+        <li><a href="./index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="./about.html" class="nav-link" aria-current="page">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+
+      <button id="menuToggle" class="flex flex-col gap-[5px] md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-neutral-100 bg-white md:hidden">
+      <ul class="mx-auto flex max-w-[70rem] flex-col gap-4 px-6 py-4 text-[13px] text-body">
+        <li><a href="./index.html#top" class="nav-link">Home</a></li>
+        <li><a href="./index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="./about.html" class="nav-link" aria-current="page">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+</ul>
+    </div>
+  </header>
+
+  <!-- ============================ PORTRAIT ============================ -->
+  <section class="about-hero" aria-label="Portrait of Carlos Rodriguez">
+    <div class="about-hero__shapes" aria-hidden="true"></div>
+    <div class="about-hero__frame">
+      <img
+        class="about-hero__image"
+        src="./assets/media/aboutmeedges.jpg"
+        alt="Black and white portrait of Carlos Rodriguez"
+        width="5520"
+        height="3408"
+      />
+    </div>
+  </section>
+
+  <main class="about-main">
+    <section class="about-copy" aria-labelledby="about-title">
+      <div class="about-copy__shapes" aria-hidden="true"></div>
+      <div class="about-copy__content">
+        <div class="project-column">
+          <h1 id="about-title" class="about-copy__label font-lexend">About</h1>
+
+          <p class="about-copy__text">
+            I&rsquo;m Carlos Rodriguez, a first-generation Mexican American from Chicago&rsquo;s Southwest Side, and an
+            AI systems researcher whose work centers on representational fidelity: the degree to which AI systems
+            accurately encode, reflect, and serve the humans they claim to represent.
+          </p>
+
+          <p class="about-copy__text">
+            Growing up in Gage Park taught me that the systems designed to serve communities often don&rsquo;t reach
+            them. Working inside Microsoft and Northwestern Medicine taught me how those systems get built. My research
+            is what happens when you take both seriously at the same time.
+          </p>
+
+          <p class="about-copy__text">I work across three scales:</p>
+
+          <div class="about-copy__scales">
+            <div class="about-copy__scale-item">
+              <p class="about-copy__scale">Model level</p>
+              <p class="about-copy__scale-body">
+                I study how demographic identity gets encoded and distorted in ways behavioral benchmarks never catch.
+              </p>
+            </div>
+            <div class="about-copy__scale-item">
+              <p class="about-copy__scale">Institutional level</p>
+              <p class="about-copy__scale-body">
+                I design tools that help people make better decisions with AI, not just faster ones.
+              </p>
+            </div>
+            <div class="about-copy__scale-item">
+              <p class="about-copy__scale">Community level</p>
+              <p class="about-copy__scale-body">
+                I build with communities that existing systems were never designed to serve.
+              </p>
+            </div>
+          </div>
+
+          <p class="about-copy__text">
+            I build the measurement instrument before I build features. I treat constraints as material, not blockers. I
+            ship things real users touch.
+          </p>
+
+          <p class="about-copy__text">
+            Currently splitting my time between research, applied AI work at Northwestern Medicine, and an Ambassador
+            role at Anthropic. If you work on alignment, evaluation, or applied AI in healthcare or
+            education, <a href="https://www.linkedin.com/in/carloscoding/" class="about-copy__link" target="_blank" rel="noopener noreferrer">let&rsquo;s talk</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer id="contact" class="site-main pb-16 mt-28 sm:mt-36">
+    <div class="project-column border-t border-neutral-100 pt-16">
+      <p class="font-medium text-[14px] text-body">Let&rsquo;s build something thoughtful.</p>
+      <ul class="mt-4 flex flex-col gap-[6px] text-[14px] text-body">
+        <li><a href="https://www.linkedin.com/in/carloscoding/" class="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><button type="button" class="nav-link footer-copy-email" data-email="c.a.rodriguez1999@gmail.com">Email</button></li>
+        <li><a href="https://github.com/CRodriguez245" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+      <p class="mt-10 text-[14px] text-body">&copy; 2026 Carlos Rodriguez</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/cursor/dist/index.js"></script>
+    <script src="./contact-nav.js?v=2"></script>
+  <script src="./script.js?v=67"></script>
+  <script src="./project.js?v=27"></script>
+</body>
+</html>

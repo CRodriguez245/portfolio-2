@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who Annotates the Annotators? — Carlos Rodriguez</title>
+  <meta
+    name="description"
+    content="A design zine examining the invisible labor of Global South data annotators and the human cost embedded in AI systems."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="../styles.css?v=391" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "#80C343",
+            ink: "#000000",
+            indigo: "#130091",
+            muted: "#D3D3D3",
+            body: "#727272",
+            body2: "#737373",
+            card: "#f8f8f8",
+          },
+          fontFamily: {
+            lexend: ['Lexend', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+            helv: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+          maxWidth: {
+            shell: '1000px',
+            nav: '1120px',
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  </script>
+</head>
+
+<body class="bg-white text-body font-helv antialiased project-page project-page--annotators">
+  <span id="top" class="scroll-anchor" aria-hidden="true"></span>
+
+  <!-- ============================ NAV ============================ -->
+  <header id="siteHeader" class="site-header sticky top-0 z-50 site-header--transparent">
+    <nav class="site-nav">
+      <a href="../index.html#top" class="nav-brand">Carlos Rodriguez</a>
+
+      <ul class="nav-menu hidden md:flex">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+      </ul>
+
+      <button id="menuToggle" class="flex flex-col gap-[5px] md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+        <span class="block h-[2px] w-6 bg-black transition"></span>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-neutral-100 bg-white md:hidden">
+      <ul class="mx-auto flex max-w-[70rem] flex-col gap-4 px-6 py-4 text-[13px] text-body">
+        <li><a href="../index.html#top" class="nav-link">Home</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="https://docs.google.com/document/d/1cWJPh5gGF9YoPmEdhrjWwOuoAjd-AkBsxdka_XkrA5U/edit?usp=sharing" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="../about.html" class="nav-link">About</a></li>
+        <li class="nav-contact">
+          <button type="button" class="nav-link nav-contact__toggle" aria-expanded="false" aria-haspopup="true">
+            Contact
+          </button>
+          <div class="nav-contact__menu" aria-hidden="true">
+            <button type="button" class="nav-contact__item" data-email="c.a.rodriguez1999@gmail.com">
+              <span>Email</span>
+              <span class="nav-contact__status">Copy</span>
+            </button>
+            <a class="nav-contact__item" href="https://www.linkedin.com/in/carloscoding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="nav-contact__item" href="https://github.com/CRodriguez245" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============================ PROJECT HERO ============================ -->
+  <section class="project-hero project-hero--annotators" aria-labelledby="project-title">
+    <div class="project-hero__media project-hero__media--shapes" aria-hidden="true">
+      <div
+        class="project-hero__shape-grid is-loading"
+        data-metadata-url="../assets/media/shapes/annotator-grid-metadata.json"
+      >
+        <img src="../assets/media/shapes/row1xcol1.svg" alt="" />
+        <img src="../assets/media/shapes/row1xcol2.svg" alt="" />
+        <img src="../assets/media/shapes/row1xcol3.svg" alt="" />
+        <img src="../assets/media/shapes/row1xcol4.svg" alt="" />
+        <img src="../assets/media/shapes/row1xcol5.svg" alt="" />
+        <img src="../assets/media/shapes/row1xcol6.svg" alt="" />
+        <img src="../assets/media/shapes/row1xcol7.svg" alt="" />
+        <img src="../assets/media/shapes/row1xcol8.svg" alt="" />
+        <img src="../assets/media/shapes/row1xcol9.svg" alt="" />
+        <img src="../assets/media/shapes/row1xcol10.svg" alt="" />
+        <img src="../assets/media/shapes/row1xcol11.svg" alt="" />
+        <img src="../assets/media/shapes/row1xcol12.svg" alt="" />
+
+        <img src="../assets/media/shapes/row2xcol1.svg" alt="" />
+        <img src="../assets/media/shapes/row2xcol2.svg" alt="" />
+        <img src="../assets/media/shapes/row2xcol3.svg" alt="" />
+        <img src="../assets/media/shapes/row2xcol4.svg" alt="" />
+        <img src="../assets/media/shapes/row2xcol5.svg" alt="" />
+        <img src="../assets/media/shapes/row2xcol6.svg" alt="" />
+        <img src="../assets/media/shapes/row2xcol7.svg" alt="" />
+        <img src="../assets/media/shapes/row2xcol8.svg" alt="" />
+        <img src="../assets/media/shapes/row2xcol9.svg" alt="" />
+        <img src="../assets/media/shapes/row2xcol10.svg" alt="" />
+        <img src="../assets/media/shapes/row2xcol11.svg" alt="" />
+        <img src="../assets/media/shapes/row2xcol12.svg" alt="" />
+
+        <img src="../assets/media/shapes/row3xcol1.svg" alt="" />
+        <img src="../assets/media/shapes/row3xcol2.svg" alt="" />
+        <img src="../assets/media/shapes/row3xcol3.svg" alt="" />
+        <img src="../assets/media/shapes/row3xcol4.svg" alt="" />
+        <img src="../assets/media/shapes/row3xcol5.svg" alt="" />
+        <img src="../assets/media/shapes/row3xcol6.svg" alt="" />
+        <img src="../assets/media/shapes/row3xcol7.svg" alt="" />
+        <img src="../assets/media/shapes/row3xcol8.svg" alt="" />
+        <img src="../assets/media/shapes/row3xcol9.svg" alt="" />
+        <img src="../assets/media/shapes/row3xcol10.svg" alt="" />
+        <img src="../assets/media/shapes/row3xcol11.svg" alt="" />
+        <img src="../assets/media/shapes/row3xcol12.svg" alt="" />
+
+        <img src="../assets/media/shapes/row4xcol1.svg" alt="" />
+        <img src="../assets/media/shapes/row4xcol2.svg" alt="" />
+        <img src="../assets/media/shapes/row4xcol3.svg" alt="" />
+        <img src="../assets/media/shapes/row4xcol4.svg" alt="" />
+        <img src="../assets/media/shapes/row4xcol5.svg" alt="" />
+        <img src="../assets/media/shapes/row4xcol6.svg" alt="" />
+        <img src="../assets/media/shapes/row4xcol7.svg" alt="" />
+        <img src="../assets/media/shapes/row4xcol8.svg" alt="" />
+        <img src="../assets/media/shapes/row4xcol9.svg" alt="" />
+        <img src="../assets/media/shapes/row4xcol10.svg" alt="" />
+        <img src="../assets/media/shapes/row4xcol11.svg" alt="" />
+        <img src="../assets/media/shapes/row4xcol12.svg" alt="" />
+
+        <img src="../assets/media/shapes/row5xcol1.svg" alt="" />
+        <img src="../assets/media/shapes/row5xcol2.svg" alt="" />
+        <img src="../assets/media/shapes/row5xcol3.svg" alt="" />
+        <img src="../assets/media/shapes/row5xcol4.svg" alt="" />
+        <img src="../assets/media/shapes/row5xcol5.svg" alt="" />
+        <img src="../assets/media/shapes/row5xcol6.svg" alt="" />
+        <img src="../assets/media/shapes/row5xcol7.svg" alt="" />
+        <img src="../assets/media/shapes/row5xcol8.svg" alt="" />
+        <img src="../assets/media/shapes/row5xcol9.svg" alt="" />
+        <img src="../assets/media/shapes/row5xcol10.svg" alt="" />
+        <img src="../assets/media/shapes/row5xcol11.svg" alt="" />
+        <img src="../assets/media/shapes/row5xcol12.svg" alt="" />
+      </div>
+      <div
+        id="annotator-shape-tooltip"
+        class="annotator-shape-tooltip"
+        role="tooltip"
+        aria-hidden="true"
+      >
+        <div class="annotator-shape-tooltip__header">
+          <div>
+            <span class="annotator-shape-tooltip__label">Annotator</span>
+            <strong class="annotator-shape-tooltip__name"></strong>
+          </div>
+          <div class="annotator-shape-tooltip__theme-group">
+            <span class="annotator-shape-tooltip__label">Dominant Theme</span>
+            <strong class="annotator-shape-tooltip__theme"></strong>
+          </div>
+        </div>
+        <div class="annotator-shape-tooltip__quote-group">
+          <span class="annotator-shape-tooltip__label">Quote</span>
+          <blockquote class="annotator-shape-tooltip__quote"></blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-hero__inner">
+      <div class="project-hero__content reveal">
+        <span class="impact-tag">AI Equity Zine</span>
+
+        <h1 id="project-title" class="project-hero__title font-lexend">
+          <span class="project-hero__title-main">Who Annotates the Annotators? </span>
+          <span class="project-hero__title-sub">A Design Zine on the Human Labor Behind AI</span>
+        </h1>
+
+        <p class="project-hero__lede">
+          Examining the invisible labor and human cost behind AI systems.
+        </p>
+
+        <dl class="project-hero__meta">
+          <div class="project-hero__meta-item">
+            <dt>Role</dt>
+            <dd>Researcher, Designer<br />&amp; Data Visualizer</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Collaborator</dt>
+            <dd>Shruthi Iyer</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Institution</dt>
+            <dd>Institute<br />of Design</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Format</dt>
+            <dd>Design<br />Zine</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Tools</dt>
+            <dd>Research, Editorial Design, Figma</dd>
+          </div>
+          <div class="project-hero__meta-item">
+            <dt>Methods</dt>
+            <dd>Data Synthesis, Visualization Design, Qualitative Analysis</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <main class="site-main project-main">
+    <section class="project-block project-annotators-brief reveal" aria-labelledby="project-brief-title">
+      <div class="project-column">
+        <h2 id="project-brief-title" class="project-block__label font-lexend">Project Brief</h2>
+        <p class="project-block__text">
+          Global education datasets are presented as objective measurements of reality. They are not. The ability to
+          submit data is tied to political conditions, economic stability, and national priorities. Some countries
+          cannot report because institutional capacity has deteriorated. Others choose not to because they face no
+          consequences for opting out.
+        </p>
+        <p class="project-block__text">
+          This project visualizes those patterns &mdash; and then asks a harder question: where do the countries that
+          disappear from these datasets go? The answer, in Venezuela&rsquo;s case, is into the AI labor supply chain.
+          The same conditions that cause a country to vanish from UNESCO reporting are the conditions under which data
+          annotation work becomes one of the only available sources of dollar-denominated income. Visibility is not
+          neutral. This zine makes that argument across eight visualizations, moving from the global system to a single
+          annotator&rsquo;s screen.
+        </p>
+
+        <div class="project-annotators-viz">
+          <h3 class="project-annotators-viz__title font-lexend">
+            Where Venezuela&rsquo;s Data Is Strongest and Where It Disappears
+          </h3>
+          <p class="project-annotators-viz__caption">
+            Each dot represents a spatial aggregation of UNESCO and World Bank education indicators.<br />
+            Darker dots indicate stronger or more complete data signals.
+          </p>
+          <div class="project-annotators-viz__legend font-lexend" role="list" aria-label="Map legend">
+            <div class="project-annotators-viz__legend-item" role="listitem">
+              <span class="project-annotators-viz__swatch project-annotators-viz__swatch--strong" aria-hidden="true"></span>
+              Stronger reporting
+            </div>
+            <div class="project-annotators-viz__legend-item" role="listitem">
+              <span class="project-annotators-viz__swatch project-annotators-viz__swatch--weak" aria-hidden="true"></span>
+              Weaker or missing reporting
+            </div>
+          </div>
+          <figure class="project-annotators-viz__figure">
+            <div
+              class="project-annotators-viz__map"
+              data-choropleth-src="../assets/media/shapes/venezuela-choropleth.svg"
+              role="img"
+              aria-label="Dot-grid map of Venezuela showing stronger education data reporting in dark blue and weaker or missing reporting in light green"
+            ></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-annotators-argument reveal" aria-labelledby="project-argument-title">
+      <div class="project-column">
+        <h2 id="project-argument-title" class="project-block__label font-lexend">Argument</h2>
+        <p class="project-block__text">
+          Global education datasets are presented as objective measurements of reality. They are not. The ability to
+          submit data is tied to political conditions, economic stability, and national priorities. Some countries
+          cannot report because institutional capacity has deteriorated. Others choose not to because they face no
+          consequences for opting out.
+        </p>
+        <p class="project-block__text">
+          This project visualizes those patterns &mdash; and then asks a harder question: where do the countries that
+          disappear from these datasets go? The answer, in Venezuela&rsquo;s case, is into the AI labor supply chain.
+          The same conditions that cause a country to vanish from UNESCO reporting are the conditions under which data
+          annotation work becomes one of the only available sources of dollar-denominated income. Visibility is not
+          neutral. This zine makes that argument across eight visualizations, moving from the global system to a single
+          annotator&rsquo;s screen.
+        </p>
+        <p class="project-annotators-argument__statement font-lexend">
+          Where data is missing, narratives get invented by markets,<br />
+          governments, or algorithms.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-block project-annotators-questions reveal" aria-labelledby="research-questions-title">
+      <div class="project-column">
+        <h2 id="research-questions-title" class="project-block__label font-lexend">Research Questions</h2>
+        <p class="project-block__text">
+          Global education datasets present themselves as objective measurements of reality. They are not &mdash; they are
+          records of who participates, who opts out, and who loses the capacity to be counted at all. These five questions
+          guided the investigation, moving from the structural dynamics of global reporting to the lived experience of the
+          workers those dynamics produce.
+        </p>
+
+        <div class="project-takeaways__list">
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">How do countries disappear from global education datasets?</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  Disappearance from global datasets is not a single event &mdash; it is a process. Countries exit
+                  international reporting systems through two distinct pathways. The first is institutional decline:
+                  conflict, economic contraction, sanctions, or administrative breakdown erodes the capacity to collect
+                  and submit data. The second is strategic withdrawal: countries with strong institutions and political
+                  leverage choose not to participate when compliance offers no benefit. Both pathways produce the same
+                  gap in the dataset. Neither is labeled as such by the data itself. Missing data looks identical whether
+                  it reflects collapse or choice.
+                </p>
+          </div>
+      </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">How do political decisions influence global reporting independently of statistical capacity?</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The World Bank Statistical Capacity Index measures the formal strength of a country&rsquo;s national
+                  statistical system &mdash; its methods, surveys, and data standards. It does not measure willingness to
+                  participate in specific reporting pipelines. A country can maintain a high SCI score and simultaneously
+                  withdraw from UNESCO reporting due to political decisions, administrative disruption, or shifting
+                  national priorities. Venezuela illustrates this precisely: its SCI score remained relatively stable even
+                  as its UNESCO reporting collapsed. The divergence proves that disappearing from a dataset is not the
+                  same as losing the ability to produce data. It can simply mean losing the conditions &mdash; political,
+                  economic, institutional &mdash; required to keep submitting it.
+                </p>
+        </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">Why does Venezuela disappear from UNESCO data while remaining active in AI labor markets?</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  Venezuela&rsquo;s trajectory across two decades shows a country moving between two global systems
+                  simultaneously &mdash; exiting one as it enters another. As its national reporting system weakened and
+                  its presence in international education indicators faded, many Venezuelans entered the digital labor
+                  markets that support artificial intelligence: annotating images, labeling text, moderating content, and
+                  training the models that power AI systems globally. The disappearance from one dataset and the emergence
+                  in another is not coincidental. Both reflect the same underlying conditions &mdash; economic contraction,
+                  institutional weakening, and the need for dollar-denominated income in a hyperinflationary economy. The
+                  same forces that made UNESCO reporting unsustainable made annotation work attractive.
+          </p>
+        </div>
+      </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">How can qualitative testimony complement quantitative data to make systemic conditions human?</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  Quantitative data surfaces patterns. It cannot explain what those patterns feel like from inside them.
+                  The 51 annotator quotes collected from journalism, academic research, and public testimony do what the
+                  choropleth maps and scatter plots cannot &mdash; they put a face on the structural conditions the data
+                  describes. A worker describing falling asleep at the keyboard while waiting for tasks to appear is not an
+                  anecdote. It is evidence of the same infrastructure failures that show up as gaps in Venezuela&rsquo;s
+                  electricity grid data. The qualitative and quantitative layers of this project are not separate
+                  arguments. They are the same argument told at different scales.
+                </p>
+    </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">How can visualization communicate emotion without sacrificing rigor?</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The pen plotter visualization is the clearest answer this project offers to that question. The decision
+                  to encode 51 annotator quotes as physical glyphs &mdash; drawn one at a time by a machine over hours
+                  &mdash; was not decorative. It was methodological. The physical drawing process mirrors the labor it
+                  represents: mechanical, repetitive, accumulating into something larger than any individual mark. A
+                  digital chart could have communicated the same thematic distribution faster and more legibly. It could
+                  not have communicated what it feels like to produce that work. Form and medium are not neutral choices.
+                  They are arguments about what the data means and what the reader should feel encountering it.
+                </p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-annotators-approach reveal" aria-labelledby="approach-title">
+      <div class="project-column">
+        <h2 id="approach-title" class="project-block__label font-lexend">Approach</h2>
+        <p class="project-block__text">
+          Rather than producing disconnected charts, the zine was designed as a single narrative. Each visualization
+          answers one question while setting up the next. The structure moves progressively from global systems to
+          institutional dynamics to a single country to individual workers &mdash; narrowing the lens until the system
+          becomes a person.
+        </p>
+        <p class="project-block__text">Three design principles governed every visualization:</p>
+
+        <div class="project-annotators-approach__grid">
+          <article class="project-annotators-approach__card">
+            <div class="project-annotators-approach__icon-slot">
+              <img
+                src="../assets/media/approach_dataartistry_icon.png"
+                alt=""
+                class="project-annotators-approach__icon"
+                width="120"
+                height="80"
+              />
+            </div>
+            <h3 class="project-annotators-approach__title font-lexend">Data Artistry</h3>
+            <p class="project-annotators-approach__text">
+              The pen plotter visualization demonstrates that physical media can communicate something digital charts
+              cannot.
+            </p>
+          </article>
+
+          <article class="project-annotators-approach__card">
+            <div class="project-annotators-approach__icon-slot">
+              <img
+                src="../assets/media/approach_certaintyprecision_icon.png"
+                alt=""
+                class="project-annotators-approach__icon"
+                width="96"
+                height="96"
+              />
+            </div>
+            <h3 class="project-annotators-approach__title font-lexend">Certainty &amp; Precision</h3>
+            <p class="project-annotators-approach__text">
+              The project asks why data is missing rather than assuming absent data means absent conditions.
+            </p>
+          </article>
+
+          <article class="project-annotators-approach__card">
+            <div class="project-annotators-approach__icon-slot">
+              <img
+                src="../assets/media/approach_literacyaccessibility_icon.png"
+                alt=""
+                class="project-annotators-approach__icon"
+                width="96"
+                height="96"
+              />
+          </div>
+            <h3 class="project-annotators-approach__title font-lexend">Literacy &amp; Accessibility</h3>
+            <p class="project-annotators-approach__text">
+              Visualizations move from familiar maps into increasingly abstract representations, building reader
+              intuition before introducing complexity.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-annotators-divider reveal" aria-labelledby="divider-title">
+      <div class="project-column">
+        <h2 id="divider-title" class="project-annotators-divider__title font-lexend">The Educational Divide</h2>
+        <p class="project-annotators-divider__subtitle font-lexend">Zine Visualizations</p>
+      </div>
+    </section>
+
+    <section class="project-annotators-global reveal" aria-labelledby="global-system-title">
+      <div class="project-annotators-global__inner">
+        <div class="project-annotators-global__copy">
+          <h2 id="global-system-title" class="project-annotators-global__title font-lexend">Global System</h2>
+          <p class="project-annotators-global__subtitle font-lexend">Section 1</p>
+        </div>
+        <figure class="project-annotators-global__figure">
+          <div
+            class="project-annotators-global__map"
+            data-global-map-src="../assets/media/shapes/globalsystems.svg"
+            role="img"
+            aria-label="Dot-grid world map with continents shaded in distinct colors"
+          ></div>
+        </figure>
+              </div>
+    </section>
+
+    <section
+      class="project-annotators-choropleth-story reveal"
+      data-choropleth-story
+      aria-label="Reporting and readiness choropleth maps"
+    >
+      <div class="project-annotators-choropleth-story__sticky">
+        <div class="project-column project-annotators-choropleth-story__column">
+          <div class="project-annotators-choropleth-story__copy">
+            <div
+              class="project-annotators-choropleth-story__panel is-active"
+              data-choropleth-panel="reporting"
+            >
+              <h3 id="reporting-map-title" class="project-annotators-viz__title font-lexend">
+                Reporting vs Non-Reporting Choropleth
+              </h3>
+              <p class="project-block__text">
+                The first map establishes the foundation: which countries report education indicators to UNESCO and
+                which do not. The key insight is that missing data has two causes &mdash; institutional decline and
+                strategic choice. Both produce the same gap in the dataset. Neither is labeled as such by the data
+                itself.
+              </p>
+              <p class="project-block__text">
+                High-income countries appear in the non-reporting column too &mdash; not because they lack capacity,
+                but because they face no consequences for opting out. That asymmetry is the first structural argument
+                the project makes.
+              </p>
+              <div class="project-annotators-viz__legend font-lexend" role="list" aria-label="Map legend">
+                <div class="project-annotators-viz__legend-item" role="listitem">
+                  <span class="project-annotators-viz__swatch project-annotators-viz__swatch--weak" aria-hidden="true"></span>
+                  Reporting
+                </div>
+                <div class="project-annotators-viz__legend-item" role="listitem">
+                  <span class="project-annotators-viz__swatch project-annotators-viz__swatch--muted" aria-hidden="true"></span>
+                  Non-reporting
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="project-annotators-choropleth-story__panel"
+              data-choropleth-panel="readiness"
+              aria-hidden="true"
+            >
+              <h3 id="readiness-map-title" class="project-annotators-viz__title font-lexend">
+                Readiness Index Choropleth
+              </h3>
+              <p class="project-block__text">
+                The readiness index is built entirely from countries that submit complete datasets. It presents itself
+                as a global measurement. It is not &mdash; it is a map of who participates. Countries facing the most
+                significant educational disruptions often do not appear, not because their readiness is high, but
+                because the data required to calculate the index was never submitted.
+              </p>
+              <div class="project-annotators-readiness__legend" aria-label="Readiness Index scale">
+                <span class="project-annotators-readiness__legend-label font-lexend">Readiness Index</span>
+                <img
+                  class="project-annotators-readiness__bar"
+                  src="../assets/media/shapes/readinessindexbar.svg"
+                  alt=""
+                  width="210"
+                  height="6"
+                />
+                <div class="project-annotators-readiness__legend-range font-lexend">
+                  <span>0.00</span>
+                  <span>1.00</span>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-annotators-choropleth-story__captions">
+            <p
+              class="project-annotators-choropleth__caption project-annotators-choropleth-story__caption is-active font-lexend"
+              data-choropleth-caption="reporting"
+            >
+              Missing data is not random. It reflects both capacity loss and power.
+            </p>
+            <p
+              class="project-annotators-choropleth__caption project-annotators-choropleth-story__caption font-lexend"
+              data-choropleth-caption="readiness"
+              aria-hidden="true"
+            >
+              The index looks complete. It is a map of who participates, not of what exists.
+              </p>
+            </div>
+
+          <div class="project-annotators-choropleth-story__maps">
+            <figure
+              class="project-annotators-choropleth__figure project-annotators-choropleth-story__map is-active"
+              data-choropleth-map-panel="reporting"
+            >
+              <div
+                class="project-annotators-choropleth__map"
+                data-choropleth-map-src="../assets/media/shapes/choropleth_idincluded.svg"
+                role="img"
+                aria-label="World map with reporting countries shaded green and non-reporting countries shaded light gray"
+              ></div>
+              <div class="reporting-country-tooltip" role="tooltip" aria-hidden="true">
+                <strong class="reporting-country-tooltip__name"></strong>
+              </div>
+            </figure>
+
+            <figure
+              class="project-annotators-choropleth__figure project-annotators-choropleth-story__map"
+              data-choropleth-map-panel="readiness"
+              aria-hidden="true"
+            >
+              <div
+                class="project-annotators-choropleth__map"
+                data-choropleth-map-src="../assets/media/shapes/choropleth2.svg"
+                role="img"
+                aria-label="World map colored by readiness index from light green to dark green"
+              ></div>
+              <div class="reporting-country-tooltip" role="tooltip" aria-hidden="true">
+                <strong class="reporting-country-tooltip__name"></strong>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-annotators-profile reveal" aria-labelledby="readiness-profile-title">
+      <div class="project-column">
+        <div class="project-annotators-profile__layout">
+          <div class="project-annotators-profile__copy">
+            <h3 id="readiness-profile-title" class="project-annotators-viz__title font-lexend">
+              Readiness Profile Visualization
+            </h3>
+            <p class="project-block__text">
+              Instead of collapsing everything into a single score, each country is represented as a GDP circle with
+              flowing curves showing individual readiness indicators beneath it. Internal variation is preserved rather
+              than averaged away. Countries with strong reporting capacity show smoother, more aligned curves.
+              Countries with weaker or inconsistent reporting show fragmented or incomplete patterns.
+            </p>
+            <p class="project-block__text">
+              The visualization makes visible what a traditional bubble plot hides: that a single score conceals as
+              much as it reveals.
+            </p>
+      </div>
+          <figure class="project-annotators-profile__figure">
+            <img
+              class="project-annotators-profile__diagram"
+              src="../assets/media/shapes/readinessprofile-legend.svg"
+              alt="Diagram of a country GDP circle with flowing curves beneath it representing percent of schools with internet access and percent of pre-primary enrollment"
+              width="190"
+              height="354"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-annotators-profiles reveal" aria-label="Readiness profiles by year">
+      <div class="project-column project-annotators-profiles__column">
+        <div class="project-annotators-profiles__group">
+          <h3 class="project-annotators-profiles__year font-lexend">2022</h3>
+          <div class="project-annotators-profiles__grid">
+            <div class="project-annotators-profiles__row project-annotators-profiles__row--trio">
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/botswana-rp.svg" alt="Readiness profile for Botswana" width="132" height="368" />
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/caboverde-rp.svg" alt="Readiness profile for Cabo Verde" width="143" height="431" />
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/colombia-rp.svg" alt="Readiness profile for Colombia" width="127" height="357" />
+            </div>
+        </div>
+      </div>
+
+        <div class="project-annotators-profiles__group">
+          <h3 class="project-annotators-profiles__year font-lexend">2023</h3>
+          <div class="project-annotators-profiles__grid">
+            <div class="project-annotators-profiles__row">
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/uruguay-rp.svg" alt="Readiness profile for Uruguay" width="283" height="766" />
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/argentina-rp.svg" alt="Readiness profile for Argentina" width="220" height="500" />
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/djibouti-rp.svg" alt="Readiness profile for Djibouti" width="108" height="294" />
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/kenya-rp.svg" alt="Readiness profile for Kenya" width="85" height="246" />
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/malawi-rp.svg" alt="Readiness profile for Malawi" width="81" height="158" />
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/estawana-rp.svg" alt="Readiness profile for Eswatini" width="78" height="188" />
+            </div>
+            <div class="project-annotators-profiles__row">
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/panama-rp.svg" alt="Readiness profile for Panama" width="256" height="399" />
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/jamaica-rp.svg" alt="Readiness profile for Jamaica" width="165" height="637" />
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/tunisia-rp.svg" alt="Readiness profile for Tunisia" width="139" height="476" />
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/srilanka-rp.svg" alt="Readiness profile for Sri Lanka" width="130" height="410" />
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/timor-leste-rp.svg" alt="Readiness profile for Timor-Leste" width="118" height="269" />
+              <img class="project-annotators-profiles__item" src="../assets/media/shapes/mali-rp.svg" alt="Readiness profile for Mali" width="53" height="113" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-block project-annotators-connectivity reveal" aria-labelledby="connectivity-title">
+      <div class="project-column">
+        <h3 id="connectivity-title" class="project-annotators-viz__title font-lexend">
+          Connectivity and Reporting
+        </h3>
+        <p class="project-block__text">
+          Countries are grouped by reporting status across two decades. Each dot is colored by its statistical capacity
+          rating. The critical finding: high-capacity countries appear in the non-reporting column too. Non-reporting is
+          not always a capacity problem. Sometimes it is a political decision.
+        </p>
+        <p class="project-block__text">
+          This visualization sets up the Venezuela pivot directly &mdash; a country can maintain formal statistical
+          infrastructure while simultaneously withdrawing from international reporting pipelines.
+        </p>
+      </div>
+
+      <div class="project-annotators-connectivity-story" data-connectivity-story>
+        <div class="project-annotators-connectivity-story__sticky">
+          <div class="project-annotators-connectivity-story__stage">
+            <aside
+              class="project-annotators-connectivity-story__copy"
+              data-connectivity-copy
+              aria-hidden="true"
+            >
+              <h3 class="project-annotators-connectivity-story__heading font-lexend">
+                Understanding Venezuela&rsquo;s Position
+              </h3>
+              <p class="project-annotators-connectivity-story__text">
+                The Statistical Capacity Index measures the formal strength of a country&rsquo;s national statistical
+                system, including methods, surveys, and data standards. It does not measure participation in specific
+                reporting pipelines such as those used by UNESCO. A country can maintain a high SCI score and still not
+                submit UNESCO indicators due to administrative disruption, political decisions, sanctions, or shifting
+                national priorities. Venezuela&rsquo;s recent data illustrates this distinction. Its reporting status
+                declines even as its SCI score remains relatively high, showing that non reporting is not always caused
+                by a loss of technical capacity. It can also result from conditions that limit or redirect how a country
+                engages with international data systems.
+              </p>
+            </aside>
+
+            <figure class="project-annotators-connectivity__figure">
+              <div
+                class="project-annotators-connectivity__chart"
+                data-connectivity-chart-src="../assets/media/shapes/connectivityreporting.svg"
+                role="img"
+                aria-label="Dot plot of countries grouped into full, partial, and empty reporting columns from 2000 to 2020, colored by statistical capacity rating"
+              ></div>
+            </figure>
+            </div>
+            </div>
+      </div>
+    </section>
+
+    <section class="project-annotators-venezuela reveal" aria-labelledby="venezuela-section-title">
+      <div class="project-annotators-venezuela__inner">
+        <div class="project-annotators-venezuela__grid" aria-hidden="true">
+          <img src="../assets/media/shapes/ven1-r1c1.svg" alt="" width="82" height="79" />
+          <img src="../assets/media/shapes/ven1-r1c2.svg" alt="" width="77" height="66" />
+          <img src="../assets/media/shapes/ven1-r1c3.svg" alt="" width="90" height="92" />
+          <img src="../assets/media/shapes/ven1-r1c4.svg" alt="" width="86" height="72" />
+          <img src="../assets/media/shapes/ven1-r1c5.svg" alt="" width="78" height="70" />
+          <img src="../assets/media/shapes/ven1-r2c1.svg" alt="" width="71" height="71" />
+          <img src="../assets/media/shapes/ven1-r2c2.svg" alt="" width="76" height="92" />
+          <img src="../assets/media/shapes/ven1-r2c3.svg" alt="" width="70" height="70" />
+          <img src="../assets/media/shapes/ven1-r2c4.svg" alt="" width="84" height="87" />
+          <img src="../assets/media/shapes/ven1-r2c5.svg" alt="" width="72" height="70" />
+            </div>
+
+        <div class="project-annotators-venezuela__copy">
+          <h2 id="venezuela-section-title" class="project-annotators-venezuela__title font-lexend">Venezuela</h2>
+          <p class="project-annotators-venezuela__subtitle font-lexend">Section 2</p>
+            </div>
+
+        <div class="project-annotators-venezuela__grid" aria-hidden="true">
+          <img src="../assets/media/shapes/ven2-r1c1.svg" alt="" width="71" height="83" />
+          <img src="../assets/media/shapes/ven2-r1c2.svg" alt="" width="82" height="75" />
+          <img src="../assets/media/shapes/ven2-r1c3.svg" alt="" width="86" height="88" />
+          <img src="../assets/media/shapes/ven2-r1c4.svg" alt="" width="80" height="69" />
+          <img src="../assets/media/shapes/ven2-r1c5.svg" alt="" width="67" height="70" />
+          <img src="../assets/media/shapes/ven2-r2c1.svg" alt="" width="68" height="74" />
+          <img src="../assets/media/shapes/ven2-r2c2.svg" alt="" width="89" height="94" />
+          <img src="../assets/media/shapes/ven2-r2c3.svg" alt="" width="72" height="59" />
+          <img src="../assets/media/shapes/ven2-r2c4.svg" alt="" width="72" height="72" />
+          <img src="../assets/media/shapes/ven2-r2c5.svg" alt="" width="71" height="74" />
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="project-block project-annotators-reporting-decline reveal"
+      aria-labelledby="reporting-decline-title"
+    >
+      <div class="project-column">
+        <h3 id="reporting-decline-title" class="project-annotators-viz__title font-lexend">
+          Venezuela&rsquo;s Reporting Decline
+        </h3>
+            <p class="project-block__text">
+          Multiple normalized indicators are layered across Venezuela&rsquo;s recent history. The critical finding is
+          visible as a divergence: statistical capacity remained relatively strong while UNESCO reporting collapsed.
+          Disappearing from an international dataset is not the same as losing the technical ability to produce
+          statistics. Venezuela retained the capability. It lost the conditions &mdash; political, economic,
+          institutional &mdash; required to continue participating.
+        </p>
+      </div>
+
+      <figure class="project-annotators-reporting-decline__figure">
+        <div
+          class="project-annotators-reporting-decline__chart"
+          data-reporting-decline-src="../assets/media/shapes/venezuelasreportingdecline.svg"
+          role="img"
+          aria-label="Line chart of normalized SCI Capacity, GDP Growth, and Inflation for Venezuela from 2000 to 2022"
+        ></div>
+      </figure>
+    </section>
+
+    <section
+      class="project-block project-annotators-quadrants reveal"
+      aria-labelledby="ai-labor-quadrants-title"
+    >
+      <div class="project-column">
+        <h3 id="ai-labor-quadrants-title" class="project-annotators-viz__title font-lexend">
+          AI Labor Quadrants
+        </h3>
+            <p class="project-block__text">
+          Countries are positioned on two axes: UNESCO reporting completeness and AI ecosystem presence or data labor
+          intensity. The AI ecosystem axis was constructed from public sources including OpenAlex, arXiv, Crunchbase,
+          OECD AI Observatory, Hugging Face, investigative journalism, Fairwork, and evidence of annotation work on
+          Toloka, Appen, and Remotasks.
+        </p>
+        <p class="project-block__text">Four quadrants emerge:</p>
+        <ul class="project-annotators-quadrants__list">
+          <li>
+            <strong>Structural AI Powers</strong> &mdash; strong reporting, substantial AI ecosystems
+          </li>
+          <li>
+            <strong>Institutional but Under-AI</strong> &mdash; consistent reporting, low AI activity
+          </li>
+          <li>
+            <strong>Data Shadows / Annotation Hubs</strong> &mdash; weak reporting, high AI labor participation
+          </li>
+          <li>
+            <strong>Neglected Periphery</strong> &mdash; weak reporting, limited AI presence
+          </li>
+        </ul>
+          </div>
+
+      <figure class="project-annotators-quadrants__figure">
+        <img
+          class="project-annotators-quadrants__chart"
+          src="../assets/media/shapes/AILaborQuadrant.svg"
+          alt="Scatter plot of countries across UNESCO reporting completeness and AI ecosystem presence, grouped into four quadrants: Annotation Hubs, Structural AI Powers, Neglected Periphery, and Institutional but Under-AI"
+          width="801"
+          height="734"
+        />
+      </figure>
+
+      <div class="project-column">
+        <p class="project-block__text project-annotators-quadrants__closing">
+          Venezuela appears as a Data Shadow. The quadrant makes the central argument of the entire zine visible as a
+          spatial relationship &mdash; the countries that disappear from datasets are often the same countries building
+          the datasets AI learns from.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="project-block project-annotators-penplotter reveal"
+      aria-labelledby="penplotter-title"
+    >
+      <div class="project-column">
+        <h3 id="penplotter-title" class="project-annotators-viz__title font-lexend">
+          Pen Plotter Visualization
+        </h3>
+
+        <div class="project-annotators-penplotter__videos">
+            <video
+            class="project-annotators-penplotter__video"
+            src="../assets/media/penplottervid.mov"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            aria-label="Pen plotter drawing annotator glyphs"
+          ></video>
+          <video
+            class="project-annotators-penplotter__video"
+            src="../assets/media/penplottervid2.mov"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-label="Pen plotter drawing a grid of annotator glyphs"
+            ></video>
+          </div>
+
+        <p class="project-block__text">This is the project&rsquo;s most experimental piece.</p>
+        <p class="project-block__text">
+          Instead of plotting quantitative values, 51 quotes from Venezuelan AI annotators were encoded as glyphs. Each
+          quote became one mark. Different shapes represent recurring themes: exploitation, uncertainty, infrastructure
+          failure, economic hardship, dehumanization.
+        </p>
+        <p class="project-block__text">
+          The pen plotter was chosen deliberately. The physical drawing process &mdash; mechanical, repetitive, one mark
+          at a time &mdash; mirrors the labor it represents. A digital chart communicates the same data faster. The pen
+          plotter communicates something a digital chart cannot: what it feels like to produce something of value through
+          repetitive mechanical work, invisibly, at scale.
+        </p>
+        <p class="project-block__text">
+          The grid structure represents the larger system. The individual glyphs preserve the uniqueness of each voice
+          within it.
+        </p>
+        </div>
+
+      <figure
+        class="project-annotators-penplotter__figure"
+        data-penplotter-src="../assets/media/shapes/annotator-day-2.svg"
+        data-metadata-url="../assets/media/shapes/annotator-grid-metadata.json"
+      >
+        <div
+          class="project-annotators-penplotter__chart"
+          role="img"
+          aria-label="Grid of pen-plotted glyphs encoding quotes from Venezuelan AI annotators. Hover or focus a glyph to read its quote."
+        ></div>
+        <div
+          id="penplotter-shape-tooltip"
+          class="annotator-shape-tooltip"
+          role="tooltip"
+          aria-hidden="true"
+        >
+          <div class="annotator-shape-tooltip__header">
+            <div>
+              <span class="annotator-shape-tooltip__label">Annotator</span>
+              <strong class="annotator-shape-tooltip__name"></strong>
+      </div>
+            <div class="annotator-shape-tooltip__theme-group">
+              <span class="annotator-shape-tooltip__label">Dominant Theme</span>
+              <strong class="annotator-shape-tooltip__theme"></strong>
+            </div>
+          </div>
+          <div class="annotator-shape-tooltip__quote-group">
+            <span class="annotator-shape-tooltip__label">Quote</span>
+            <blockquote class="annotator-shape-tooltip__quote"></blockquote>
+          </div>
+        </div>
+      </figure>
+    </section>
+
+    <section
+      class="project-block project-annotators-quotes reveal"
+      aria-labelledby="annotator-quotes-title"
+    >
+      <div class="project-column">
+        <h3 id="annotator-quotes-title" class="project-annotators-viz__title font-lexend">
+          Annotator Quotes
+        </h3>
+        <p class="project-block__text">
+          The project concludes with the voices it was built to represent. Fifty-one statements from Venezuelan data
+          annotators, synthesized from journalism, academic research, and public testimony.
+        </p>
+      </div>
+
+      <div class="project-annotators-quotes__stage" aria-label="Annotator quotes arranged vertically along a shared center line">
+        <h4 class="project-annotators-quotes__visual-title font-lexend">
+          <span class="project-annotators-quotes__visual-title-main">51 Quotes</span>
+          <span class="project-annotators-quotes__visual-title-sub">from Venezuelan Data Annotators</span>
+        </h4>
+        <ul class="project-annotators-quotes__rail">
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;There&#x27;s more data than there are searches.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Oskarina Fuentes</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;We are slaves to the Latin American system.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Oskarina Fuentes</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;The work is enslaving and poorly-paid.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I have trouble sleeping… I live with the computer on 24 hours a day.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous woman from Cabimas</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;In Venezuela, you don&#x27;t live, you survive.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Oskarina Fuentes</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I don&#x27;t like the uncertainty of not knowing when an assignment will come out.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Oskarina Fuentes</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I was terrified they would close my account and I&#x27;d lose everything.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;There could come a time when there are simply no more tasks.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;Annotation work was attractive because it had so few access barriers.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Oskarina Fuentes</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;The salary doesn&#x27;t cover half a dozen eggs… not enough to buy bread.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;It&#x27;s creepy the things we do for pennies.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Melba</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;Our paychecks don&#x27;t cover anything.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous annotator</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;We all cooperate; we are a team.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Melba</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I used to be an engineer. Now I spend my days clicking.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Maria</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I am treated like a robot; they would prefer I were a robot.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;They treat us like we&#x27;re not human.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;It has been difficult to earn the minimum, which is ten dollars a week.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I leave my computer and phone charging all night hoping a task shows up.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous older man</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;If the electricity goes out, I lose the task and get penalized.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous Venezuelan worker</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I failed a task because my internet dropped for seconds.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous Venezuelan annotator</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I cried when they suspended my account. It meant no food that week.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous Venezuelan clickworker</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;It feels like gambling. Maybe today there is work, maybe not.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous Venezuelan mother</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;If a task doesn&#x27;t come up, I&#x27;m just waiting… days, weeks, even months can go by without anything coming up at all.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Oskarina Fuentes</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;My son helps me with the English words when the tasks are too hard.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I worked eight hours and earned less than two dollars.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous TolokaAI worker</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;They said I did &#x27;poor quality work&#x27; but gave no explanation.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I don&#x27;t understand why the system rejected me. They never tell you.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;The instructions contradict each other. You end up guessing.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous engineer</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;If you ask for help, they tell you to read the instructions again.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I fail tasks I haven&#x27;t even started yet.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I have a degree, but this is the only job that pays in dollars.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous content labeler</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I never know how much I will earn this week.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous mother</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;When the electricity cuts, everything collapses.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous Venezuelan Telegram groups</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;The platform banned my husband for no reason. We depended on that money.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;Sometimes the tasks are disturbing; we have to see violent things.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I don&#x27;t want my kids to see what I have to label.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous teacher</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I get migraines from staring at the screen for so long.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I wake up at 3 AM to catch the good tasks.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;Sometimes I fall asleep at the keyboard.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I prayed they wouldn&#x27;t close my account. It was all I had.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I used to teach. Now I just click.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;We do the hard work; the AI gets the credit.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I only eat once a day when the tasks are slow.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;My family depends on every cent I make here.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;It&#x27;s humiliating. They score everything we do.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;My account was closed for &#x27;fraud&#x27; even though I did nothing wrong.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;The platform feels like a lottery. Some days you win, most days you lose.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I work 12 hours but only get paid for tasks they accept.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+          <li class="project-annotators-quotes__item">
+            <div class="project-annotators-quotes__quote-slot">
+              <span class="project-annotators-quotes__text">&ldquo;I&#x27;m scared AI will replace even this miserable job.&rdquo;</span>
+            </div>
+            <div class="project-annotators-quotes__name-slot">
+              <span class="project-annotators-quotes__attribution">Anonymous</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="project-column">
+        <p class="project-block__text project-annotators-quotes__closing">
+          They transform macro-level statistics into lived human experiences. By the time a reader reaches these quotes,
+          they have seen the global system that produced the conditions these workers describe. The quotes land
+          differently because of everything that came before them.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="project-block project-annotators-decisions reveal"
+      aria-labelledby="design-decisions-title"
+    >
+      <div class="project-column">
+        <h2 id="design-decisions-title" class="project-block__label font-lexend">Design Decisions</h2>
+        <p class="project-block__text">
+          Every decision in this project was made in service of one claim: that how you show data is itself an argument
+          about what data means. A choropleth that grays out missing countries is making a claim. A pen plotter that
+          draws for hours is making a claim. A zine that cannot be skipped is making a claim. The four decisions below
+          were not aesthetic choices &mdash; they were the methodology.
+        </p>
+
+        <div class="project-takeaways__list">
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">The zine format was an argument about reading.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  Most data visualization work assumes a user who navigates freely &mdash; clicking, filtering, jumping
+                  between views. That assumption is a design choice, and it is the wrong one for this project. A
+                  dashboard about data inequality lets you opt out of the parts that are uncomfortable. A zine does not.
+                  Every page assumes you have seen the one before it. The format enforces the argument: you cannot
+                  understand what Venezuela&rsquo;s disappearance from AI labor markets means until you have seen what
+                  its disappearance from UNESCO datasets looks like. Sequence is the methodology.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">Missing data was treated as the most important data.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  Standard visualization practice fills gaps, interpolates missing values, or excludes incomplete
+                  records. This project did the opposite. Every missing data point was preserved and made visible
+                  &mdash; as a gray country on a choropleth, as an absent curve in a readiness profile, as a dot that
+                  never appears in a full-reporting column. The design decision was to refuse the convention that
+                  absence means nothing. In this dataset, absence is the finding.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">The pen plotter was chosen because a screen cannot do what a machine can.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The 51 annotator quotes could have been visualized as a word cloud, a bar chart of themes, or a
+                  scrollable quote gallery. All of those would have been faster to read and easier to reproduce. The pen
+                  plotter was chosen because the physical act of drawing &mdash; mechanical, repetitive, one mark at a
+                  time, accumulating into something larger than any single glyph &mdash; is the closest a visualization
+                  can get to the experience it is representing. The machine drew for hours. The annotators work for
+                  hours. That parallel is not metaphor. It is the design.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">The narrative narrows by design.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The eight visualizations move from global system to institutional dynamics to one country to one
+                  annotator&rsquo;s screen. That narrowing was not inevitable &mdash; the project could have stayed at
+                  the global scale, or focused entirely on Venezuela, or presented only the worker testimony. The
+                  decision to move through all four scales was a claim: that you cannot understand the individual
+                  without the system, and you cannot care about the system without the individual. The structure is the
+                  argument.
+                </p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="project-block project-annotators-impact reveal"
+      aria-labelledby="annotators-impact-title"
+    >
+      <div class="project-column">
+        <h2 id="annotators-impact-title" class="project-block__label font-lexend">Impact</h2>
+
+        <dl class="project-impact__stats project-annotators-impact__stats">
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">23</dt>
+            <dd class="project-impact__label">years of longitudinal data</dd>
+          </div>
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">190+</dt>
+            <dd class="project-impact__label">countries compared</dd>
+          </div>
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">51</dt>
+            <dd class="project-impact__label">firsthand testimonies</dd>
+          </div>
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">8</dt>
+            <dd class="project-impact__label">original visualizations</dd>
+          </div>
+          <div class="project-impact__stat">
+            <dt class="project-impact__value font-lexend">4</dt>
+            <dd class="project-impact__label">normalized national indicators</dd>
+          </div>
+        </dl>
+
+        <p class="project-block__text project-annotators-impact__note">
+          The AI labor quadrant required constructing an original axis from scratch. No existing dataset measures AI
+          ecosystem presence and data labor intensity together &mdash; the vertical axis was built by synthesizing
+          OpenAlex, arXiv, Crunchbase, OECD AI Observatory, Hugging Face model data, Fairwork reports, and investigative
+          journalism from Time, Rest of World, and MIT Tech Review. That synthesis is itself a contribution &mdash; an
+          argument that these sources, read together, tell a story no single dataset can tell alone.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="project-block project-annotators-reflection reveal"
+      aria-labelledby="annotators-reflection-title"
+    >
+      <div class="project-column">
+        <h2 id="annotators-reflection-title" class="project-block__label font-lexend">Reflection</h2>
+        <p class="project-block__text">
+          This project was finished before it was done. The zine exists, the pen plotter ran, the 51 quotes are on the
+          page. But the version of this project that should exist &mdash; with original field interviews, a
+          peer-reviewed labor intensity methodology, and an interactive digital format that preserves the sequential
+          logic of the print object &mdash; has not been built yet. What follows is an honest accounting of what worked,
+          what the project&rsquo;s real limitations are, and what the work that remains looks like.
+        </p>
+
+        <div class="project-takeaways__list">
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">What the narrative arc actually did.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The annotator quotes at the end of the zine are not remarkable on their own. Fifty-one quotes from
+                  workers describing precarious conditions is a document. What the zine does is make those quotes land
+                  as a conclusion rather than an introduction. By the time a reader encounters &ldquo;We do the hard
+                  work; the AI gets the credit,&rdquo; they have already seen the global reporting map, the Venezuela
+                  timeline, and the AI labor quadrant. The quote is not new information. It is the human face of
+                  something the reader already understands structurally. That sequence was the most important design
+                  decision in the project &mdash; and the hardest one to get right.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">The AI ecosystem axis is the project&rsquo;s most defensible vulnerability.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The vertical axis of the AI labor quadrant &mdash; AI ecosystem presence and data labor intensity
+                  &mdash; was constructed from public evidence rather than original data collection. Every source is
+                  cited and the methodology is transparent. But a stronger version of this project would not rely on
+                  triangulation from journalism and platform-adjacent research. It would include direct annotator
+                  interviews, platform-level task data, or a peer-reviewed methodology for labor intensity measurement.
+                  The axis is honest about what it is. It is not as rigorous as it could be.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">The zine does not survive the scroll.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  The format works as a printed object held in two hands, turned page by page. As a portfolio artifact
+                  embedded in a webpage it loses the physicality that makes it an argument rather than a document. A
+                  reader scrolling past the pen plotter visualization on a screen is not having the same experience as a
+                  reader encountering it after turning five pages of a zine. A future version of this project would be
+                  an interactive digital experience &mdash; one that controls reading pace, prevents jumping ahead, and
+                  preserves the sequential encounter that the print format enforces naturally. That version does not yet
+                  exist.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-takeaways__item">
+            <summary class="project-takeaways__trigger font-lexend">
+              <span class="project-takeaways__trigger-text">The pattern is not Venezuela&rsquo;s.</span>
+              <svg class="project-takeaways__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="project-takeaways__panel">
+              <div class="project-takeaways__panel-inner">
+                <p class="project-takeaways__text">
+                  This project uses Venezuela as a case study because the evidence is clear and the data is traceable.
+                  But the pattern &mdash; institutional disappearance from one global system, extraction into another
+                  &mdash; applies to annotation labor in the Philippines, Kenya, Pakistan, and India. It applies
+                  wherever the AI supply chain runs through communities that international datasets have already learned
+                  to overlook. Venezuela is the entry point. The argument is structural. Building the next version of
+                  this project at a comparative scale &mdash; multiple countries, multiple platforms, original field
+                  research &mdash; is the work that remains.
+                </p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer id="contact" class="site-main pb-16 mt-28 sm:mt-36">
+    <div class="project-column border-t border-neutral-100 pt-16">
+      <p class="font-medium text-[14px] text-body">Let&rsquo;s build something thoughtful.</p>
+      <ul class="mt-4 flex flex-col gap-[6px] text-[14px] text-body">
+        <li><a href="https://www.linkedin.com/in/carloscoding/" class="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><button type="button" class="nav-link footer-copy-email" data-email="c.a.rodriguez1999@gmail.com">Email</button></li>
+        <li><a href="https://github.com/CRodriguez245" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+      <p class="mt-10 text-[14px] text-body">&copy; 2026 Carlos Rodriguez</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/cursor/dist/index.js"></script>
+    <script src="../contact-nav.js?v=2"></script>
+  <script src="../script.js?v=64"></script>
+  <script src="../project.js?v=6"></script>
+</body>
+</html>
