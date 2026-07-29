@@ -3,7 +3,13 @@
 
   var TRIGGER_FADE_MS = 600;
 
-  function prepareHeroVideo(video) {
+  function isMobileVideoContext() {
+    return window.matchMedia(
+      "(max-width: 767px), (hover: none) and (pointer: coarse)"
+    ).matches;
+  }
+
+  function prepareAutoplayVideo(video) {
     if (!video) return;
     video.muted = true;
     video.defaultMuted = true;
@@ -12,22 +18,43 @@
     video.playsInline = true;
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
-    if (!video.hasAttribute("loop")) video.loop = true;
+    if (video.hasAttribute("loop") || video.loop) {
+      video.loop = true;
+      video.setAttribute("loop", "");
+    }
   }
 
-  function playHeroVideo(video) {
+  function playAutoplayVideo(video) {
     if (!video) return;
-    prepareHeroVideo(video);
+    prepareAutoplayVideo(video);
+
+    if (video.preload === "none" || video.preload === "metadata") {
+      video.preload = "auto";
+    }
+
+    if (video.readyState === 0) {
+      try {
+        video.load();
+      } catch (err) {}
+    }
+
     var tryPlay = function () {
+      if (video.ended) {
+        try {
+          video.currentTime = 0;
+        } catch (err) {}
+      }
       var playPromise = video.play();
       if (playPromise && typeof playPromise.catch === "function") {
         playPromise.catch(function () {});
       }
     };
+
     if (video.readyState >= 2) {
       tryPlay();
       return;
     }
+
     var onReady = function () {
       video.removeEventListener("loadeddata", onReady);
       video.removeEventListener("canplay", onReady);
@@ -38,19 +65,121 @@
     tryPlay();
   }
 
+  function isManualControlsVideo(video) {
+    return video.hasAttribute("controls");
+  }
+
+  function isAutoplayCandidate(video) {
+    if (!video || isManualControlsVideo(video)) return false;
+    if (video.hasAttribute("autoplay")) return true;
+    if (video.hasAttribute("data-phase-video")) return true;
+    if (video.loop && (video.muted || video.hasAttribute("muted"))) return true;
+    return false;
+  }
+
+  function canPlayInContext(video) {
+    var panel = video.closest(
+      ".project-triggers__panel, [data-trigger-panel]"
+    );
+    if (panel && !panel.classList.contains("is-active")) return false;
+    return true;
+  }
+
+  /* Heroes: keep playing on every viewport (desktop already fine) */
   var heroVideos = document.querySelectorAll(".project-hero__video");
   heroVideos.forEach(function (video) {
-    prepareHeroVideo(video);
-    playHeroVideo(video);
+    prepareAutoplayVideo(video);
+    playAutoplayVideo(video);
   });
+
+  /*
+   * Mobile only: drive every muted looping video (not just heroes).
+   * Desktop keeps native autoplay + existing phase/trigger handlers.
+   */
+  function initMobileProjectVideos() {
+    if (!isMobileVideoContext()) return;
+
+    var videos = Array.prototype.filter.call(
+      document.querySelectorAll("video"),
+      isAutoplayCandidate
+    );
+    if (!videos.length) return;
+
+    videos.forEach(function (video) {
+      prepareAutoplayVideo(video);
+    });
+
+    function syncMobileVideos() {
+      videos.forEach(function (video) {
+        if (!canPlayInContext(video)) {
+          video.pause();
+          return;
+        }
+        var rect = video.getBoundingClientRect();
+        var inView =
+          rect.bottom > 0 &&
+          rect.top <
+            (window.innerHeight || document.documentElement.clientHeight);
+        if (inView) playAutoplayVideo(video);
+        else video.pause();
+      });
+    }
+
+    if ("IntersectionObserver" in window) {
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            var video = entry.target;
+            if (!canPlayInContext(video)) {
+              video.pause();
+              return;
+            }
+            if (entry.isIntersecting) playAutoplayVideo(video);
+            else video.pause();
+          });
+        },
+        { rootMargin: "140px 0px", threshold: 0.08 }
+      );
+      videos.forEach(function (video) {
+        observer.observe(video);
+      });
+    } else {
+      syncMobileVideos();
+    }
+
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) syncMobileVideos();
+    });
+
+    var unlockOnce = function () {
+      syncMobileVideos();
+      document.removeEventListener("touchstart", unlockOnce, true);
+      document.removeEventListener("click", unlockOnce, true);
+    };
+    document.addEventListener("touchstart", unlockOnce, true);
+    document.addEventListener("click", unlockOnce, true);
+
+    /* Restart cleanly when a loop stalls as a still frame */
+    videos.forEach(function (video) {
+      video.addEventListener("ended", function () {
+        if (!video.loop || !canPlayInContext(video)) return;
+        try {
+          video.currentTime = 0;
+        } catch (err) {}
+        playAutoplayVideo(video);
+      });
+    });
+  }
+
+  initMobileProjectVideos();
 
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) return;
-    heroVideos.forEach(playHeroVideo);
+    heroVideos.forEach(playAutoplayVideo);
   });
 
   var unlockHeroVideosOnce = function () {
-    heroVideos.forEach(playHeroVideo);
+    heroVideos.forEach(playAutoplayVideo);
     document.removeEventListener("touchstart", unlockHeroVideosOnce, true);
     document.removeEventListener("click", unlockHeroVideosOnce, true);
   };
@@ -149,7 +278,7 @@
 
         if (isNext) {
           video.currentTime = 0;
-          video.play().catch(function () {});
+          playAutoplayVideo(video);
           return;
         }
 
@@ -179,6 +308,11 @@
         setActiveTrigger(button.dataset.triggerButton);
       });
     });
+
+    if (activePanel) {
+      var initialTriggerVideo = activePanel.querySelector("video");
+      if (initialTriggerVideo) playAutoplayVideo(initialTriggerVideo);
+    }
   }
 
   var TAKEAWAY_ANIM_MS = 450;
@@ -394,24 +528,32 @@
   });
 
   var phaseVideos = document.querySelectorAll("[data-phase-video]");
-  if (phaseVideos.length && "IntersectionObserver" in window) {
-    var phaseObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          var video = entry.target;
-          if (entry.isIntersecting) {
-            video.play().catch(function () {});
-          } else {
-            video.pause();
-          }
-        });
-      },
-      { rootMargin: "10% 0px", threshold: 0.25 }
-    );
-
+  if (phaseVideos.length) {
     phaseVideos.forEach(function (video) {
-      phaseObserver.observe(video);
+      prepareAutoplayVideo(video);
     });
+
+    if ("IntersectionObserver" in window) {
+      var phaseObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            var video = entry.target;
+            if (entry.isIntersecting) {
+              playAutoplayVideo(video);
+            } else {
+              video.pause();
+            }
+          });
+        },
+        { rootMargin: "12% 0px", threshold: 0.15 }
+      );
+
+      phaseVideos.forEach(function (video) {
+        phaseObserver.observe(video);
+      });
+    } else if (isMobileVideoContext()) {
+      phaseVideos.forEach(playAutoplayVideo);
+    }
   }
 
   var phasesTimeline = document.querySelector("[data-phases-timeline]");
