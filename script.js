@@ -33,6 +33,20 @@
 
   function prepareInlineVideo(video) {
     if (!video) return;
+
+    var desktopSrc = video.getAttribute("data-src-desktop");
+    var mobileSrc = video.getAttribute("data-src-mobile");
+    if (desktopSrc || mobileSrc) {
+      var useMobile = window.matchMedia(
+        "(max-width: 767px), (hover: none) and (pointer: coarse)"
+      ).matches;
+      var nextSrc =
+        useMobile && mobileSrc ? mobileSrc : desktopSrc || mobileSrc;
+      if (nextSrc && video.getAttribute("src") !== nextSrc) {
+        video.setAttribute("src", nextSrc);
+      }
+    }
+
     video.muted = true;
     video.defaultMuted = true;
     video.volume = 0;
@@ -49,13 +63,19 @@
 
     /* iOS often rejects the first play() while bytes are still loading */
     if (video.preload === "none") {
-      video.preload = "auto";
+      video.preload = "metadata";
     }
 
     var tryPlay = function () {
       var playPromise = video.play();
       if (playPromise && typeof playPromise.catch === "function") {
-        playPromise.catch(function () {});
+        playPromise.catch(function () {
+          window.setTimeout(function () {
+            if (!video.paused) return;
+            video.muted = true;
+            video.play().catch(function () {});
+          }, 200);
+        });
       }
     };
 
@@ -101,7 +121,9 @@
 
     videos.forEach(function (video) {
       prepareInlineVideo(video);
-      video.preload = "none";
+      if (!video.getAttribute("preload") || video.preload === "none") {
+        video.preload = "metadata";
+      }
     });
 
     if (!("IntersectionObserver" in window)) {
