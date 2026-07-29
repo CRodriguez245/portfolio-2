@@ -7445,7 +7445,80 @@ html.custom-cursor-enabled * {
   color: #000;
 }
 
+/* ============================================================
+   Project pager — previous / next case study
+   ============================================================ */
+.project-pager {
+  margin-top: 5.5rem;
+}
+
+.project-pager__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.project-pager__link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-pager__link--next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.project-pager__dir {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--color-text-2);
+}
+
+.project-pager__title {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--color-ink);
+  transition: color 160ms ease;
+}
+
+.project-pager__link:hover .project-pager__title,
+.project-pager__link:focus-visible .project-pager__title {
+  color: var(--color-indigo);
+}
+
+.project-pager__link:focus-visible {
+  outline: 1.5px solid var(--color-indigo);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.project-pager + #contact {
+  margin-top: 3.5rem !important;
+}
+
 @media (max-width: 640px) {
+  .project-pager {
+    margin-top: 4rem;
+  }
+
+  .project-pager__inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-pager__link--next {
+    align-items: flex-start;
+    text-align: left;
+  }
+
   .about-main {
     padding-top: 3rem;
   }
