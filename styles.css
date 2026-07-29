@@ -1603,7 +1603,9 @@ button.nav-link.footer-copy-email.is-copied {
 }
 
 .project-card__ven-shape {
-  overflow: hidden;
+  overflow: visible;
+  /* Keep filter compositing sharp while the soft focus runs */
+  transform: translateZ(0);
 }
 
 .project-card__ven-shape path[fill],

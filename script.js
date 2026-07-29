@@ -29,6 +29,73 @@
   /* ---------- Project filter tabs ---------- */
   var tabs = document.querySelectorAll(".filter-tab");
   var projectCards = document.querySelectorAll(".project-card[data-category]");
+  var cardVideoObserver = null;
+
+  function playCardVideo(video) {
+    if (!video) return;
+    var playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(function () {});
+    }
+  }
+
+  function pauseCardVideo(video) {
+    if (!video) return;
+    video.pause();
+  }
+
+  function syncCardVideos() {
+    document.querySelectorAll("video.project-card__video").forEach(function (video) {
+      var card = video.closest(".project-card");
+      if (card && card.hidden) {
+        pauseCardVideo(video);
+        return;
+      }
+      var rect = video.getBoundingClientRect();
+      var inView =
+        rect.bottom > 0 &&
+        rect.top < (window.innerHeight || document.documentElement.clientHeight);
+      if (inView) playCardVideo(video);
+      else pauseCardVideo(video);
+    });
+  }
+
+  function initCardVideoObserver() {
+    var videos = document.querySelectorAll("video.project-card__video");
+    if (!videos.length) return;
+
+    videos.forEach(function (video) {
+      video.muted = true;
+      video.playsInline = true;
+      video.setAttribute("playsinline", "");
+      video.preload = "none";
+    });
+
+    if (!("IntersectionObserver" in window)) {
+      syncCardVideos();
+      return;
+    }
+
+    cardVideoObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          var video = entry.target;
+          var card = video.closest(".project-card");
+          if (card && card.hidden) {
+            pauseCardVideo(video);
+            return;
+          }
+          if (entry.isIntersecting) playCardVideo(video);
+          else pauseCardVideo(video);
+        });
+      },
+      { rootMargin: "80px 0px", threshold: 0.15 }
+    );
+
+    videos.forEach(function (video) {
+      cardVideoObserver.observe(video);
+    });
+  }
 
   function applyProjectFilter(filter) {
     projectCards.forEach(function (card) {
@@ -41,15 +108,12 @@
         card.style.order = "";
       }
 
-      if (!card.hidden) {
-        card.querySelectorAll("video.project-card__video").forEach(function (video) {
-          var playPromise = video.play();
-          if (playPromise && typeof playPromise.catch === "function") {
-            playPromise.catch(function () {});
-          }
-        });
+      if (card.hidden) {
+        card.querySelectorAll("video.project-card__video").forEach(pauseCardVideo);
       }
     });
+
+    window.requestAnimationFrame(syncCardVideos);
   }
 
   tabs.forEach(function (tab) {
@@ -64,6 +128,7 @@
   });
 
   applyProjectFilter("selected");
+  initCardVideoObserver();
 
   /* ---------- Hero draw animation (SVG only) ---------- */
   function easeInOut(t) {
@@ -298,6 +363,37 @@
     })();
   }
 
+  function animateShapeSoftFocus(shape, duration) {
+    return new Promise(function (resolve) {
+      var targetOpacity = parseFloat(shape.dataset.fillOpacity || "1");
+      var start = performance.now();
+
+      shape.style.transformBox = "fill-box";
+      shape.style.transformOrigin = "center";
+      shape.style.fillOpacity = "0";
+      shape.style.transform = "scale(0.55)";
+
+      function frame(now) {
+        var t = Math.min((now - start) / duration, 1);
+        var eased = easeInOut(t);
+        shape.style.fillOpacity = String(targetOpacity * eased);
+        shape.style.transform = "scale(" + (0.55 + 0.45 * eased) + ")";
+
+        if (t < 1) {
+          requestAnimationFrame(frame);
+        } else {
+          shape.style.fillOpacity = String(targetOpacity);
+          shape.style.removeProperty("transform");
+          shape.style.removeProperty("transform-box");
+          shape.style.removeProperty("transform-origin");
+          resolve();
+        }
+      }
+
+      requestAnimationFrame(frame);
+    });
+  }
+
   function animateShapeFill(shape, duration, options) {
     return new Promise(function (resolve) {
       var opts = options || {};
@@ -315,22 +411,41 @@
       // Bring opacity up early so blur is visible while the fill is already on-screen
       var opacityWindow =
         typeof opts.opacityWindow === "number" ? opts.opacityWindow : 1;
+      var useSvgBlur = opts.useSvgBlur === true && opts.svgBlurNode;
+      var svgFilterId = opts.svgFilterId;
       var start = performance.now();
+
+      if (useBlur && useSvgBlur && svgFilterId) {
+        shape.setAttribute("filter", "url(#" + svgFilterId + ")");
+        opts.svgBlurNode.setAttribute("stdDeviation", String(blurAmount));
+      }
 
       function frame(now) {
         var t = Math.min((now - start) / duration, 1);
         var opacityT = Math.min(t / opacityWindow, 1);
         shape.style.fillOpacity = String(targetOpacity * easeInOut(opacityT));
         if (useBlur) {
-          shape.style.filter =
-            "blur(" + blurAmount * (1 - easeInOut(t)) + "px)";
+          var currentBlur = blurAmount * (1 - easeInOut(t));
+          if (useSvgBlur) {
+            opts.svgBlurNode.setAttribute(
+              "stdDeviation",
+              String(Math.max(0, currentBlur))
+            );
+          } else {
+            shape.style.filter = "blur(" + currentBlur + "px)";
+          }
         }
 
         if (t < 1) {
           requestAnimationFrame(frame);
         } else {
           shape.style.fillOpacity = String(targetOpacity);
-          shape.style.removeProperty("filter");
+          if (useSvgBlur) {
+            shape.removeAttribute("filter");
+            opts.svgBlurNode.setAttribute("stdDeviation", "0");
+          } else {
+            shape.style.removeProperty("filter");
+          }
           resolve();
         }
       }
@@ -1719,9 +1834,52 @@
         });
       }
 
+      function ensureFillBlurFilter(svg) {
+        var ns = "http://www.w3.org/2000/svg";
+        var defs = svg.querySelector("defs");
+        if (!defs) {
+          defs = document.createElementNS(ns, "defs");
+          svg.insertBefore(defs, svg.firstChild);
+        }
+
+        var filterId = svg.getAttribute("data-fill-blur-id");
+        if (!filterId) {
+          filterId =
+            "ven-fill-blur-" + Math.random().toString(36).slice(2, 9);
+          svg.setAttribute("data-fill-blur-id", filterId);
+        }
+
+        var filter = svg.querySelector("#" + filterId);
+        if (!filter) {
+          filter = document.createElementNS(ns, "filter");
+          filter.setAttribute("id", filterId);
+          filter.setAttribute("x", "-50%");
+          filter.setAttribute("y", "-50%");
+          filter.setAttribute("width", "200%");
+          filter.setAttribute("height", "200%");
+          filter.setAttribute("color-interpolation-filters", "sRGB");
+
+          var blur = document.createElementNS(ns, "feGaussianBlur");
+          blur.setAttribute("in", "SourceGraphic");
+          blur.setAttribute("stdDeviation", "0");
+          filter.appendChild(blur);
+          defs.appendChild(filter);
+        }
+
+        return {
+          id: filterId,
+          blur: filter.querySelector("feGaussianBlur"),
+        };
+      }
+
       function drawIn(svg) {
         var strokeDuration = 700 + Math.random() * 900;
         var fillDuration = 800 + Math.random() * 900;
+        var isCard = shapeClassName === "project-card__ven-shape";
+        /* Banner shapes are larger — SVG blur stays smooth there.
+           Card glyphs are tiny, so use scale/opacity bloom instead of blur. */
+        var blurAmount = 3.5 + Math.random() * 2.5;
+        var blurFilter = isCard ? null : ensureFillBlurFilter(svg);
         var prepared = geometriesOf(svg).map(function (shape) {
           return { shape: shape, state: prepareShapeGeometry(shape) };
         });
@@ -1733,13 +1891,20 @@
               animations.push(animateStroke(item.shape, strokeDuration));
             }
             if (item.state.hasFill) {
-              animations.push(
-                animateShapeFill(item.shape, fillDuration, {
-                  forceBlur: true,
-                  blurAmount: 22 + Math.random() * 14,
-                  opacityWindow: 0.35,
-                })
-              );
+              if (isCard) {
+                animations.push(animateShapeSoftFocus(item.shape, fillDuration));
+              } else {
+                animations.push(
+                  animateShapeFill(item.shape, fillDuration, {
+                    forceBlur: true,
+                    blurAmount: blurAmount,
+                    opacityWindow: 0.35,
+                    useSvgBlur: true,
+                    svgBlurNode: blurFilter.blur,
+                    svgFilterId: blurFilter.id,
+                  })
+                );
+              }
             }
             return Promise.all(animations);
           })
@@ -3142,14 +3307,14 @@
     function tick(now) {
       if (!running) return;
       rafId = window.requestAnimationFrame(tick);
-      if (now - lastTick < 48) return;
+      if (now - lastTick < 90) return;
       lastTick = now;
 
       var n = rects.length;
       if (!n) return;
 
       /* Burst of cell updates each frame — feels like streaming compute */
-      var updates = 18 + Math.floor(Math.random() * 22);
+      var updates = 8 + Math.floor(Math.random() * 10);
       var i;
       for (i = 0; i < updates; i++) {
         var idx = Math.floor(Math.random() * n);
