@@ -31,12 +31,47 @@
   var projectCards = document.querySelectorAll(".project-card[data-category]");
   var cardVideoObserver = null;
 
+  function prepareInlineVideo(video) {
+    if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 0;
+    video.setAttribute("muted", "");
+    video.playsInline = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+    if (!video.hasAttribute("loop")) video.loop = true;
+  }
+
   function playCardVideo(video) {
     if (!video) return;
-    var playPromise = video.play();
-    if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch(function () {});
+    prepareInlineVideo(video);
+
+    /* iOS often rejects the first play() while bytes are still loading */
+    if (video.preload === "none") {
+      video.preload = "auto";
     }
+
+    var tryPlay = function () {
+      var playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(function () {});
+      }
+    };
+
+    if (video.readyState >= 2) {
+      tryPlay();
+      return;
+    }
+
+    var onReady = function () {
+      video.removeEventListener("loadeddata", onReady);
+      video.removeEventListener("canplay", onReady);
+      tryPlay();
+    };
+    video.addEventListener("loadeddata", onReady);
+    video.addEventListener("canplay", onReady);
+    tryPlay();
   }
 
   function pauseCardVideo(video) {
@@ -65,9 +100,7 @@
     if (!videos.length) return;
 
     videos.forEach(function (video) {
-      video.muted = true;
-      video.playsInline = true;
-      video.setAttribute("playsinline", "");
+      prepareInlineVideo(video);
       video.preload = "none";
     });
 
@@ -89,12 +122,25 @@
           else pauseCardVideo(video);
         });
       },
-      { rootMargin: "80px 0px", threshold: 0.15 }
+      { rootMargin: "120px 0px", threshold: 0.1 }
     );
 
     videos.forEach(function (video) {
       cardVideoObserver.observe(video);
     });
+
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) syncCardVideos();
+    });
+
+    /* First tap unlocks autoplay policies on stubborn mobile browsers */
+    var unlockOnce = function () {
+      syncCardVideos();
+      document.removeEventListener("touchstart", unlockOnce, true);
+      document.removeEventListener("click", unlockOnce, true);
+    };
+    document.addEventListener("touchstart", unlockOnce, true);
+    document.addEventListener("click", unlockOnce, true);
   }
 
   function applyProjectFilter(filter) {
@@ -340,6 +386,20 @@
       return;
     }
 
+    function resetHeroShapes() {
+      shapes.forEach(function (shape) {
+        if (shape.classList.contains("hero-draw-stroke")) {
+          var length = shape.getTotalLength();
+          shape.style.strokeDasharray = length + " " + length;
+          shape.style.strokeDashoffset = String(length);
+        } else if (shape.classList.contains("hero-draw-circle")) {
+          hideCircle(shape);
+        } else {
+          shape.style.opacity = "0";
+        }
+      });
+    }
+
     (async function runSequence() {
       var byOrder = {};
       shapes.forEach(function (shape) {
@@ -360,6 +420,17 @@
 
       /* 3 — black triangle */
       await animateStroke(byOrder[4], STROKE_MS);
+
+      /* Mobile only: loop the hero mark so it keeps playing */
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        await wait(2400);
+        circleAnim = pickCircleAnim();
+        if (circleGroup && circleAnim === "bounce") {
+          fallDistance = getOffScreenFallDistance(circleGroup);
+        }
+        resetHeroShapes();
+        runSequence();
+      }
     })();
   }
 

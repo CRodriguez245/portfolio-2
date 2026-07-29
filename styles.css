@@ -7450,3 +7450,155 @@ html.custom-cursor-enabled * {
     padding-top: 3rem;
   }
 }
+
+/* ============================================================
+   Homepage / shared — mobile only (desktop rules stay untouched)
+   ============================================================ */
+@media (max-width: 1023px) {
+  /* Match desktop card media aspect (~481×284) so frames don't go near-square */
+  .project-card__media {
+    height: auto;
+    aspect-ratio: 481 / 284;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-main {
+    padding-inline: 1.25rem;
+  }
+
+  .hero-section {
+    padding-top: 5rem;
+    margin-bottom: 4rem;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 2rem;
+  }
+
+  .hero-row {
+    padding-left: 0;
+    gap: 1.75rem;
+  }
+
+  .hero-graphic {
+    width: min(225px, 62vw);
+    height: auto;
+    aspect-ratio: 225 / 229;
+  }
+
+  .hero-content {
+    padding-top: 0;
+    max-width: none;
+  }
+
+  .hero-br {
+    display: none;
+  }
+
+  .hero-content .type-hero-body {
+    line-height: 1.45;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-content .type-hero-meta {
+    line-height: 1.45;
+  }
+
+  .projects-section {
+    padding-top: 1rem;
+  }
+
+  .projects-tabs {
+    gap: 0.75rem;
+  }
+
+  .projects-tabs__labels {
+    gap: 0.85rem;
+    font-size: 0.6875rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-width: 100%;
+    padding-bottom: 0.125rem;
+  }
+
+  .projects-tabs__labels::-webkit-scrollbar {
+    display: none;
+  }
+
+  .projects-grid {
+    gap: 2.25rem;
+    margin-top: 1.35rem;
+  }
+
+  .project-card__copy {
+    grid-template-rows: auto auto auto;
+    flex: 1 1 auto;
+    max-width: none;
+  }
+
+  .project-card__desc {
+    min-height: 0;
+  }
+
+  .project-card__media--annotators {
+    padding: 0.75rem 0.8rem;
+  }
+
+  .project-card__ven-grid {
+    gap: 0.3rem 0.28rem;
+    transform: none;
+  }
+
+  .project-card__ven-grid img,
+  .project-card__ven-grid .project-card__ven-shape {
+    max-width: 3.1rem;
+    max-height: 2.85rem;
+  }
+
+  .research-section {
+    padding-top: 4.5rem;
+  }
+
+  .research-section__layout {
+    gap: 2.25rem;
+    margin-top: 2.25rem;
+  }
+
+  .research-section__statement {
+    font-size: 1.25rem;
+  }
+
+  .research-section__items {
+    gap: 2.5rem;
+    max-width: none;
+  }
+
+  .research-section__item {
+    gap: 1rem;
+  }
+
+  .research-section__icon {
+    width: 5.5rem;
+  }
+
+  .research-section__copy {
+    max-width: none;
+  }
+
+  /* Project page heroes: keep media readable without changing desktop */
+  .project-page .project-hero__media,
+  .project-hero__media {
+    height: min(48svh, 22rem);
+  }
+
+  .project-page--researchbridge .project-hero__media {
+    height: min(48svh, 22rem);
+    padding-inline: 1rem;
+  }
+
+  .project-page--researchbridge .project-hero__video {
+    max-height: min(42svh, 19rem);
+  }
+}
