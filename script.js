@@ -363,37 +363,6 @@
     })();
   }
 
-  function animateShapeSoftFocus(shape, duration) {
-    return new Promise(function (resolve) {
-      var targetOpacity = parseFloat(shape.dataset.fillOpacity || "1");
-      var start = performance.now();
-
-      shape.style.transformBox = "fill-box";
-      shape.style.transformOrigin = "center";
-      shape.style.fillOpacity = "0";
-      shape.style.transform = "scale(0.55)";
-
-      function frame(now) {
-        var t = Math.min((now - start) / duration, 1);
-        var eased = easeInOut(t);
-        shape.style.fillOpacity = String(targetOpacity * eased);
-        shape.style.transform = "scale(" + (0.55 + 0.45 * eased) + ")";
-
-        if (t < 1) {
-          requestAnimationFrame(frame);
-        } else {
-          shape.style.fillOpacity = String(targetOpacity);
-          shape.style.removeProperty("transform");
-          shape.style.removeProperty("transform-box");
-          shape.style.removeProperty("transform-origin");
-          resolve();
-        }
-      }
-
-      requestAnimationFrame(frame);
-    });
-  }
-
   function animateShapeFill(shape, duration, options) {
     return new Promise(function (resolve) {
       var opts = options || {};
@@ -1742,6 +1711,7 @@
             svg.classList.add(shapeClassName);
             svg.setAttribute("aria-hidden", "true");
             svg.setAttribute("focusable", "false");
+            svg.setAttribute("overflow", "visible");
             image.replaceWith(svg);
             return svg;
           })
@@ -1853,10 +1823,11 @@
         if (!filter) {
           filter = document.createElementNS(ns, "filter");
           filter.setAttribute("id", filterId);
-          filter.setAttribute("x", "-50%");
-          filter.setAttribute("y", "-50%");
-          filter.setAttribute("width", "200%");
-          filter.setAttribute("height", "200%");
+          /* Match hero filter padding so soft edges aren't clipped */
+          filter.setAttribute("x", "-80%");
+          filter.setAttribute("y", "-80%");
+          filter.setAttribute("width", "260%");
+          filter.setAttribute("height", "260%");
           filter.setAttribute("color-interpolation-filters", "sRGB");
 
           var blur = document.createElementNS(ns, "feGaussianBlur");
@@ -1875,11 +1846,9 @@
       function drawIn(svg) {
         var strokeDuration = 700 + Math.random() * 900;
         var fillDuration = 800 + Math.random() * 900;
-        var isCard = shapeClassName === "project-card__ven-shape";
-        /* Banner shapes are larger — SVG blur stays smooth there.
-           Card glyphs are tiny, so use scale/opacity bloom instead of blur. */
+        /* Same SVG gaussian soft-focus as the banner / hero circle */
         var blurAmount = 3.5 + Math.random() * 2.5;
-        var blurFilter = isCard ? null : ensureFillBlurFilter(svg);
+        var blurFilter = ensureFillBlurFilter(svg);
         var prepared = geometriesOf(svg).map(function (shape) {
           return { shape: shape, state: prepareShapeGeometry(shape) };
         });
@@ -1891,20 +1860,16 @@
               animations.push(animateStroke(item.shape, strokeDuration));
             }
             if (item.state.hasFill) {
-              if (isCard) {
-                animations.push(animateShapeSoftFocus(item.shape, fillDuration));
-              } else {
-                animations.push(
-                  animateShapeFill(item.shape, fillDuration, {
-                    forceBlur: true,
-                    blurAmount: blurAmount,
-                    opacityWindow: 0.35,
-                    useSvgBlur: true,
-                    svgBlurNode: blurFilter.blur,
-                    svgFilterId: blurFilter.id,
-                  })
-                );
-              }
+              animations.push(
+                animateShapeFill(item.shape, fillDuration, {
+                  forceBlur: true,
+                  blurAmount: blurAmount,
+                  opacityWindow: 0.35,
+                  useSvgBlur: true,
+                  svgBlurNode: blurFilter.blur,
+                  svgFilterId: blurFilter.id,
+                })
+              );
             }
             return Promise.all(animations);
           })
