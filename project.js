@@ -32,7 +32,8 @@
       video.preload = "auto";
     }
 
-    if (video.readyState === 0) {
+    if (video.readyState === 0 && video.dataset.mediaLoadStarted !== "1") {
+      video.dataset.mediaLoadStarted = "1";
       try {
         video.load();
       } catch (err) {}
@@ -46,7 +47,14 @@
       }
       var playPromise = video.play();
       if (playPromise && typeof playPromise.catch === "function") {
-        playPromise.catch(function () {});
+        playPromise.catch(function () {
+          /* Retry once media can play — common on iOS after first gesture */
+          window.setTimeout(function () {
+            if (video.paused && canPlayInContext(video)) {
+              video.play().catch(function () {});
+            }
+          }, 250);
+        });
       }
     };
 
