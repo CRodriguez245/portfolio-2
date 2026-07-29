@@ -27,6 +27,9 @@
     video.setAttribute("src", nextSrc);
     video.removeAttribute("data-media-load-started");
     video.dataset.mediaLoadStarted = "";
+    try {
+      video.load();
+    } catch (err) {}
   }
 
   /* Assign desktop/mobile sources before any autoplay kicks in */
