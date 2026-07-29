@@ -9,8 +9,34 @@
     ).matches;
   }
 
+  function resolveResponsiveVideoSrc(video) {
+    if (!video) return;
+    var desktopSrc = video.getAttribute("data-src-desktop");
+    var mobileSrc = video.getAttribute("data-src-mobile");
+    if (!desktopSrc && !mobileSrc) return;
+
+    var nextSrc =
+      isMobileVideoContext() && mobileSrc
+        ? mobileSrc
+        : desktopSrc || mobileSrc;
+    if (!nextSrc) return;
+
+    var currentSrc = video.getAttribute("src") || "";
+    if (currentSrc === nextSrc) return;
+
+    video.setAttribute("src", nextSrc);
+    video.removeAttribute("data-media-load-started");
+    video.dataset.mediaLoadStarted = "";
+  }
+
+  /* Assign desktop/mobile sources before any autoplay kicks in */
+  document
+    .querySelectorAll("video[data-src-desktop], video[data-src-mobile]")
+    .forEach(resolveResponsiveVideoSrc);
+
   function prepareAutoplayVideo(video) {
     if (!video) return;
+    resolveResponsiveVideoSrc(video);
     video.muted = true;
     video.defaultMuted = true;
     video.volume = 0;
