@@ -354,6 +354,7 @@ summary,
   height: 220vh;
   margin: 0;
   padding: 0;
+  margin-top: 6rem;
 }
 
 .project-bluedot-argument__sticky {
