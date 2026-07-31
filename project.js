@@ -103,7 +103,11 @@
   }
 
   function isManualControlsVideo(video) {
-    return video.hasAttribute("controls");
+    if (!video) return false;
+    return (
+      video.hasAttribute("controls") ||
+      video.classList.contains("project-about__video")
+    );
   }
 
   function isAutoplayCandidate(video) {
