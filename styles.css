@@ -3919,7 +3919,9 @@ svg.project-annotators-profiles__item {
 
 .project-about__media {
   border-radius: 5px;
+  overflow: hidden;
   background: #000;
+  line-height: 0;
 }
 
 .project-about__video {
@@ -3927,12 +3929,10 @@ svg.project-annotators-profiles__item {
   width: 100%;
   max-width: 100%;
   height: auto;
-  min-height: 12rem;
   vertical-align: middle;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
+  aspect-ratio: 1368 / 772;
+  object-fit: cover;
   background: #000;
-  border-radius: 5px;
 }
 
 .project-about__video-link {

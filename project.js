@@ -39,6 +39,13 @@
 
   function prepareAutoplayVideo(video) {
     if (!video) return;
+    /* Never mute manual/about-client players */
+    if (
+      video.classList.contains("project-about__video") ||
+      video.hasAttribute("controls")
+    ) {
+      return;
+    }
     resolveResponsiveVideoSrc(video);
     video.muted = true;
     video.defaultMuted = true;
