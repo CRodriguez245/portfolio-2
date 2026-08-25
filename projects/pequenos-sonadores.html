@@ -164,13 +164,16 @@
         <div class="project-about__media">
           <video
             class="project-about__video"
-            src="../assets/media/gplxc-about.mp4?v=3"
-            poster="../assets/media/gplxc-about-poster.jpg"
             controls
             playsinline
-            preload="auto"
-            controlslist="nodownload"
-          ></video>
+            preload="metadata"
+            poster="../assets/media/gplxc-about-poster.jpg"
+          >
+            <source src="../assets/media/gplxc-about-client.mp4" type="video/mp4" />
+          </video>
+          <p class="project-about__video-link">
+            <a href="../assets/media/gplxc-about-client.mp4" target="_blank" rel="noopener">Open video</a>
+          </p>
         </div>
 
         <div class="project-about__copy">
