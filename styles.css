@@ -3919,18 +3919,20 @@ svg.project-annotators-profiles__item {
 
 .project-about__media {
   border-radius: 5px;
-  overflow: hidden;
   background: #000;
 }
 
 .project-about__video {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
+  min-height: 12rem;
   vertical-align: middle;
   aspect-ratio: 16 / 9;
   object-fit: contain;
   background: #000;
+  border-radius: 5px;
 }
 
 .project-about__video-link {
