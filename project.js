@@ -110,6 +110,18 @@
     );
   }
 
+  /* About Client clips keep sound — never inherit hero mute/volume=0 behavior */
+  document.querySelectorAll(".project-about__video").forEach(function (video) {
+    function enableSound() {
+      video.muted = false;
+      video.defaultMuted = false;
+      video.volume = 1;
+      video.removeAttribute("muted");
+    }
+    enableSound();
+    video.addEventListener("play", enableSound);
+  });
+
   function isAutoplayCandidate(video) {
     if (!video || isManualControlsVideo(video)) return false;
     if (video.hasAttribute("autoplay")) return true;
