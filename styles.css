@@ -3921,17 +3921,15 @@ svg.project-annotators-profiles__item {
   border-radius: 5px;
   overflow: hidden;
   background: #000;
-  line-height: 0;
 }
 
 .project-about__video {
   display: block;
   width: 100%;
-  max-width: 100%;
   height: auto;
   vertical-align: middle;
-  aspect-ratio: 1368 / 772;
-  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
   background: #000;
 }
 

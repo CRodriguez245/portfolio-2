@@ -117,16 +117,48 @@
     );
   }
 
-  /* About Client clips keep sound — never inherit hero mute/volume=0 behavior */
-  document.querySelectorAll(".project-about__video").forEach(function (video) {
-    function enableSound() {
-      video.muted = false;
-      video.defaultMuted = false;
-      video.volume = 1;
-      video.removeAttribute("muted");
+  /* About Client: video-only file + synced audio element (Chrome often drops muxed AAC on this clip) */
+  document.querySelectorAll(".project-about__video[data-audio-src]").forEach(function (video) {
+    var audioSrc = video.getAttribute("data-audio-src");
+    if (!audioSrc) return;
+
+    var audio = new Audio(audioSrc);
+    audio.preload = "auto";
+
+    function syncTime() {
+      if (Math.abs(audio.currentTime - video.currentTime) > 0.3) {
+        try {
+          audio.currentTime = video.currentTime;
+        } catch (err) {}
+      }
     }
-    enableSound();
-    video.addEventListener("play", enableSound);
+
+    function syncVolume() {
+      audio.volume = video.volume;
+      audio.muted = video.muted;
+    }
+
+    video.addEventListener("play", function () {
+      syncVolume();
+      syncTime();
+      var playPromise = audio.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(function () {});
+      }
+    });
+    video.addEventListener("pause", function () {
+      audio.pause();
+    });
+    video.addEventListener("seeking", syncTime);
+    video.addEventListener("seeked", syncTime);
+    video.addEventListener("timeupdate", syncTime);
+    video.addEventListener("volumechange", syncVolume);
+    video.addEventListener("ended", function () {
+      audio.pause();
+      try {
+        audio.currentTime = 0;
+      } catch (err) {}
+    });
   });
 
   function isAutoplayCandidate(video) {
