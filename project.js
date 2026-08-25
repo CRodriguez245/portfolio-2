@@ -133,6 +133,56 @@
     playAutoplayVideo(video);
   });
 
+  /* Keep hero loops alive when autoplay is blocked or stalls on first frame */
+  (function watchHeroPlayback() {
+    if (!heroVideos.length) return;
+
+    function unlockHeroes() {
+      heroVideos.forEach(function (video) {
+        prepareAutoplayVideo(video);
+        if (video.paused || video.ended) playAutoplayVideo(video);
+      });
+    }
+
+    ["pointerdown", "touchstart", "keydown"].forEach(function (evt) {
+      window.addEventListener(evt, unlockHeroes, { once: true, passive: true });
+    });
+
+    heroVideos.forEach(function (video) {
+      var lastTime = -1;
+      var stallTicks = 0;
+
+      window.setInterval(function () {
+        if (!canPlayInContext(video)) return;
+        var rect = video.getBoundingClientRect();
+        var inView =
+          rect.bottom > 40 &&
+          rect.top <
+            (window.innerHeight || document.documentElement.clientHeight) - 40;
+        if (!inView) return;
+
+        if (video.paused || video.ended) {
+          playAutoplayVideo(video);
+          return;
+        }
+
+        if (Math.abs(video.currentTime - lastTime) < 0.01) {
+          stallTicks += 1;
+          if (stallTicks >= 3) {
+            stallTicks = 0;
+            try {
+              video.currentTime = 0;
+            } catch (err) {}
+            playAutoplayVideo(video);
+          }
+        } else {
+          stallTicks = 0;
+        }
+        lastTime = video.currentTime;
+      }, 700);
+    });
+  })();
+
   /*
    * Mobile only: drive every muted looping video (not just heroes).
    * Desktop keeps native autoplay + existing phase/trigger handlers.
